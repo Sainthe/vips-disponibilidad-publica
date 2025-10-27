@@ -36,43 +36,60 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    function renderVipSpots(data) {
-        for (const locationName in data) {
-            const locationData = data[locationName];
-            
-            const card = document.createElement('div');
-            card.className = 'location-card';
+function renderVipSpots(data) {
+        // Actualizamos la fecha usando el timestamp del propio archivo JSON
+        if (data.last_updated_utc) {
+            const lastUpdate = new Date(data.last_updated_utc);
+            lastUpdatedElem.textContent = `Datos actualizados el: ${lastUpdate.toLocaleString()}`;
+        }
 
-            const title = document.createElement('h2');
-            title.textContent = locationName;
-            card.appendChild(title);
+        // Iteramos sobre cada HOJA en los datos (ej. "LasCariñosas", "Furrys Spanish")
+        for (const sheetName in data) {
+            if (sheetName === 'last_updated_utc') continue; // Ignoramos la marca de tiempo
 
-            const grid = document.createElement('div');
-            grid.className = 'spots-grid';
+            const sheetData = data[sheetName];
 
-            const allSpots = [
-                ...locationData.libres.map(spot => ({ name: spot, status: 'libre' })),
-                ...locationData.ocupados.map(spot => ({ name: spot, status: 'ocupado' }))
-            ];
+            // Creamos un título principal para la hoja
+            const sheetTitle = document.createElement('h1');
+            sheetTitle.className = 'sheet-title';
+            sheetTitle.textContent = sheetName;
+            container.appendChild(sheetTitle);
 
-            // Ordenar numéricamente
-            allSpots.sort((a, b) => {
-                const numA = parseInt(a.name.match(/\d+/) ? a.name.match(/\d+/)[0] : 9999);
-                const numB = parseInt(b.name.match(/\d+/) ? b.name.match(/\d+/)[0] : 9999);
-                return numA - numB;
-            });
+            // Ahora, iteramos sobre cada UBICACIÓN dentro de esa hoja
+            for (const locationName in sheetData) {
+                const locationData = sheetData[locationName];
+                
+                const card = document.createElement('div');
+                card.className = 'location-card';
 
-            allSpots.forEach(spotInfo => {
-                const spotElement = document.createElement('div');
-                spotElement.className = `vip-spot ${spotInfo.status}`;
-                spotElement.textContent = spotInfo.name;
-                grid.appendChild(spotElement);
-            });
+                const title = document.createElement('h2');
+                title.textContent = locationName;
+                card.appendChild(title);
 
-            card.appendChild(grid);
-            container.appendChild(card);
+                const grid = document.createElement('div');
+                grid.className = 'spots-grid';
+
+                const allSpots = [
+                    ...locationData.libres.map(spot => ({ name: spot, status: 'libre' })),
+                    ...locationData.ocupados.map(spot => ({ name: spot, status: 'ocupado' }))
+                ];
+
+                // Ordenar numéricamente
+                allSpots.sort((a, b) => {
+                    const numA = parseInt(a.name.match(/\d+/) ? a.name.match(/\d+/)[0] : 9999);
+                    const numB = parseInt(b.name.match(/\d+/) ? b.name.match(/\d+/)[0] : 9999);
+                    return numA - numB;
+                });
+
+                allSpots.forEach(spotInfo => {
+                    const spotElement = document.createElement('div');
+                    spotElement.className = `vip-spot ${spotInfo.status}`;
+                    spotElement.textContent = spotInfo.name;
+                    grid.appendChild(spotElement);
+                });
+
+                card.appendChild(grid);
+                container.appendChild(card);
+            }
         }
     }
-
-    fetchVipData();
-});
