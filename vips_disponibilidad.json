@@ -145,7 +145,6 @@
         },
         "Pasillo": {
             "libres": [
-                "D-VIP-4",
                 "D-VIP-6",
                 "D-VIP-8"
             ],
@@ -153,6 +152,7 @@
                 "D-VIP-1",
                 "D-VIP-2",
                 "D-VIP-3",
+                "D-VIP-4",
                 "D-VIP-5",
                 "D-VIP-7"
             ]
@@ -207,7 +207,6 @@
                 "PCB-VIP-13",
                 "PCB-VIP-14",
                 "PCB-VIP-16",
-                "PCB-VIP-17",
                 "PCB-VIP-18",
                 "PCB-VIP-19",
                 "PCB-VIP-20",
@@ -225,7 +224,8 @@
                 "PCB-VIP-32"
             ],
             "ocupados": [
-                "PCB-VIP-15"
+                "PCB-VIP-15",
+                "PCB-VIP-17"
             ]
         },
         "Cine": {
@@ -241,7 +241,6 @@
             "libres": [
                 "PCC-VIP-5",
                 "PCC-VIP-6",
-                "PCC-VIP-7",
                 "PCC-VIP-8",
                 "PCC-VIP-9",
                 "PCC-VIP-10",
@@ -252,8 +251,10 @@
                 "PCC-VIP-15",
                 "PCC-VIP-16"
             ],
-            "ocupados": []
+            "ocupados": [
+                "PCC-VIP-7"
+            ]
         }
     },
-    "last_updated_utc": "2025-11-01T02:20:34.481125+00:00"
+    "last_updated_utc": "2025-11-06T18:27:11.208829+00:00"
 }
