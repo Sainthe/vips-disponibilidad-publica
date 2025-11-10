@@ -1,7 +1,10 @@
+// script.js
+
 document.addEventListener('DOMContentLoaded', () => {
     const mainContainer = document.getElementById('main-container');
     const lastUpdatedSpan = document.getElementById('last-updated');
 
+    // Función para convertir fecha UTC a formato local legible
     function formatLocalDate(isoString) {
         if (!isoString) return 'No disponible';
         const date = new Date(isoString);
@@ -11,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Cargar los datos desde el archivo JSON
     fetch('availability.json')
         .then(response => {
             if (!response.ok) {
@@ -19,30 +23,25 @@ document.addEventListener('DOMContentLoaded', () => {
             return response.json();
         })
         .then(data => {
+            // Limpiar el contenedor por si acaso
             mainContainer.innerHTML = '';
 
             const lastUpdated = data.last_updated_utc;
             delete data.last_updated_utc;
 
-            // --- INICIO DE LA LÓGICA CORREGIDA ---
+            // Iterar sobre cada "hoja" (comunidad)
             for (const sheetName in data) {
                 const sheetData = data[sheetName];
                 
-                const accordionItem = document.createElement('div');
-                accordionItem.className = 'accordion-item';
-
-                const button = document.createElement('button');
-                button.className = 'accordion-button';
-                button.textContent = sheetName;
-
-                const panel = document.createElement('div');
-                panel.className = 'accordion-panel';
+                // Crear la sección para la hoja
+                const sheetSection = document.createElement('section');
+                sheetSection.className = 'sheet-section';
+                sheetSection.innerHTML = `<h2 class="sheet-title">${sheetName}</h2>`;
                 
-                // 1. Crear el contenedor de la grilla para las tarjetas
                 const grid = document.createElement('div');
                 grid.className = 'locations-grid';
 
-                // 2. Iterar sobre cada ubicación para crear una TARJETA, no una lista
+                // Iterar sobre cada ubicación (Zona VIP A, etc.)
                 for (const locationName in sheetData) {
                     const locationData = sheetData[locationName];
                     
@@ -51,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                     let cardHTML = `<h3>${locationName}</h3>`;
 
-                    // Sección de espacios libres (con el estilo de "píldoras")
+                    // Sección de espacios libres
                     if (locationData.libres && locationData.libres.length > 0) {
                         cardHTML += `
                             <div class="status-section">
@@ -63,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         `;
                     }
 
-                    // Sección de espacios ocupados (con el estilo de "píldoras")
+                    // Sección de espacios ocupados
                     if (locationData.ocupados && locationData.ocupados.length > 0) {
                         cardHTML += `
                             <div class="status-section">
@@ -76,29 +75,14 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                     
                     card.innerHTML = cardHTML;
-                    grid.appendChild(card); // Añadir la tarjeta a la grilla
+                    grid.appendChild(card);
                 }
                 
-                panel.appendChild(grid); // Añadir la grilla completa al panel
-
-                button.addEventListener('click', function() {
-                    this.classList.toggle('active');
-                    if (panel.style.maxHeight) {
-                        panel.style.maxHeight = null;
-                        panel.style.padding = "0 20px";
-                    } else {
-                        // Añadimos 40px para el padding vertical del panel
-                        panel.style.maxHeight = panel.scrollHeight + 40 + "px";
-                        panel.style.padding = "20px";
-                    }
-                });
-
-                accordionItem.appendChild(button);
-                accordionItem.appendChild(panel);
-                mainContainer.appendChild(accordionItem);
+                sheetSection.appendChild(grid);
+                mainContainer.appendChild(sheetSection);
             }
-            // --- FIN DE LA LÓGICA CORREGIDA ---
 
+            // Actualizar la fecha de última actualización
             if (lastUpdated) {
                 lastUpdatedSpan.textContent = formatLocalDate(lastUpdated);
             }
