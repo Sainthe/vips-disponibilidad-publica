@@ -3,20 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Disponibilidad de VIPs</title>
+    <title>Disponibilidad de Espacios VIP</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>Disponibilidad de Espacios VIP</h1>
-        <p id="last-updated">Buscando última actualización...</p>
-    </header>
-    <main id="main-container">
-        <p id="loading">Cargando datos de comunidades...</p>
-    </main>
-    <footer>
-        <p>Solo se muestran los espacios libres.</p>
-    </footer>
+
+    <div class="container">
+        <header>
+            <h1>Disponibilidad de Espacios VIP</h1>
+            <p>Consulta en tiempo real los espacios libres y ocupados.</p>
+        </header>
+
+        <main id="main-container">
+
+            <p style="text-align: center;">Cargando información...</p>
+        </main>
+
+        <footer>
+            <p>Última actualización: <span id="last-updated">--</span></p>
+        </footer>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
