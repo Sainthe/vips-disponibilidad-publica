@@ -1,88 +1,150 @@
+:root {
+    --font-family: 'Poppins', sans-serif;
+    --bg-color: #f4f7f9;
+    --card-bg-color: #ffffff;
+    --text-color: #333;
+    --header-color: #2c3e50;
+    --accent-color: #3498db;
+    --free-color: #2ecc71;
+    --occupied-color: #e74c3c;
+    --card-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    --border-color: #e0e0e0;
+}
+
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-color: #1a1a1a;
+        --card-bg-color: #2c2c2c;
+        --text-color: #f0f0f0;
+        --header-color: #ecf0f1;
+        --border-color: #444;
+    }
+}
+
 body {
-    background-color: #242424;
-    color: #f0f0f0;
-    font-family: sans-serif;
+    font-family: var(--font-family);
+    background-color: var(--bg-color);
+    color: var(--text-color);
     margin: 0;
     padding: 20px;
+    line-height: 1.6;
+    transition: background-color 0.3s, color 0.3s;
 }
-header, footer {
-    text-align: center;
-    margin-bottom: 20px;
-}
-h1 {
-    color: #5c9be0;
-}
-#main-container {
+
+.container {
     max-width: 1200px;
     margin: 0 auto;
 }
 
-.community-header {
-    background-color: #3a3a3a;
-    color: #f0f0f0;
-    cursor: pointer;
-    padding: 18px;
-    width: 100%;
-    border: none;
-    text-align: left;
-    outline: none;
-    font-size: 1.5em;
-    transition: background-color 0.3s ease;
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 20px;
+}
+
+header h1 {
+    color: var(--header-color);
+    font-size: 2.5em;
+    margin: 0;
+}
+
+header p {
+    font-size: 1.1em;
+    color: #7f8c8d;
+}
+
+
+.sheet-section {
+    margin-bottom: 40px;
+}
+
+.sheet-title {
+    font-size: 2em;
+    color: var(--accent-color);
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+
+.locations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.location-card {
+    background-color: var(--card-bg-color);
     border-radius: 8px;
+    box-shadow: var(--card-shadow);
+    padding: 20px;
+    border: 1px solid var(--border-color);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.location-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.location-card h3 {
+    margin-top: 0;
+    font-size: 1.5em;
+    color: var(--header-color);
+}
+
+.status-section {
     margin-top: 15px;
+}
+
+.status-section h4 {
+    margin: 0 0 10px 0;
+    font-size: 1.1em;
     display: flex;
-    justify-content: space-between;
     align-items: center;
 }
 
-.community-header:hover {
-    background-color: #4a4a4a;
-}
+.status-section h4.free { color: var(--free-color); }
+.status-section h4.occupied { color: var(--occupied-color); }
 
-.community-header::after {
-    content: '\25B6'; 
-    font-size: 0.8em;
-    transition: transform 0.3s ease;
-}
-
-.community-header.active::after {
-    transform: rotate(90deg); 
-}
-
-.community-content {
-    padding: 0 18px;
-    background-color: #2d2d2d;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease-out;
-    border-bottom-left-radius: 8px;
-    border-bottom-right-radius: 8px;
-}
-.location-card {
-    padding: 20px 0;
-    border-bottom: 1px solid #444;
-}
-.location-card:last-child {
-    border-bottom: none;
-}
-.location-card h2 {
-    margin-top: 0;
-    color: #5c9be0;
-}
-.spots-grid {
+.slots-list {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 8px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
 }
-.vip-spot {
-    width: 80px;
-    height: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+.slot {
+    padding: 5px 10px;
     border-radius: 4px;
-    font-weight: bold;
-    font-size: 1.1em;
-    background-color: #28a745;
-    color: white;
+    font-weight: 500;
+    font-size: 0.9em;
+}
+
+.slot.free {
+    background-color: #2ecc7120;
+    color: var(--free-color);
+    border: 1px solid #2ecc7180;
+}
+
+.slot.occupied {
+    background-color: #e74c3c20;
+    color: var(--occupied-color);
+    border: 1px solid #e74c3c80;
+    text-decoration: line-through;
+}
+
+
+footer {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+    color: #7f8c8d;
+    font-size: 0.9em;
 }
