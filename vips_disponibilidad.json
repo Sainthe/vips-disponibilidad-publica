@@ -9,11 +9,12 @@
             ]
         },
         "Bar Spawn": {
-            "libres": [],
+            "libres": [
+                "VIP-6"
+            ],
             "ocupados": [
                 "VIP-4",
                 "VIP-5",
-                "VIP-6",
                 "VIP-7",
                 "VIP-8",
                 "VIP-9",
@@ -82,7 +83,9 @@
             ]
         },
         "Exterior": {
-            "libres": [],
+            "libres": [
+                "VIP-28"
+            ],
             "ocupados": [
                 "VIP-20",
                 "VIP-21",
@@ -92,7 +95,6 @@
                 "VIP-25",
                 "VIP-26",
                 "VIP-27",
-                "VIP-28",
                 "VIP-29",
                 "VIP-30"
             ]
@@ -145,7 +147,6 @@
         },
         "Pasillo": {
             "libres": [
-                "D-VIP-6",
                 "D-VIP-8"
             ],
             "ocupados": [
@@ -154,6 +155,7 @@
                 "D-VIP-3",
                 "D-VIP-4",
                 "D-VIP-5",
+                "D-VIP-6",
                 "D-VIP-7"
             ]
         },
@@ -202,7 +204,6 @@
         },
         "Segunda Planta": {
             "libres": [
-                "PCB-VIP-11",
                 "PCB-VIP-12",
                 "PCB-VIP-13",
                 "PCB-VIP-14",
@@ -224,6 +225,7 @@
                 "PCB-VIP-32"
             ],
             "ocupados": [
+                "PCB-VIP-11",
                 "PCB-VIP-15",
                 "PCB-VIP-17"
             ]
@@ -256,5 +258,5 @@
             ]
         }
     },
-    "last_updated_utc": "2025-11-06T18:55:35.107572+00:00"
+    "last_updated_utc": "2025-11-10T23:24:07.542871+00:00"
 }
