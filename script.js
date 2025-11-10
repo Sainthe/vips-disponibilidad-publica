@@ -1,113 +1,83 @@
 document.addEventListener('DOMContentLoaded', () => {
+    const mainContainer = document.getElementById('main-container');
+    const lastUpdatedSpan = document.getElementById('last-updated');
 
-    const GITHUB_USER = 'Sainthe';
-    const GITHUB_REPO = 'vips-disponibilidad-publica';
-    const JSON_FILE_PATH = 'vips_disponibilidad.json';
-
-    const apiUrl = `https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/contents/${JSON_FILE_PATH}`;
-    const container = document.getElementById('main-container');
-    const loadingIndicator = document.getElementById('loading');
-    const lastUpdatedElem = document.getElementById('last-updated');
-
-    async function fetchVipData() {
-        try {
-            const response = await fetch(apiUrl);
-            const data = await response.json();
-
-            if (data.message) {
-                throw new Error(`GitHub API Error: ${data.message}`);
-            }
-
-            const decodedContent = new TextDecoder().decode(Uint8Array.from(atob(data.content), c => c.charCodeAt(0)));
-            const jsonData = JSON.parse(decodedContent);
-
-            loadingIndicator.style.display = 'none';
-            renderAccordion(jsonData);
-
-        } catch (error) {
-            loadingIndicator.textContent = 'Error al cargar los datos. Asegúrate de haber publicado la disponibilidad desde la aplicación.';
-            console.error('Error fetching VIP data:', error);
-        }
+    function formatLocalDate(isoString) {
+        if (!isoString) return 'No disponible';
+        const date = new Date(isoString);
+        return date.toLocaleString(undefined, { 
+            year: 'numeric', month: 'long', day: 'numeric', 
+            hour: '2-digit', minute: '2-digit' 
+        });
     }
 
-    function renderAccordion(data) {
-        if (data.last_updated_utc) {
-            const lastUpdate = new Date(data.last_updated_utc);
-            lastUpdatedElem.textContent = `Datos actualizados el: ${lastUpdate.toLocaleString()}`;
-        } else {
-            lastUpdatedElem.textContent = 'No se pudo determinar la fecha de actualización.';
-        }
+    fetch('availability.json')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`Error de red: ${response.statusText}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            mainContainer.innerHTML = '';
 
-        for (const sheetName in data) {
-            if (sheetName === 'last_updated_utc') continue;
+            const lastUpdated = data.last_updated_utc;
+            delete data.last_updated_utc;
 
-            const sheetData = data[sheetName];
+            for (const sheetName in data) {
+                const sheetData = data[sheetName];
+                
+                const sheetSection = document.createElement('section');
+                sheetSection.className = 'sheet-section';
+                sheetSection.innerHTML = `<h2 class="sheet-title">${sheetName}</h2>`;
+                
+                const grid = document.createElement('div');
+                grid.className = 'locations-grid';
 
-            const header = document.createElement('button');
-            header.className = 'community-header';
-            header.textContent = sheetName;
-            container.appendChild(header);
-
-            const content = document.createElement('div');
-            content.className = 'community-content';
-
-            let hasFreeSpots = false;
-
-            for (const locationName in sheetData) {
-                const locationData = sheetData[locationName];
-
-
-                if (locationData.libres && locationData.libres.length > 0) {
-                    hasFreeSpots = true;
-
+                for (const locationName in sheetData) {
+                    const locationData = sheetData[locationName];
+                    
                     const card = document.createElement('div');
                     card.className = 'location-card';
 
-                    const title = document.createElement('h2');
-                    title.textContent = locationName;
-                    card.appendChild(title);
+                    let cardHTML = `<h3>${locationName}</h3>`;
 
-                    const grid = document.createElement('div');
-                    grid.className = 'spots-grid';
+                    if (locationData.libres && locationData.libres.length > 0) {
+                        cardHTML += `
+                            <div class="status-section">
+                                <h4 class="free">✅ Libres (${locationData.libres.length})</h4>
+                                <ul class="slots-list">
+                                    ${locationData.libres.map(slot => `<li class="slot free">${slot}</li>`).join('')}
+                                </ul>
+                            </div>
+                        `;
+                    }
 
-                    locationData.libres.sort((a, b) => {
-                        const numA = parseInt(a.match(/\d+/) ? a.match(/\d+/)[0] : 9999);
-                        const numB = parseInt(b.match(/\d+/) ? b.match(/\d+/)[0] : 9999);
-                        return numA - numB;
-                    });
-
-                    locationData.libres.forEach(spotName => {
-                        const spotElement = document.createElement('div');
-                        spotElement.className = 'vip-spot'; 
-                        spotElement.textContent = spotName;
-                        grid.appendChild(spotElement);
-                    });
-
-                    card.appendChild(grid);
-                    content.appendChild(card);
+                    if (locationData.ocupados && locationData.ocupados.length > 0) {
+                        cardHTML += `
+                            <div class="status-section">
+                                <h4 class="occupied">❌ Ocupados (${locationData.ocupados.length})</h4>
+                                <ul class="slots-list">
+                                    ${locationData.ocupados.map(slot => `<li class="slot occupied">${slot}</li>`).join('')}
+                                </ul>
+                            </div>
+                        `;
+                    }
+                    
+                    card.innerHTML = cardHTML;
+                    grid.appendChild(card);
                 }
+                
+                sheetSection.appendChild(grid);
+                mainContainer.appendChild(sheetSection);
             }
 
-            if (!hasFreeSpots) {
-                const noSpotsMessage = document.createElement('p');
-                noSpotsMessage.textContent = 'No hay espacios libres en este momento.';
-                noSpotsMessage.style.padding = '20px';
-                content.appendChild(noSpotsMessage);
+            if (lastUpdated) {
+                lastUpdatedSpan.textContent = formatLocalDate(lastUpdated);
             }
-
-            container.appendChild(content);
-
-            header.addEventListener('click', function() {
-                this.classList.toggle('active');
-                const panel = this.nextElementSibling;
-                if (panel.style.maxHeight) {
-                    panel.style.maxHeight = null;
-                } else {
-                    panel.style.maxHeight = panel.scrollHeight + "px";
-                }
-            });
-        }
-    }
-
-    fetchVipData();
+        })
+        .catch(error => {
+            console.error('Error al cargar los datos de disponibilidad:', error);
+            mainContainer.innerHTML = `<p style="text-align: center; color: var(--occupied-color);">No se pudo cargar la información de disponibilidad. Inténtalo de nuevo más tarde.</p>`;
+        });
 });
