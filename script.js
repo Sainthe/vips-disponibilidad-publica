@@ -24,15 +24,26 @@ document.addEventListener('DOMContentLoaded', () => {
             const lastUpdated = data.last_updated_utc;
             delete data.last_updated_utc;
 
+
             for (const sheetName in data) {
                 const sheetData = data[sheetName];
                 
-                const sheetSection = document.createElement('section');
-                sheetSection.className = 'sheet-section';
-                sheetSection.innerHTML = `<h2 class="sheet-title">${sheetName}</h2>`;
+
+                const accordionItem = document.createElement('div');
+                accordionItem.className = 'accordion-item';
+
+
+                const button = document.createElement('button');
+                button.className = 'accordion-button';
+                button.textContent = sheetName;
+
+
+                const panel = document.createElement('div');
+                panel.className = 'accordion-panel';
                 
                 const grid = document.createElement('div');
                 grid.className = 'locations-grid';
+
 
                 for (const locationName in sheetData) {
                     const locationData = sheetData[locationName];
@@ -68,8 +79,22 @@ document.addEventListener('DOMContentLoaded', () => {
                     grid.appendChild(card);
                 }
                 
-                sheetSection.appendChild(grid);
-                mainContainer.appendChild(sheetSection);
+                panel.appendChild(grid);
+
+                button.addEventListener('click', function() {
+                    this.classList.toggle('active');
+                    if (panel.style.maxHeight) {
+                        panel.style.maxHeight = null; 
+                        panel.style.padding = "0 20px";
+                    } else {
+                        panel.style.maxHeight = panel.scrollHeight + 40 + "px"; 
+                        panel.style.padding = "0 20px 20px 20px";
+                    }
+                });
+
+                accordionItem.appendChild(button);
+                accordionItem.appendChild(panel);
+                mainContainer.appendChild(accordionItem);
             }
 
             if (lastUpdated) {
