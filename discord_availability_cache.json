@@ -1,5 +1,8 @@
 {
-    "LasCariñosas": [],
+    "LasCariñosas": [
+        "C-VIP-12",
+        "VIP-6"
+    ],
     "Furrys Spanish": [
         "D-VIP-14",
         "D-VIP-15",
@@ -13,8 +16,6 @@
         "D-VIP-26",
         "D-VIP-27",
         "D-VIP-28",
-        "D-VIP-4",
-        "D-VIP-6",
         "D-VIP-8",
         "PCB-VIP-1",
         "PCB-VIP-10",
@@ -64,7 +65,6 @@
         "PCC-VIP-4",
         "PCC-VIP-5",
         "PCC-VIP-6",
-        "PCC-VIP-7",
         "PCC-VIP-8",
         "PCC-VIP-9"
     ]
