@@ -11,7 +11,7 @@
     --border-color: #e0e0e0;
 }
 
-
+/* --- Modo Oscuro Automático --- */
 @media (prefers-color-scheme: dark) {
     :root {
         --bg-color: #1a1a1a;
@@ -22,7 +22,7 @@
     }
 }
 
-
+/* --- Estilos Generales --- */
 body {
     font-family: var(--font-family);
     background-color: var(--bg-color);
@@ -38,7 +38,7 @@ body {
     margin: 0 auto;
 }
 
-
+/* --- Cabecera --- */
 header {
     text-align: center;
     margin-bottom: 40px;
@@ -57,67 +57,28 @@ header p {
     color: #7f8c8d;
 }
 
-
-.accordion-item {
-    margin-bottom: 10px;
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    overflow: hidden; 
+/* --- Contenedor de Hojas (Comunidades) --- */
+.sheet-section {
+    margin-bottom: 40px;
 }
 
-.accordion-button {
-    background-color: var(--card-bg-color);
+.sheet-title {
+    font-size: 2em;
     color: var(--accent-color);
-    cursor: pointer;
-    padding: 18px 20px;
-    width: 100%;
-    border: none;
-    text-align: left;
-    outline: none;
-    font-size: 1.5em;
-    font-weight: 500;
-    font-family: var(--font-family);
-    transition: background-color 0.3s;
-    position: relative;
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
 }
 
-.accordion-button:hover, .accordion-button.active {
-    background-color: #3498db1a; 
-
-
-.accordion-button::after {
-    content: '+';
-    font-size: 1.5em;
-    color: var(--accent-color);
-    position: absolute;
-    right: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-    transition: transform 0.3s;
-}
-
-.accordion-button.active::after {
-    content: '−';
-    transform: translateY(-50%) rotate(180deg);
-}
-
-.accordion-panel {
-    padding: 0 20px;
-    background-color: var(--card-bg-color);
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease-out, padding 0.3s ease-out;
-}
-
+/* --- Diseño de Tarjetas (Grid Responsivo) --- */
 .locations-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
-    padding: 20px 0; 
 }
 
 .location-card {
-    background-color: var(--bg-color); 
+    background-color: var(--card-bg-color);
     border-radius: 8px;
     box-shadow: var(--card-shadow);
     padding: 20px;
@@ -179,7 +140,7 @@ header p {
     text-decoration: line-through;
 }
 
-
+/* --- Pie de Página --- */
 footer {
     text-align: center;
     margin-top: 40px;
