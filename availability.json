@@ -28,14 +28,13 @@
             ]
         },
         "Zona de Escalera": {
-            "libres": [
-                "VIP-20"
-            ],
+            "libres": [],
             "ocupados": [
                 "VIP-16",
                 "VIP-17",
                 "VIP-18",
                 "VIP-19",
+                "VIP-20",
                 "VIP-21",
                 "VIP-22",
                 "VIP-23",
@@ -103,7 +102,8 @@
         },
         "Zotano": {
             "libres": [
-                "VIP-3"
+                "VIP-3",
+                "VIP-14"
             ],
             "ocupados": [
                 "VIP-1",
@@ -118,7 +118,6 @@
                 "VIP-11",
                 "VIP-12",
                 "VIP-13",
-                "VIP-14",
                 "VIP-31",
                 "VIP-32"
             ]
@@ -136,13 +135,14 @@
             "ocupados": []
         },
         "Spawn": {
-            "libres": [],
+            "libres": [
+                "D-VIP-29"
+            ],
             "ocupados": [
                 "D-VIP-9",
                 "D-VIP-10",
                 "D-VIP-11",
                 "D-VIP-12",
-                "D-VIP-29",
                 "D-VIP-30",
                 "D-VIP-31",
                 "D-VIP-32"
@@ -150,10 +150,10 @@
         },
         "Pasillo": {
             "libres": [
+                "D-VIP-1",
                 "D-VIP-8"
             ],
             "ocupados": [
-                "D-VIP-1",
                 "D-VIP-2",
                 "D-VIP-3",
                 "D-VIP-4",
@@ -164,15 +164,14 @@
         },
         "Terraza - SemiPlaya xD": {
             "libres": [
+                "D-VIP-13",
                 "D-VIP-14",
                 "D-VIP-15",
                 "D-VIP-16",
                 "D-VIP-17",
                 "D-VIP-18"
             ],
-            "ocupados": [
-                "D-VIP-13"
-            ]
+            "ocupados": []
         },
         "Sala de Star - Bar": {
             "libres": [
@@ -261,5 +260,5 @@
             ]
         }
     },
-    "last_updated_utc": "2025-11-12T01:43:48.866204+00:00"
+    "last_updated_utc": "2025-11-12T04:56:24.402194+00:00"
 }
