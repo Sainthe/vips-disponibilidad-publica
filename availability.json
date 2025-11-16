@@ -84,7 +84,9 @@
             ]
         },
         "Exterior": {
-            "libres": [],
+            "libres": [
+                "VIP-29"
+            ],
             "ocupados": [
                 "VIP-20",
                 "VIP-21",
@@ -95,7 +97,6 @@
                 "VIP-26",
                 "VIP-27",
                 "VIP-28",
-                "VIP-29",
                 "VIP-30"
             ]
         },
@@ -148,10 +149,10 @@
         },
         "Pasillo": {
             "libres": [
-                "D-VIP-1",
                 "D-VIP-8"
             ],
             "ocupados": [
+                "D-VIP-1",
                 "D-VIP-2",
                 "D-VIP-3",
                 "D-VIP-4",
@@ -259,5 +260,5 @@
             ]
         }
     },
-    "last_updated_utc": "2025-11-14T20:20:30.852776+00:00"
+    "last_updated_utc": "2025-11-16T02:25:23.823681+00:00"
 }
