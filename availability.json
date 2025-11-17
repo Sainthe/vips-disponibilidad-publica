@@ -99,12 +99,11 @@
             ]
         },
         "Zotano": {
-            "libres": [
-                "VIP-3"
-            ],
+            "libres": [],
             "ocupados": [
                 "VIP-1",
                 "VIP-2",
+                "VIP-3",
                 "VIP-4",
                 "VIP-5",
                 "VIP-6",
@@ -258,5 +257,5 @@
             ]
         }
     },
-    "last_updated_utc": "2025-11-16T07:04:40.360489+00:00"
+    "last_updated_utc": "2025-11-17T00:56:02.601695+00:00"
 }
