@@ -27,9 +27,7 @@
             ]
         },
         "Zona de Escalera": {
-            "libres": [
-                "VIP-22"
-            ],
+            "libres": [],
             "ocupados": [
                 "VIP-16",
                 "VIP-17",
@@ -37,6 +35,7 @@
                 "VIP-19",
                 "VIP-20",
                 "VIP-21",
+                "VIP-22",
                 "VIP-23",
                 "VIP-24"
             ]
@@ -146,9 +145,7 @@
             ]
         },
         "Pasillo": {
-            "libres": [
-                "D-VIP-8"
-            ],
+            "libres": [],
             "ocupados": [
                 "D-VIP-1",
                 "D-VIP-2",
@@ -156,19 +153,20 @@
                 "D-VIP-4",
                 "D-VIP-5",
                 "D-VIP-6",
-                "D-VIP-7"
+                "D-VIP-7",
+                "D-VIP-8"
             ]
         },
         "Terraza - SemiPlaya xD": {
             "libres": [
-                "D-VIP-14",
                 "D-VIP-15",
                 "D-VIP-16",
                 "D-VIP-17",
                 "D-VIP-18"
             ],
             "ocupados": [
-                "D-VIP-13"
+                "D-VIP-13",
+                "D-VIP-14"
             ]
         },
         "Sala de Star - Bar": {
@@ -258,5 +256,5 @@
             ]
         }
     },
-    "last_updated_utc": "2025-11-17T21:54:53.042236+00:00"
+    "last_updated_utc": "2025-11-18T23:42:22.290916+00:00"
 }
