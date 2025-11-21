@@ -103,7 +103,8 @@
         },
         "Zotano": {
             "libres": [
-                "VIP-10"
+                "VIP-10",
+                "VIP-11"
             ],
             "ocupados": [
                 "VIP-1",
@@ -115,7 +116,6 @@
                 "VIP-7",
                 "VIP-8",
                 "VIP-9",
-                "VIP-11",
                 "VIP-12",
                 "VIP-13",
                 "VIP-14",
@@ -211,7 +211,7 @@
                 "PCB-VIP-13",
                 "PCB-VIP-14",
                 "PCB-VIP-16",
-                "PCB-VIP-18",
+                "PCB-VIP-17",
                 "PCB-VIP-19",
                 "PCB-VIP-20",
                 "PCB-VIP-21",
@@ -230,7 +230,7 @@
             "ocupados": [
                 "PCB-VIP-11",
                 "PCB-VIP-15",
-                "PCB-VIP-17"
+                "PCB-VIP-18"
             ]
         },
         "Cine": {
@@ -261,5 +261,5 @@
             ]
         }
     },
-    "last_updated_utc": "2025-11-21T10:24:27.463847+00:00"
+    "last_updated_utc": "2025-11-21T16:51:53.611447+00:00"
 }
