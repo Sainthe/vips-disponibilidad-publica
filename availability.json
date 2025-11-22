@@ -2,15 +2,16 @@
 {
     "LasCariñosas": {
         "Entrada Spawn": {
-            "libres": [
+            "libres": [],
+            "ocupados": [
                 "VIP-1",
                 "VIP-2",
                 "VIP-3"
-            ],
-            "ocupados": []
+            ]
         },
         "Bar Spawn": {
-            "libres": [
+            "libres": [],
+            "ocupados": [
                 "VIP-4",
                 "VIP-5",
                 "VIP-6",
@@ -23,11 +24,13 @@
                 "VIP-13",
                 "VIP-14",
                 "VIP-15"
-            ],
-            "ocupados": []
+            ]
         },
         "Zona de Escalera": {
             "libres": [
+                "VIP-24"
+            ],
+            "ocupados": [
                 "VIP-16",
                 "VIP-17",
                 "VIP-18",
@@ -35,29 +38,29 @@
                 "VIP-20",
                 "VIP-21",
                 "VIP-22",
-                "VIP-23",
-                "VIP-24"
-            ],
-            "ocupados": []
+                "VIP-23"
+            ]
         },
         "Stage": {
             "libres": [
+                "VIP-27",
+                "VIP-31"
+            ],
+            "ocupados": [
                 "VIP-1",
                 "VIP-2",
                 "VIP-3",
                 "VIP-25",
                 "VIP-26",
-                "VIP-27",
                 "VIP-28",
                 "VIP-29",
                 "VIP-30",
-                "VIP-31",
                 "VIP-32"
-            ],
-            "ocupados": []
+            ]
         },
         "Pasillo VIP": {
-            "libres": [
+            "libres": [],
+            "ocupados": [
                 "VIP-4",
                 "VIP-5",
                 "VIP-6",
@@ -68,22 +71,24 @@
                 "VIP-11",
                 "VIP-12",
                 "VIP-13"
-            ],
-            "ocupados": []
+            ]
         },
         "Back Stage": {
-            "libres": [
+            "libres": [],
+            "ocupados": [
                 "VIP-14",
                 "VIP-15",
                 "VIP-16",
                 "VIP-17",
                 "VIP-18",
                 "VIP-19"
-            ],
-            "ocupados": []
+            ]
         },
         "Exterior": {
             "libres": [
+                "VIP-30"
+            ],
+            "ocupados": [
                 "VIP-20",
                 "VIP-21",
                 "VIP-22",
@@ -93,13 +98,15 @@
                 "VIP-26",
                 "VIP-27",
                 "VIP-28",
-                "VIP-29",
-                "VIP-30"
-            ],
-            "ocupados": []
+                "VIP-29"
+            ]
         },
         "Zotano": {
             "libres": [
+                "VIP-10",
+                "VIP-11"
+            ],
+            "ocupados": [
                 "VIP-1",
                 "VIP-2",
                 "VIP-3",
@@ -109,15 +116,12 @@
                 "VIP-7",
                 "VIP-8",
                 "VIP-9",
-                "VIP-10",
-                "VIP-11",
                 "VIP-12",
                 "VIP-13",
                 "VIP-14",
                 "VIP-31",
                 "VIP-32"
-            ],
-            "ocupados": []
+            ]
         }
     },
     "Furrys Spanish": {
@@ -133,19 +137,21 @@
         },
         "Spawn": {
             "libres": [
+                "D-VIP-31"
+            ],
+            "ocupados": [
                 "D-VIP-9",
                 "D-VIP-10",
                 "D-VIP-11",
                 "D-VIP-12",
                 "D-VIP-29",
                 "D-VIP-30",
-                "D-VIP-31",
                 "D-VIP-32"
-            ],
-            "ocupados": []
+            ]
         },
         "Pasillo": {
-            "libres": [
+            "libres": [],
+            "ocupados": [
                 "D-VIP-1",
                 "D-VIP-2",
                 "D-VIP-3",
@@ -154,34 +160,35 @@
                 "D-VIP-6",
                 "D-VIP-7",
                 "D-VIP-8"
-            ],
-            "ocupados": []
+            ]
         },
         "Terraza - SemiPlaya xD": {
             "libres": [
-                "D-VIP-13",
-                "D-VIP-14",
-                "D-VIP-15",
                 "D-VIP-16",
                 "D-VIP-17",
                 "D-VIP-18"
             ],
-            "ocupados": []
+            "ocupados": [
+                "D-VIP-13",
+                "D-VIP-14",
+                "D-VIP-15"
+            ]
         },
         "Sala de Star - Bar": {
             "libres": [
-                "D-VIP-19",
-                "D-VIP-20",
                 "D-VIP-21",
                 "D-VIP-22",
                 "D-VIP-23",
                 "D-VIP-24",
-                "D-VIP-25",
                 "D-VIP-26",
                 "D-VIP-27",
                 "D-VIP-28"
             ],
-            "ocupados": []
+            "ocupados": [
+                "D-VIP-19",
+                "D-VIP-20",
+                "D-VIP-25"
+            ]
         },
         "Pasillo Stage": {
             "libres": [
@@ -200,14 +207,11 @@
         },
         "Segunda Planta": {
             "libres": [
-                "PCB-VIP-11",
                 "PCB-VIP-12",
                 "PCB-VIP-13",
                 "PCB-VIP-14",
-                "PCB-VIP-15",
                 "PCB-VIP-16",
                 "PCB-VIP-17",
-                "PCB-VIP-18",
                 "PCB-VIP-19",
                 "PCB-VIP-20",
                 "PCB-VIP-21",
@@ -223,7 +227,11 @@
                 "PCB-VIP-31",
                 "PCB-VIP-32"
             ],
-            "ocupados": []
+            "ocupados": [
+                "PCB-VIP-11",
+                "PCB-VIP-15",
+                "PCB-VIP-18"
+            ]
         },
         "Cine": {
             "libres": [
@@ -238,7 +246,6 @@
             "libres": [
                 "PCC-VIP-5",
                 "PCC-VIP-6",
-                "PCC-VIP-7",
                 "PCC-VIP-8",
                 "PCC-VIP-9",
                 "PCC-VIP-10",
@@ -249,12 +256,15 @@
                 "PCC-VIP-15",
                 "PCC-VIP-16"
             ],
-            "ocupados": []
+            "ocupados": [
+                "PCC-VIP-7"
+            ]
         }
     },
     "IslaDelPecado": {
         "Spawn": {
             "libres": [
+                "VipV-1",
                 "VipV-2",
                 "VipV-3",
                 "VipV-4",
@@ -287,10 +297,8 @@
                 "VipV-31",
                 "VipV-32"
             ],
-            "ocupados": [
-                "VipV-1"
-            ]
+            "ocupados": []
         }
     },
-    "last_updated_utc": "2025-11-22T05:10:52.871989+00:00"
+    "last_updated_utc": "2025-11-22T05:43:21.035864+00:00"
 }
