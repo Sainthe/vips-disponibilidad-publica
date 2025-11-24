@@ -68,7 +68,6 @@
         "PCC-VIP-9"
     ],
     "IslaDelPecado": [
-        "VipV-10",
         "VipV-11",
         "VipV-12",
         "VipV-13",
@@ -90,12 +89,6 @@
         "VipV-29",
         "VipV-30",
         "VipV-31",
-        "VipV-32",
-        "VipV-4",
-        "VipV-5",
-        "VipV-6",
-        "VipV-7",
-        "VipV-8",
-        "VipV-9"
+        "VipV-32"
     ]
 }
