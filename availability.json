@@ -263,13 +263,6 @@
     "IslaDelPecado": {
         "Spawn": {
             "libres": [
-                "VipV-4",
-                "VipV-5",
-                "VipV-6",
-                "VipV-7",
-                "VipV-8",
-                "VipV-9",
-                "VipV-10",
                 "VipV-11",
                 "VipV-12",
                 "VipV-13",
@@ -296,9 +289,16 @@
             "ocupados": [
                 "VipV-1",
                 "VipV-2",
-                "VipV-3"
+                "VipV-3",
+                "VipV-4",
+                "VipV-5",
+                "VipV-6",
+                "VipV-7",
+                "VipV-8",
+                "VipV-9",
+                "VipV-10"
             ]
         }
     },
-    "last_updated_utc": "2025-11-23T23:54:16.731629+00:00"
+    "last_updated_utc": "2025-11-24T22:15:52.787630+00:00"
 }
