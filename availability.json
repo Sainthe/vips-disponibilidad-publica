@@ -261,23 +261,7 @@
     },
     "IslaDelPecado": {
         "Spawn": {
-            "libres": [
-                "VipV-18",
-                "VipV-19",
-                "VipV-20",
-                "VipV-21",
-                "VipV-22",
-                "VipV-23",
-                "VipV-24",
-                "VipV-25",
-                "VipV-26",
-                "VipV-27",
-                "VipV-28",
-                "VipV-29",
-                "VipV-30",
-                "VipV-31",
-                "VipV-32"
-            ],
+            "libres": [],
             "ocupados": [
                 "VipV-1",
                 "VipV-2",
@@ -295,9 +279,24 @@
                 "VipV-14",
                 "VipV-15",
                 "VipV-16",
-                "VipV-17"
+                "VipV-17",
+                "VipV-18",
+                "VipV-19",
+                "VipV-20",
+                "VipV-21",
+                "VipV-22",
+                "VipV-23",
+                "VipV-24",
+                "VipV-25",
+                "VipV-26",
+                "VipV-27",
+                "VipV-28",
+                "VipV-29",
+                "VipV-30",
+                "VipV-31",
+                "VipV-32"
             ]
         }
     },
-    "last_updated_utc": "2025-11-26T01:42:04.474556+00:00"
+    "last_updated_utc": "2025-11-26T14:22:20.540336+00:00"
 }
