@@ -262,7 +262,6 @@
     "IslaDelPecado": {
         "Spawn": {
             "libres": [
-                "VIpB-4",
                 "VIpB-5",
                 "VIpB-6",
                 "VIpB-7",
@@ -300,6 +299,7 @@
                 "VipV-3",
                 "VIpB-3",
                 "VipV-4",
+                "VIpB-4",
                 "VipV-5",
                 "VipV-6",
                 "VipV-7",
@@ -331,5 +331,5 @@
             ]
         }
     },
-    "last_updated_utc": "2025-11-27T19:47:42.830859+00:00"
+    "last_updated_utc": "2025-11-28T13:58:13.952272+00:00"
 }
