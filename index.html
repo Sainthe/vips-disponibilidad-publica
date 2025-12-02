@@ -10,7 +10,7 @@
             --card-bg: #1e1e1e;
             --text-primary: #e0e0e0;
             --text-secondary: #a0a0a0;
-            --accent-color: #5865F2;
+            --accent-color: #5865F2; /* Discord Blue */
             --free-color: #43b581;
             --occupied-color: #36393f;
             --border-radius: 8px;
@@ -33,6 +33,7 @@
         h1 { margin-bottom: 5px; text-align: center; }
         .last-updated { font-size: 0.9em; color: var(--text-secondary); margin-bottom: 20px; text-align: center; }
 
+        /* Banner */
         .community-banner {
             width: 100%; max-width: 800px; height: auto; max-height: 250px;
             object-fit: cover; border-radius: var(--border-radius);
@@ -40,6 +41,7 @@
             box-shadow: 0 4px 10px rgba(0,0,0,0.5); border: 1px solid #333;
         }
 
+        /* Tabs */
         .tabs { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px; justify-content: center; }
         .tab-btn {
             background-color: var(--card-bg); border: 1px solid #333; color: var(--text-secondary);
@@ -48,40 +50,20 @@
         .tab-btn:hover { background-color: #2c2c2c; }
         .tab-btn.active { background-color: var(--accent-color); color: white; border-color: var(--accent-color); }
 
+        /* Controls Bar */
         .controls {
-            display: flex; 
-            gap: 10px; 
-            align-items: center; 
-            margin-bottom: 20px;
-            background: var(--card-bg); 
-            padding: 10px 15px; 
-            border-radius: var(--border-radius);
-            flex-wrap: nowrap;
-            justify-content: flex-start; 
-            width: 100%; 
-            max-width: 950px; 
-            box-sizing: border-box;
-            overflow-x: auto;
+            display: flex; gap: 10px; align-items: center; margin-bottom: 20px;
+            background: var(--card-bg); padding: 10px 15px; border-radius: var(--border-radius);
+            flex-wrap: nowrap; justify-content: flex-start; width: 100%; max-width: 950px;
+            box-sizing: border-box; overflow-x: auto;
         }
 
         .total-counter { 
-            font-weight: bold; 
-            color: var(--free-color); 
-            display: flex; 
-            align-items: center; 
-            gap: 5px; 
-            margin-right: auto;
-            white-space: nowrap;
-            font-size: 1em;
+            font-weight: bold; color: var(--free-color); display: flex; align-items: center; 
+            gap: 5px; margin-right: auto; white-space: nowrap; font-size: 1em;
         }
         
-        .toggle-switch { 
-            display: flex; 
-            align-items: center; 
-            cursor: pointer; 
-            margin-right: 5px; 
-            white-space: nowrap;
-        }
+        .toggle-switch { display: flex; align-items: center; cursor: pointer; margin-right: 5px; white-space: nowrap; }
         .toggle-switch input { display: none; }
         .slider {
             width: 36px; height: 18px; background-color: #555; border-radius: 20px; position: relative; margin-right: 8px; transition: 0.3s;
@@ -92,14 +74,12 @@
         input:checked + .slider { background-color: var(--free-color); }
         input:checked + .slider::before { transform: translateX(18px); }
 
+        /* Buttons */
         .action-btn {
-            color: white; text-decoration: none; 
-            padding: 8px 14px;
-            border-radius: 6px;
+            color: white; text-decoration: none; padding: 8px 14px; border-radius: 6px;
             font-weight: bold; display: none; align-items: center; justify-content: center;
             gap: 6px; transition: transform 0.1s, filter 0.2s; border: none; 
-            font-size: 0.9rem; cursor: pointer;
-            white-space: nowrap;
+            font-size: 0.9rem; cursor: pointer; white-space: nowrap;
         }
         .action-btn:hover { transform: translateY(-2px); filter: brightness(1.1); }
         .discord-btn { background-color: var(--accent-color); }
@@ -107,51 +87,37 @@
         .buy-main-btn { background-color: #FF9800; color: black; }
         .dm-btn { background-color: var(--dm-color); }
 
+        /* Modal Wizard */
         .modal {
             display: none; position: fixed; z-index: 1000; left: 0; top: 0;
             width: 100%; height: 100%; background-color: rgba(0,0,0,0.85); 
-            backdrop-filter: blur(5px);
-            justify-content: center; align-items: center;
+            backdrop-filter: blur(5px); justify-content: center; align-items: center;
         }
-        
         .modal.show { display: flex; }
 
         .modal-content {
-            background-color: #252525; 
-            padding: 0;
-            border: 1px solid #444; 
-            width: 90%; max-width: 600px;
-            height: auto;
-            max-height: 85vh;
-            border-radius: 12px; 
-            position: relative; color: #e0e0e0;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-            display: flex; 
-            flex-direction: column;
+            background-color: #252525; padding: 0; border: 1px solid #444; 
+            width: 90%; max-width: 600px; height: auto; max-height: 85vh;
+            border-radius: 12px; position: relative; color: #e0e0e0;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5); display: flex; flex-direction: column;
         }
         
         .modal-header {
             padding: 15px 20px; border-bottom: 1px solid #333; display: flex; justify-content: space-between; align-items: center;
-            background: #1f1f1f; border-radius: 12px 12px 0 0;
-            flex: 0 0 auto;
+            background: #1f1f1f; border-radius: 12px 12px 0 0; flex: 0 0 auto;
         }
         
-        .modal-body { 
-            padding: 20px; 
-            overflow-y: auto;
-            flex: 1 1 auto;
-        }
+        .modal-body { padding: 20px; overflow-y: auto; flex: 1 1 auto; }
         
         .modal-footer {
             padding: 15px 20px; border-top: 1px solid #333; display: flex; justify-content: space-between;
-            background: #1f1f1f; border-radius: 0 0 12px 12px;
-            flex: 0 0 auto;
-            z-index: 10;
+            background: #1f1f1f; border-radius: 0 0 12px 12px; flex: 0 0 auto; z-index: 10;
         }
         
         .close-modal { font-size: 24px; cursor: pointer; color: #aaa; }
         .close-modal:hover { color: white; }
 
+        /* Wizard Steps */
         .step { display: none; animation: fadeIn 0.3s; }
         .step.active { display: block; }
         
@@ -160,6 +126,7 @@
             font-size: 0.9em; line-height: 1.5; border: 1px solid #333; color: #ccc;
         }
 
+        /* Form Inputs */
         .form-group { margin-bottom: 15px; }
         .form-group label { display: block; margin-bottom: 5px; font-weight: bold; font-size: 0.9em; color: #bbb; }
         .form-control {
@@ -167,6 +134,12 @@
             background-color: var(--input-bg); color: white; font-size: 1em; box-sizing: border-box;
         }
         .form-control:focus { outline: none; border-color: var(--accent-color); }
+
+        .info-box {
+            background-color: rgba(88, 101, 242, 0.1); border: 1px solid var(--accent-color);
+            padding: 10px; border-radius: 6px; color: #ddd; font-size: 0.9em; margin-bottom: 15px;
+            display: flex; align-items: center; gap: 10px;
+        }
 
         .admin-list { display: flex; flex-direction: column; gap: 10px; }
         .admin-card {
@@ -176,6 +149,7 @@
         }
         .admin-card:hover { background: var(--accent-color); }
 
+        /* Content Area */
         .content-area { width: 100%; max-width: 1000px; }
         .community-section { display: none; animation: fadeIn 0.3s; }
         .community-section.active { display: block; }
@@ -196,10 +170,7 @@
         #loading { font-size: 1.2em; color: var(--accent-color); text-align: center; }
 
         @media (max-width: 768px) {
-            .controls { 
-                flex-wrap: wrap;
-                justify-content: center;
-            }
+            .controls { flex-wrap: wrap; justify-content: center; }
             .total-counter { margin-right: 0; width: 100%; text-align: center; justify-content: center; margin-bottom: 10px; }
             .action-btn { flex: 1; }
         }
@@ -221,10 +192,12 @@
             <span>Ocultar Ocupados</span>
         </label>
         
+        <!-- Botón Principal de Compra -->
         <button id="buy-btn" class="action-btn buy-main-btn" onclick="startPurchaseFlow()">
             🛒 Comprar
         </button>
 
+        <!-- Botón Contacto Directo -->
         <button id="main-dm-btn" class="action-btn dm-btn" onclick="openContactModal()">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
             Contactar Admin
@@ -241,6 +214,7 @@
         <div id="loading">Cargando disponibilidad...</div>
     </div>
 
+    <!-- WIZARD MODAL (COMPRA) -->
     <div id="wizardModal" class="modal">
         <div class="modal-content">
             <div class="modal-header">
@@ -249,21 +223,38 @@
             </div>
             
             <div class="modal-body">
+                <!-- PASO 1: REGLAS Y PAGO -->
                 <div id="step-1" class="step">
+                    <h4 style="color: var(--patreon-color); margin-top:0;">1. Reglas y Pago</h4>
                     <div id="rules-content" class="rules-box">Cargando reglas...</div>
-                    <p style="font-size:0.9em; color:#aaa; margin-top:10px;">Por favor, lee atentamente antes de continuar.</p>
+                    
+                    <div style="margin-top:20px; text-align:center;">
+                        <p style="margin-bottom:10px;">Para continuar, debes realizar tu suscripción en Patreon:</p>
+                        <a id="step1-patreon-link" href="#" target="_blank" class="action-btn patreon-btn" style="display:inline-flex; width:auto; padding:12px 25px; font-size:1.1em;">
+                            Ir a Patreon para Pagar
+                        </a>
+                    </div>
                 </div>
 
+                <!-- PASO 2: FORMULARIO -->
                 <div id="step-2" class="step">
-                    <h4 style="color: #FF9800; margin-top:0;">📝 Llena tus datos</h4>
+                    <h4 style="color: #FF9800; margin-top:0;">2. Llena tus datos</h4>
+                    <p style="font-size:0.9em; color:#aaa;">Estos datos se enviarán al administrador para activar tu VIP.</p>
+                    
                     <div class="form-group">
                         <label>📧 Email de Patreon:</label>
                         <input type="email" id="f-email" class="form-control" placeholder="ejemplo@correo.com">
                     </div>
-                    <div class="form-group">
-                        <label>🖼️ Link de tu Foto (1920x1080):</label>
-                        <input type="text" id="f-foto" class="form-control" placeholder="Link de Imgur, Discord, etc.">
+                    
+                    <!-- AVISO DE IMAGEN (Sin Input) -->
+                    <div class="info-box">
+                        <span style="font-size:1.5em;">🖼️</span>
+                        <div>
+                            <strong>Imagen VIP:</strong><br>
+                            Ten lista tu imagen (1920x1080) en tu dispositivo. Deberás enviarla como <strong>archivo adjunto</strong> en el chat de Discord.
+                        </div>
                     </div>
+
                     <div class="form-group">
                         <label>🔗 Link de tu Perfil VRChat:</label>
                         <input type="text" id="f-vrc" class="form-control" placeholder="https://vrchat.com/home/user/...">
@@ -281,31 +272,29 @@
                     </div>
                 </div>
 
+                <!-- PASO 3: ACCIÓN -->
                 <div id="step-3" class="step">
                     <div style="text-align:center; padding:20px; background:#2d2d2d; border-radius:8px; margin-bottom:20px;">
                         <div style="font-size:3em;">✅</div>
                         <h3 style="color:#4CAF50;">¡Formulario Copiado!</h3>
                         <p style="font-size:1.1em;">Los datos están en tu portapapeles.</p>
                         <p style="color:#FF9800; font-weight:bold; margin-top:10px;">⚠️ IMPORTANTE: Abre el chat con el Admin y PEGA (Ctrl+V) el mensaje.</p>
+                        <p style="font-size:0.9em; color:#aaa; margin-top:5px;">(No olvides adjuntar tu imagen en el mismo chat)</p>
                     </div>
                     
-                    <h4 style="margin-bottom:10px;">1. Selecciona a quién enviar el formulario:</h4>
+                    <h4 style="margin-bottom:10px;">Selecciona a quién enviar el formulario:</h4>
                     <div id="admin-list-container" class="admin-list"></div>
-
-                    <h4 style="margin-top:20px; margin-bottom:10px;">2. Realizar Pago:</h4>
-                    <a id="final-patreon-link" href="#" target="_blank" class="action-btn patreon-btn" style="display:flex; width:100%; box-sizing:border-box;">
-                        Ir a Patreon
-                    </a>
                 </div>
             </div>
 
             <div class="modal-footer">
-                <button id="btn-prev" class="action-btn" style="background:#555; display:flex;" onclick="prevStep()">Atrás</button>
-                <button id="btn-next" class="action-btn buy-main-btn" style="display:flex;" onclick="nextStep()">Aceptar y Continuar</button>
+                <button id="btn-prev" class="action-btn" style="background:#555;" onclick="prevStep()">Atrás</button>
+                <button id="btn-next" class="action-btn buy-main-btn" onclick="nextStep()">Ya pagué / Continuar</button>
             </div>
         </div>
     </div>
 
+    <!-- MODAL CONTACTO SIMPLE -->
     <div id="contactModal" class="modal">
         <div class="modal-content" style="max-width: 400px; max-height: 80vh;">
             <div class="modal-header">
@@ -314,7 +303,9 @@
             </div>
             <div class="modal-body">
                 <p>Selecciona un administrador para enviar mensaje directo:</p>
-                <div id="simple-admin-list" class="admin-list"></div>
+                <div id="simple-admin-list" class="admin-list">
+                    <!-- Botones generados dinámicamente -->
+                </div>
             </div>
         </div>
     </div>
@@ -394,10 +385,12 @@
                 discordBtn.href = meta.discord_invite; discordBtn.style.display = "flex";
             } else { discordBtn.style.display = "none"; }
 
+            // Mostrar botón de compra si hay reglas o admins configurados
             if (meta.rules_text || (meta.admin_ids && meta.admin_ids.length > 0)) {
                 buyBtn.style.display = "flex";
             } else { buyBtn.style.display = "none"; }
 
+            // Mostrar botón de contacto si hay admins
             if (meta.admin_ids && meta.admin_ids.length > 0) {
                 mainDmBtn.style.display = "flex";
             } else { mainDmBtn.style.display = "none"; }
@@ -456,23 +449,27 @@
             if (container.innerHTML === "") container.innerHTML = "<div style='text-align:center; padding:40px;'>🚫 No hay espacios libres.</div>";
         }
 
+        // --- WIZARD LOGIC ---
         function startPurchaseFlow() {
             const data = globalData[currentTab];
             const meta = data._meta || {};
             
+            // Reset
             currentStep = 1;
             document.getElementById('f-email').value = "";
-            document.getElementById('f-foto').value = "";
             document.getElementById('f-vrc').value = "";
             document.getElementById('f-notas').value = "";
             
+            // Load Rules
             document.getElementById('rules-content').textContent = meta.rules_text || "No hay reglas definidas. Contacta a un admin.";
             
-            const pLink = document.getElementById('final-patreon-link');
+            // Load Patreon Link (Step 1)
+            const pLink = document.getElementById('step1-patreon-link');
             if (meta.patreon_url) {
-                pLink.href = meta.patreon_url; pLink.style.display = "flex";
+                pLink.href = meta.patreon_url; pLink.style.display = "inline-flex";
             } else { pLink.style.display = "none"; }
 
+            // Load Admins for Wizard (Step 3)
             const adminContainer = document.getElementById('admin-list-container');
             adminContainer.innerHTML = "";
             if (meta.admin_ids && meta.admin_ids.length > 0) {
@@ -517,6 +514,7 @@
             if (currentStep === 1) {
                 currentStep = 2;
             } else if (currentStep === 2) {
+                // Validate
                 const email = document.getElementById('f-email').value;
                 const vrc = document.getElementById('f-vrc').value;
                 if (!email || !vrc) { alert("Por favor, llena al menos el Email y el Link de VRChat."); return; }
@@ -544,49 +542,47 @@
 
             if (currentStep === 1) {
                 btnPrev.style.display = "none";
-                btnNext.textContent = "Acepto las reglas";
-                btnNext.style.display = "flex";
-                document.getElementById('modal-title').textContent = "Paso 1: Reglas";
+                btnNext.textContent = "Ya pagué / Continuar";
+                document.getElementById('modal-title').textContent = "Paso 1: Reglas y Pago";
             } else if (currentStep === 2) {
-                btnPrev.style.display = "flex";
+                btnPrev.style.display = "block";
                 btnNext.textContent = "Generar y Copiar";
-                btnNext.style.display = "flex";
                 document.getElementById('modal-title').textContent = "Paso 2: Tus Datos";
             } else if (currentStep === 3) {
                 btnPrev.style.display = "none";
                 btnNext.textContent = "Cerrar";
-                btnNext.style.display = "flex";
-                document.getElementById('modal-title').textContent = "Paso 3: Enviar";
+                document.getElementById('modal-title').textContent = "Paso 3: Enviar al Admin";
             }
         }
 
         function generateAndCopy() {
             const email = document.getElementById('f-email').value;
-            const foto = document.getElementById('f-foto').value || "Pendiente";
             const vrc = document.getElementById('f-vrc').value;
             const tipo = document.getElementById('f-tipo').value;
             const notas = document.getElementById('f-notas').value;
 
-            const text = `Hola, deseo adquirir un VIP en **${currentTab}**.
+            // FORMATO LIMPIO PARA EL ADMIN
+            const text = `Hola, ya realicé mi pago para VIP en **${currentTab}**.
 Aquí mis datos:
 
 📧 **Email Patreon:** ${email}
-🖼️ **Foto:** ${foto}
 🔗 **VRChat:** ${vrc}
 📌 **Tipo:** ${tipo}
 📝 **Notas:** ${notas}
 
-_Generado desde la web de disponibilidad._`;
+[Adjuntaré mi imagen en este chat]`;
 
             navigator.clipboard.writeText(text).then(() => {
+                // Success feedback handled by UI transition
             }).catch(err => {
                 alert("No se pudo copiar al portapapeles. Por favor copia los datos manualmente.");
             });
         }
-    function closeModal(id) { document.getElementById(id).classList.remove('show'); }
-    window.onclick = function(e) { if (e.target.classList.contains('modal')) e.target.classList.remove('show'); }
 
-    loadData();
-</script>
+        function closeModal(id) { document.getElementById(id).classList.remove('show'); }
+        window.onclick = function(e) { if (e.target.classList.contains('modal')) e.target.classList.remove('show'); }
+
+        loadData();
+    </script>
 </body>
 </html>
