@@ -139,6 +139,7 @@
             background-color: rgba(88, 101, 242, 0.1); border: 1px solid var(--accent-color);
             padding: 10px; border-radius: 6px; color: #ddd; font-size: 0.9em; margin-bottom: 15px;
             display: flex; align-items: center; gap: 10px;
+            transition: all 0.3s ease;
         }
 
         .admin-list { display: flex; flex-direction: column; gap: 10px; }
@@ -229,7 +230,6 @@
                     
                     <div style="margin-top:20px; text-align:center;">
                         <p style="margin-bottom:10px;">Para continuar, debes realizar tu suscripción en Patreon:</p>
-                        <!-- El onclick abre el link Y avanza al paso 2 -->
                         <a id="step1-patreon-link" href="#" target="_blank" class="action-btn patreon-btn" 
                            style="display:inline-flex; width:auto; padding:12px 25px; font-size:1.1em;"
                            onclick="onPatreonClick(event)">
@@ -247,8 +247,16 @@
                         <input type="email" id="f-email" class="form-control" placeholder="ejemplo@correo.com">
                     </div>
                     
-                    <!-- AVISO DE IMAGEN (Sin Input) -->
-                    <div class="info-box">
+                    <div class="form-group">
+                        <label>📌 Tipo de VIP:</label>
+                        <select id="f-tipo" class="form-control" onchange="toggleImageInstructions()">
+                            <option value="Con Cuadro">Con Cuadro (Espacio Físico)</option>
+                            <option value="Sin Cuadro">Sin Cuadro (Solo Rol y Beneficios)</option>
+                        </select>
+                    </div>
+
+                    <!-- AVISO DE IMAGEN (Dinámico) -->
+                    <div id="image-instruction-box" class="info-box">
                         <span style="font-size:1.5em;">🖼️</span>
                         <div>
                             <strong>Imagen VIP:</strong><br>
@@ -260,16 +268,10 @@
                         <label>🔗 Link de tu Perfil VRChat:</label>
                         <input type="text" id="f-vrc" class="form-control" placeholder="https://vrchat.com/home/user/...">
                     </div>
+                    
                     <div class="form-group">
-                        <label>📌 Tipo de VIP:</label>
-                        <select id="f-tipo" class="form-control">
-                            <option value="Con Cuadro">Con Cuadro (Espacio Físico)</option>
-                            <option value="Sin Cuadro">Sin Cuadro (Solo Rol y Beneficios)</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label>📝 Notas Adicionales (Opcional):</label>
-                        <input type="text" id="f-notas" class="form-control" placeholder="Pareja, detalles extra...">
+                        <label>📝 Links Acompañantes / Notas Adicionales:</label>
+                        <textarea id="f-notas" class="form-control" rows="3" placeholder="Si tu VIP incluye acompañantes, pega sus links de VRChat aquí."></textarea>
                     </div>
                 </div>
 
@@ -280,7 +282,7 @@
                         <h3 style="color:#4CAF50;">¡Formulario Copiado!</h3>
                         <p style="font-size:1.1em;">Los datos están en tu portapapeles.</p>
                         <p style="color:#FF9800; font-weight:bold; margin-top:10px;">⚠️ IMPORTANTE: Abre el chat con el Admin y PEGA (Ctrl+V) el mensaje.</p>
-                        <p style="font-size:0.9em; color:#aaa; margin-top:5px;">(No olvides adjuntar tu imagen en el mismo chat)</p>
+                        <p style="font-size:0.9em; color:#aaa; margin-top:5px;">(No olvides adjuntar tu imagen si aplica)</p>
                     </div>
                     
                     <h4 style="margin-bottom:10px;">Selecciona a quién enviar el formulario:</h4>
@@ -383,17 +385,15 @@
             } else { bannerImg.style.display = "none"; }
 
             if (meta.discord_invite) {
-                discordBtn.href = meta.discord_invite; discordBtn.style.display = "flex";
+                discordBtn.href = meta.discord_invite; discordBtn.style.display = "inline-flex";
             } else { discordBtn.style.display = "none"; }
 
-            // Mostrar botón de compra si hay reglas o admins configurados
             if (meta.rules_text || (meta.admin_ids && meta.admin_ids.length > 0)) {
-                buyBtn.style.display = "flex";
+                buyBtn.style.display = "inline-flex";
             } else { buyBtn.style.display = "none"; }
 
-            // Mostrar botón de contacto si hay admins
             if (meta.admin_ids && meta.admin_ids.length > 0) {
-                mainDmBtn.style.display = "flex";
+                mainDmBtn.style.display = "inline-flex";
             } else { mainDmBtn.style.display = "none"; }
 
             const locations = Object.keys(data).filter(k => k !== "_meta");
@@ -460,6 +460,8 @@
             document.getElementById('f-email').value = "";
             document.getElementById('f-vrc').value = "";
             document.getElementById('f-notas').value = "";
+            document.getElementById('f-tipo').value = "Con Cuadro";
+            toggleImageInstructions(); // Reset image box visibility
             
             // Load Rules
             document.getElementById('rules-content').textContent = meta.rules_text || "No hay reglas definidas. Contacta a un admin.";
@@ -512,11 +514,19 @@
         }
 
         function onPatreonClick(event) {
-            // El enlace se abre en una nueva pestaña por target="_blank"
-            // Nosotros avanzamos el wizard manualmente
             setTimeout(() => {
                 nextStep();
-            }, 500); // Pequeño delay para que se sienta natural
+            }, 500);
+        }
+
+        function toggleImageInstructions() {
+            const tipo = document.getElementById('f-tipo').value;
+            const box = document.getElementById('image-instruction-box');
+            if (tipo === 'Con Cuadro') {
+                box.style.display = 'flex';
+            } else {
+                box.style.display = 'none';
+            }
         }
 
         function nextStep() {
@@ -549,12 +559,15 @@
             const btnNext = document.getElementById('btn-next');
             const btnPrev = document.getElementById('btn-prev');
 
+            // FORCE DISPLAY
+            btnNext.style.display = "inline-flex";
+
             if (currentStep === 1) {
                 btnPrev.style.display = "none";
                 btnNext.textContent = "Ya pagué / Continuar";
                 document.getElementById('modal-title').textContent = "Paso 1: Reglas y Pago";
             } else if (currentStep === 2) {
-                btnPrev.style.display = "block";
+                btnPrev.style.display = "inline-flex";
                 btnNext.textContent = "Generar y Copiar";
                 document.getElementById('modal-title').textContent = "Paso 2: Tus Datos";
             } else if (currentStep === 3) {
@@ -570,19 +583,24 @@
             const tipo = document.getElementById('f-tipo').value;
             const notas = document.getElementById('f-notas').value;
 
-            // FORMATO LIMPIO PARA EL ADMIN
-            const text = `Hola, ya realicé mi pago para VIP en **${currentTab}**.
+            let text = `Hola, ya realicé mi pago para VIP en **${currentTab}**.
 Aquí mis datos:
 
 📧 **Email Patreon:** ${email}
 🔗 **VRChat:** ${vrc}
 📌 **Tipo:** ${tipo}
-📝 **Notas:** ${notas}
+`;
 
-[Adjuntaré mi imagen en este chat]`;
+            if (notas && notas.trim() !== "") {
+                text += `📝 **Acompañantes/Notas:** ${notas}\n`;
+            }
+
+            if (tipo === "Con Cuadro") {
+                text += `\n[Adjuntaré mi imagen en este chat]`;
+            }
 
             navigator.clipboard.writeText(text).then(() => {
-                // Success feedback handled by UI transition
+                // Success
             }).catch(err => {
                 alert("No se pudo copiar al portapapeles. Por favor copia los datos manualmente.");
             });
