@@ -10,7 +10,7 @@
             --card-bg: #1e1e1e;
             --text-primary: #e0e0e0;
             --text-secondary: #a0a0a0;
-            --accent-color: #5865F2; /* Discord Blue */
+            --accent-color: #5865F2;
             --free-color: #43b581;
             --occupied-color: #36393f;
             --border-radius: 8px;
@@ -33,7 +33,6 @@
         h1 { margin-bottom: 5px; text-align: center; }
         .last-updated { font-size: 0.9em; color: var(--text-secondary); margin-bottom: 20px; text-align: center; }
 
-        /* Banner */
         .community-banner {
             width: 100%; max-width: 800px; height: auto; max-height: 250px;
             object-fit: cover; border-radius: var(--border-radius);
@@ -41,7 +40,6 @@
             box-shadow: 0 4px 10px rgba(0,0,0,0.5); border: 1px solid #333;
         }
 
-        /* Tabs */
         .tabs { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px; justify-content: center; }
         .tab-btn {
             background-color: var(--card-bg); border: 1px solid #333; color: var(--text-secondary);
@@ -50,7 +48,6 @@
         .tab-btn:hover { background-color: #2c2c2c; }
         .tab-btn.active { background-color: var(--accent-color); color: white; border-color: var(--accent-color); }
 
-        /* Controls Bar - CORREGIDO PARA UNA SOLA LÍNEA */
         .controls {
             display: flex; 
             gap: 10px; 
@@ -59,12 +56,12 @@
             background: var(--card-bg); 
             padding: 10px 15px; 
             border-radius: var(--border-radius);
-            flex-wrap: nowrap; /* Evita el salto de línea */
+            flex-wrap: nowrap;
             justify-content: flex-start; 
             width: 100%; 
             max-width: 950px; 
             box-sizing: border-box;
-            overflow-x: auto; /* Scroll horizontal si la pantalla es muy pequeña */
+            overflow-x: auto;
         }
 
         .total-counter { 
@@ -73,7 +70,7 @@
             display: flex; 
             align-items: center; 
             gap: 5px; 
-            margin-right: auto; /* Empuja los botones a la derecha */
+            margin-right: auto;
             white-space: nowrap;
             font-size: 1em;
         }
@@ -95,15 +92,14 @@
         input:checked + .slider { background-color: var(--free-color); }
         input:checked + .slider::before { transform: translateX(18px); }
 
-        /* Buttons */
         .action-btn {
             color: white; text-decoration: none; 
-            padding: 8px 14px; /* Padding reducido */
+            padding: 8px 14px;
             border-radius: 6px;
             font-weight: bold; display: none; align-items: center; justify-content: center;
             gap: 6px; transition: transform 0.1s, filter 0.2s; border: none; 
             font-size: 0.9rem; cursor: pointer;
-            white-space: nowrap; /* Evita que el texto del botón se rompa */
+            white-space: nowrap;
         }
         .action-btn:hover { transform: translateY(-2px); filter: brightness(1.1); }
         .discord-btn { background-color: var(--accent-color); }
@@ -111,7 +107,6 @@
         .buy-main-btn { background-color: #FF9800; color: black; }
         .dm-btn { background-color: var(--dm-color); }
 
-        /* Modal Wizard - CORREGIDO EL SCROLL Y FOOTER */
         .modal {
             display: none; position: fixed; z-index: 1000; left: 0; top: 0;
             width: 100%; height: 100%; background-color: rgba(0,0,0,0.85); 
@@ -127,37 +122,36 @@
             border: 1px solid #444; 
             width: 90%; max-width: 600px;
             height: auto;
-            max-height: 85vh; /* Altura máxima fija */
+            max-height: 85vh;
             border-radius: 12px; 
             position: relative; color: #e0e0e0;
             box-shadow: 0 10px 25px rgba(0,0,0,0.5);
             display: flex; 
-            flex-direction: column; /* Estructura vertical estricta */
+            flex-direction: column;
         }
         
         .modal-header {
             padding: 15px 20px; border-bottom: 1px solid #333; display: flex; justify-content: space-between; align-items: center;
             background: #1f1f1f; border-radius: 12px 12px 0 0;
-            flex: 0 0 auto; /* No encoger */
+            flex: 0 0 auto;
         }
         
         .modal-body { 
             padding: 20px; 
-            overflow-y: auto; /* Scroll SOLO aquí */
-            flex: 1 1 auto; /* Ocupar espacio restante */
+            overflow-y: auto;
+            flex: 1 1 auto;
         }
         
         .modal-footer {
             padding: 15px 20px; border-top: 1px solid #333; display: flex; justify-content: space-between;
             background: #1f1f1f; border-radius: 0 0 12px 12px;
-            flex: 0 0 auto; /* No encoger, siempre visible */
+            flex: 0 0 auto;
             z-index: 10;
         }
         
         .close-modal { font-size: 24px; cursor: pointer; color: #aaa; }
         .close-modal:hover { color: white; }
 
-        /* Wizard Steps */
         .step { display: none; animation: fadeIn 0.3s; }
         .step.active { display: block; }
         
@@ -166,7 +160,6 @@
             font-size: 0.9em; line-height: 1.5; border: 1px solid #333; color: #ccc;
         }
 
-        /* Form Inputs */
         .form-group { margin-bottom: 15px; }
         .form-group label { display: block; margin-bottom: 5px; font-weight: bold; font-size: 0.9em; color: #bbb; }
         .form-control {
@@ -183,7 +176,6 @@
         }
         .admin-card:hover { background: var(--accent-color); }
 
-        /* Content Area */
         .content-area { width: 100%; max-width: 1000px; }
         .community-section { display: none; animation: fadeIn 0.3s; }
         .community-section.active { display: block; }
@@ -203,14 +195,13 @@
 
         #loading { font-size: 1.2em; color: var(--accent-color); text-align: center; }
 
-        /* Mobile Adjustments */
         @media (max-width: 768px) {
             .controls { 
-                flex-wrap: wrap; /* Permitir wrap solo en móviles muy pequeños */
+                flex-wrap: wrap;
                 justify-content: center;
             }
             .total-counter { margin-right: 0; width: 100%; text-align: center; justify-content: center; margin-bottom: 10px; }
-            .action-btn { flex: 1; } /* Botones ocupan espacio equitativo */
+            .action-btn { flex: 1; }
         }
     </style>
 </head>
@@ -230,12 +221,10 @@
             <span>Ocultar Ocupados</span>
         </label>
         
-        <!-- Botón Principal de Compra -->
         <button id="buy-btn" class="action-btn buy-main-btn" onclick="startPurchaseFlow()">
             🛒 Comprar
         </button>
 
-        <!-- Botón Contacto Directo -->
         <button id="main-dm-btn" class="action-btn dm-btn" onclick="openContactModal()">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
             Contactar Admin
@@ -252,7 +241,6 @@
         <div id="loading">Cargando disponibilidad...</div>
     </div>
 
-    <!-- WIZARD MODAL (COMPRA) -->
     <div id="wizardModal" class="modal">
         <div class="modal-content">
             <div class="modal-header">
@@ -261,14 +249,11 @@
             </div>
             
             <div class="modal-body">
-                <!-- PASO 1: REGLAS -->
                 <div id="step-1" class="step">
-                    <h4 style="color: var(--patreon-color); margin-top:0;">📜 Reglas e Instrucciones</h4>
                     <div id="rules-content" class="rules-box">Cargando reglas...</div>
                     <p style="font-size:0.9em; color:#aaa; margin-top:10px;">Por favor, lee atentamente antes de continuar.</p>
                 </div>
 
-                <!-- PASO 2: FORMULARIO -->
                 <div id="step-2" class="step">
                     <h4 style="color: #FF9800; margin-top:0;">📝 Llena tus datos</h4>
                     <div class="form-group">
@@ -296,7 +281,6 @@
                     </div>
                 </div>
 
-                <!-- PASO 3: ACCIÓN -->
                 <div id="step-3" class="step">
                     <div style="text-align:center; padding:20px; background:#2d2d2d; border-radius:8px; margin-bottom:20px;">
                         <div style="font-size:3em;">✅</div>
@@ -316,13 +300,12 @@
             </div>
 
             <div class="modal-footer">
-                <button id="btn-prev" class="action-btn" style="background:#555;" onclick="prevStep()">Atrás</button>
-                <button id="btn-next" class="action-btn buy-main-btn" onclick="nextStep()">Aceptar y Continuar</button>
+                <button id="btn-prev" class="action-btn" style="background:#555; display:flex;" onclick="prevStep()">Atrás</button>
+                <button id="btn-next" class="action-btn buy-main-btn" style="display:flex;" onclick="nextStep()">Aceptar y Continuar</button>
             </div>
         </div>
     </div>
 
-    <!-- MODAL CONTACTO SIMPLE -->
     <div id="contactModal" class="modal">
         <div class="modal-content" style="max-width: 400px; max-height: 80vh;">
             <div class="modal-header">
@@ -331,9 +314,7 @@
             </div>
             <div class="modal-body">
                 <p>Selecciona un administrador para enviar mensaje directo:</p>
-                <div id="simple-admin-list" class="admin-list">
-                    <!-- Botones generados dinámicamente -->
-                </div>
+                <div id="simple-admin-list" class="admin-list"></div>
             </div>
         </div>
     </div>
@@ -413,12 +394,10 @@
                 discordBtn.href = meta.discord_invite; discordBtn.style.display = "flex";
             } else { discordBtn.style.display = "none"; }
 
-            // Mostrar botón de compra si hay reglas o admins configurados
             if (meta.rules_text || (meta.admin_ids && meta.admin_ids.length > 0)) {
                 buyBtn.style.display = "flex";
             } else { buyBtn.style.display = "none"; }
 
-            // Mostrar botón de contacto si hay admins
             if (meta.admin_ids && meta.admin_ids.length > 0) {
                 mainDmBtn.style.display = "flex";
             } else { mainDmBtn.style.display = "none"; }
@@ -477,28 +456,23 @@
             if (container.innerHTML === "") container.innerHTML = "<div style='text-align:center; padding:40px;'>🚫 No hay espacios libres.</div>";
         }
 
-        // --- WIZARD LOGIC ---
         function startPurchaseFlow() {
             const data = globalData[currentTab];
             const meta = data._meta || {};
             
-            // Reset
             currentStep = 1;
             document.getElementById('f-email').value = "";
             document.getElementById('f-foto').value = "";
             document.getElementById('f-vrc').value = "";
             document.getElementById('f-notas').value = "";
             
-            // Load Rules
             document.getElementById('rules-content').textContent = meta.rules_text || "No hay reglas definidas. Contacta a un admin.";
             
-            // Load Patreon Link
             const pLink = document.getElementById('final-patreon-link');
             if (meta.patreon_url) {
                 pLink.href = meta.patreon_url; pLink.style.display = "flex";
             } else { pLink.style.display = "none"; }
 
-            // Load Admins for Wizard
             const adminContainer = document.getElementById('admin-list-container');
             adminContainer.innerHTML = "";
             if (meta.admin_ids && meta.admin_ids.length > 0) {
@@ -543,7 +517,6 @@
             if (currentStep === 1) {
                 currentStep = 2;
             } else if (currentStep === 2) {
-                // Validate
                 const email = document.getElementById('f-email').value;
                 const vrc = document.getElementById('f-vrc').value;
                 if (!email || !vrc) { alert("Por favor, llena al menos el Email y el Link de VRChat."); return; }
@@ -572,14 +545,17 @@
             if (currentStep === 1) {
                 btnPrev.style.display = "none";
                 btnNext.textContent = "Acepto las reglas";
+                btnNext.style.display = "flex";
                 document.getElementById('modal-title').textContent = "Paso 1: Reglas";
             } else if (currentStep === 2) {
-                btnPrev.style.display = "block";
+                btnPrev.style.display = "flex";
                 btnNext.textContent = "Generar y Copiar";
+                btnNext.style.display = "flex";
                 document.getElementById('modal-title').textContent = "Paso 2: Tus Datos";
             } else if (currentStep === 3) {
                 btnPrev.style.display = "none";
                 btnNext.textContent = "Cerrar";
+                btnNext.style.display = "flex";
                 document.getElementById('modal-title').textContent = "Paso 3: Enviar";
             }
         }
@@ -603,16 +579,7 @@ Aquí mis datos:
 _Generado desde la web de disponibilidad._`;
 
             navigator.clipboard.writeText(text).then(() => {
-                // Success feedback handled by UI transition
             }).catch(err => {
                 alert("No se pudo copiar al portapapeles. Por favor copia los datos manualmente.");
             });
         }
-
-        function closeModal(id) { document.getElementById(id).classList.remove('show'); }
-        window.onclick = function(e) { if (e.target.classList.contains('modal')) e.target.classList.remove('show'); }
-
-        loadData();
-    </script>
-</body>
-</html>
