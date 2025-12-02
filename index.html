@@ -17,7 +17,7 @@
             --patreon-color: #FF424D;
             --dm-color: #2D7D46;
             --input-bg: #2b2b2b;
-            --partner-color: #AB47BC; /* Purple for Partners */
+            --partner-color: #AB47BC;
         }
 
         body {
@@ -603,18 +603,16 @@
             const tipo = document.getElementById('f-tipo').value;
             const notas = document.getElementById('f-notas').value;
 
-            // FORMATO BLOQUE DE CÓDIGO PARA DISCORD
-            let text = "```\n";
-            text += `SOLICITUD VIP - ${currentTab}\n`;
-            text += `--------------------------------\n`;
-            text += `Email: ${email}\n`;
-            text += `VRChat: ${vrc}\n`;
-            text += `Tipo: ${tipo}\n`;
+            // FORMATO TEXTO PLANO CON EMOJIS Y NEGRITAS
+            let text = `Hola, ya realicé mi pago para VIP en **${currentTab}**.\n`;
+            text += `Aquí mis datos:\n\n`;
+            text += `📧 **Email Patreon:** ${email}\n`;
+            text += `🔗 **VRChat:** ${vrc}\n`;
+            text += `📌 **Tipo:** ${tipo}\n`;
 
             if (notas && notas.trim() !== "") {
-                text += `Notas: ${notas}\n`;
+                text += `📝 **Acompañantes/Notas:** ${notas}\n`;
             }
-            text += "```";
 
             if (tipo === "Con Cuadro") {
                 text += `\n(Adjuntaré mi imagen en este chat)`;
