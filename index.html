@@ -585,21 +585,18 @@
             const tipo = document.getElementById('f-tipo').value;
             const notas = document.getElementById('f-notas').value;
 
-            // FORMATO BLOQUE DE CÓDIGO PARA DISCORD
-            let text = "```\n";
-            text += `Hola, ya realicé mi pago para VIP en ${currentTab}.\n`;
-            text += `Aquí mis datos:\n\n`;
-            text += `📧 Email Patreon: ${email}\n`;
-            text += `🔗 VRChat: ${vrc}\n`;
-            text += `📌 Tipo: ${tipo}\n`;
+            // FORMATO ADMIN FRIENDLY (Cajas de código en línea)
+            let text = "**NUEVA SOLICITUD DE COMPRA**\n--------------------------------\n";
+            text += "**Email Patreon:**\n`" + email + "`\n\n";
+            text += "**Link VRChat:**\n`" + vrc + "`\n\n";
+            text += "**Tipo:**\n`" + tipo + "`\n\n";
 
             if (notas && notas.trim() !== "") {
-                text += `📝 Acompañantes/Notas: ${notas}\n`;
+                text += "**Acompañantes/Notas:**\n`" + notas + "`\n\n";
             }
-            text += "```";
 
             if (tipo === "Con Cuadro") {
-                text += `\n(Adjuntaré mi imagen en este chat)`;
+                text += "*(Adjuntaré mi imagen en este chat)*";
             }
 
             navigator.clipboard.writeText(text).then(() => {
