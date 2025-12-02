@@ -35,12 +35,13 @@
             width: 100%;
             max-width: 800px;
             height: auto;
-            max-height: 200px;
+            max-height: 250px;
             object-fit: cover;
             border-radius: var(--border-radius);
             margin-bottom: 20px;
-            display: none; /* Hidden by default */
+            display: none; /* Se oculta si no hay link */
             box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+            border: 1px solid #333;
         }
 
         /* Tabs Navigation */
@@ -108,15 +109,20 @@
             background-color: #5865F2;
             color: white;
             text-decoration: none;
-            padding: 8px 16px;
+            padding: 10px 20px;
             border-radius: 4px;
             font-weight: bold;
-            display: none; /* Hidden by default */
+            display: none; /* Se oculta por defecto */
             align-items: center;
-            gap: 8px;
-            transition: background-color 0.2s;
+            justify-content: center;
+            gap: 10px;
+            transition: background-color 0.2s, transform 0.1s;
+            margin-left: auto;
         }
-        .discord-btn:hover { background-color: #4752c4; }
+        .discord-btn:hover { 
+            background-color: #4752c4; 
+            transform: translateY(-1px);
+        }
 
         /* Content Area */
         .content-area { width: 100%; max-width: 1000px; }
@@ -168,11 +174,13 @@
             border: 1px solid #444;
         }
 
-        .hidden { display: none; }
-
-        /* Loading */
         #loading { font-size: 1.2em; color: var(--accent-color); text-align: center; }
 
+        /* Mobile Adjustments */
+        @media (max-width: 600px) {
+            .controls { flex-direction: column; align-items: stretch; }
+            .discord-btn { margin-left: 0; text-align: center; margin-top: 10px; }
+        }
     </style>
 </head>
 <body>
@@ -191,8 +199,7 @@
         </label>
         
         <a href="#" id="discord-link" class="discord-btn" target="_blank">
-            <!-- Discord Icon SVG -->
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037 13.46 13.46 0 0 0-1.063 2.192 18.42 18.42 0 0 0-4.58 0 13.46 13.46 0 0 0-1.064-2.192.074.074 0 0 0-.078-.037 19.791 19.791 0 0 0-4.885 1.515.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="white"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037 13.46 13.46 0 0 0-1.063 2.192 18.42 18.42 0 0 0-4.58 0 13.46 13.46 0 0 0-1.064-2.192.074.074 0 0 0-.078-.037 19.791 19.791 0 0 0-4.885 1.515.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>
             Unirse al Discord
         </a>
     </div>
@@ -208,13 +215,12 @@
 
         async function loadData() {
             try {
-                // Cache busting para asegurar datos frescos
+                // Leemos el archivo availability.json que genera tu programa
                 const response = await fetch('availability.json?t=' + new Date().getTime());
                 if (!response.ok) throw new Error("No se pudo cargar el archivo JSON");
                 
                 globalData = await response.json();
                 
-                // Actualizar fecha
                 if (globalData.last_updated_utc) {
                     const date = new Date(globalData.last_updated_utc);
                     document.getElementById('last-updated').textContent = "Última actualización: " + date.toLocaleString();
@@ -222,7 +228,7 @@
 
                 renderTabs();
             } catch (error) {
-                document.getElementById('loading').textContent = "Error al cargar datos. Intenta recargar la página.";
+                document.getElementById('loading').textContent = "Error al cargar datos. Verifica que 'availability.json' exista.";
                 console.error(error);
             }
         }
@@ -241,14 +247,12 @@
             }
 
             sheets.forEach((sheetName, index) => {
-                // Crear Botón de Pestaña
                 const btn = document.createElement('button');
                 btn.className = `tab-btn ${index === 0 ? 'active' : ''}`;
                 btn.textContent = sheetName;
                 btn.onclick = () => switchTab(sheetName);
                 tabsContainer.appendChild(btn);
 
-                // Crear Contenedor de Contenido (oculto por defecto)
                 const section = document.createElement('div');
                 section.id = `section-${sheetName}`;
                 section.className = `community-section ${index === 0 ? 'active' : ''}`;
@@ -261,18 +265,13 @@
 
         function switchTab(sheetName) {
             currentTab = sheetName;
-            
-            // Actualizar botones
             document.querySelectorAll('.tab-btn').forEach(btn => {
                 btn.classList.toggle('active', btn.textContent === sheetName);
             });
-
-            // Actualizar visibilidad de secciones
             document.querySelectorAll('.community-section').forEach(sec => {
                 sec.classList.remove('active');
             });
             document.getElementById(`section-${sheetName}`).classList.add('active');
-
             renderCurrentTab();
         }
 
@@ -284,28 +283,28 @@
             const discordBtn = document.getElementById('discord-link');
             const bannerImg = document.getElementById('community-banner');
 
-            container.innerHTML = ""; // Limpiar contenido previo
+            container.innerHTML = ""; 
 
-            // 1. Manejar Metadatos (Banner y Discord)
+            // --- LÓGICA DE BANNER Y DISCORD ---
             const meta = data._meta || {};
             
             // Banner
-            if (meta.banner) {
+            if (meta.banner && meta.banner.trim() !== "") {
                 bannerImg.src = meta.banner;
                 bannerImg.style.display = "block";
             } else {
                 bannerImg.style.display = "none";
             }
 
-            // Discord Button
-            if (meta.discord_invite) {
+            // Discord
+            if (meta.discord_invite && meta.discord_invite.trim() !== "") {
                 discordBtn.href = meta.discord_invite;
                 discordBtn.style.display = "flex";
             } else {
                 discordBtn.style.display = "none";
             }
+            // ----------------------------------
 
-            // 2. Renderizar Ubicaciones
             const locations = Object.keys(data).filter(k => k !== "_meta");
 
             if (locations.length === 0) {
@@ -318,7 +317,6 @@
                 const libres = locData.libres || [];
                 const ocupados = locData.ocupados || [];
 
-                // Si ocultamos ocupados y no hay libres, no mostramos la tarjeta
                 if (hideOccupied && libres.length === 0) return;
 
                 const card = document.createElement('div');
@@ -332,7 +330,6 @@
                 const grid = document.createElement('div');
                 grid.className = 'spaces-grid';
 
-                // Renderizar Libres
                 libres.forEach(space => {
                     const badge = document.createElement('div');
                     badge.className = 'space-badge space-free';
@@ -340,7 +337,6 @@
                     grid.appendChild(badge);
                 });
 
-                // Renderizar Ocupados (si el toggle está desactivado)
                 if (!hideOccupied) {
                     ocupados.forEach(space => {
                         const badge = document.createElement('div');
@@ -359,7 +355,6 @@
             }
         }
 
-        // Iniciar
         loadData();
     </script>
 </body>
