@@ -1,5 +1,10 @@
 {
     "LasCariñosas": {
+        "_meta": {
+            "discord_invite": "https://discord.gg/SzdzbvvGHN",
+            "banner": "",
+            "purchase_info": ""
+        },
         "Entrada Spawn": {
             "libres": [],
             "ocupados": [
@@ -123,6 +128,11 @@
         }
     },
     "Furrys Spanish": {
+        "_meta": {
+            "discord_invite": "",
+            "banner": "",
+            "purchase_info": ""
+        },
         "Stage": {
             "libres": [
                 "PCC-VIP-17",
@@ -261,6 +271,11 @@
         }
     },
     "IslaDelPecado": {
+        "_meta": {
+            "discord_invite": "https://discord.gg/VMhFWuVQwB",
+            "banner": "",
+            "purchase_info": ""
+        },
         "Spawn": {
             "libres": [
                 "VIpB-5",
@@ -332,5 +347,5 @@
             ]
         }
     },
-    "last_updated_utc": "2025-12-02T14:57:07.743640+00:00"
+    "last_updated_utc": "2025-12-02T15:04:01.717544+00:00"
 }
