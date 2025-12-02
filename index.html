@@ -14,8 +14,8 @@
             --free-color: #43b581;
             --occupied-color: #36393f;
             --border-radius: 8px;
-            --patreon-color: #FF424D; /* Patreon Coral */
-            --dm-color: #2D7D46; /* Green for DM */
+            --patreon-color: #FF424D;
+            --dm-color: #2D7D46;
         }
 
         body {
@@ -89,7 +89,6 @@
             box-sizing: border-box;
         }
 
-        /* Total Counter */
         .total-counter {
             font-weight: bold;
             color: var(--free-color);
@@ -128,19 +127,80 @@
             padding: 10px 18px;
             border-radius: 6px;
             font-weight: bold;
-            display: none; /* Hidden by default */
+            display: none;
             align-items: center;
             justify-content: center;
             gap: 8px;
             transition: transform 0.1s, filter 0.2s;
             border: none;
             font-size: 0.95rem;
+            cursor: pointer;
         }
         .action-btn:hover { transform: translateY(-2px); filter: brightness(1.1); }
         
         .discord-btn { background-color: var(--accent-color); }
         .patreon-btn { background-color: var(--patreon-color); }
         .dm-btn { background-color: var(--dm-color); }
+
+        /* Modal Styles */
+        .modal {
+            display: none; 
+            position: fixed; 
+            z-index: 1000; 
+            left: 0; top: 0; 
+            width: 100%; height: 100%; 
+            background-color: rgba(0,0,0,0.8); 
+            overflow: auto;
+        }
+        .modal-content {
+            background-color: #252525;
+            margin: 5% auto;
+            padding: 25px;
+            border: 1px solid #444;
+            width: 90%;
+            max-width: 700px;
+            border-radius: 8px;
+            position: relative;
+            color: #e0e0e0;
+        }
+        .close-modal {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .close-modal:hover { color: white; }
+        
+        .rules-text {
+            white-space: pre-wrap;
+            background: #1a1a1a;
+            padding: 15px;
+            border-radius: 5px;
+            max-height: 400px;
+            overflow-y: auto;
+            margin-bottom: 20px;
+            font-size: 0.95em;
+            line-height: 1.5;
+        }
+
+        .admin-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        .admin-btn {
+            background-color: #36393f;
+            color: white;
+            padding: 12px;
+            text-decoration: none;
+            border-radius: 5px;
+            text-align: center;
+            font-weight: bold;
+            transition: background 0.2s;
+        }
+        .admin-btn:hover { background-color: #5865F2; }
 
         /* Content Area */
         .content-area { width: 100%; max-width: 1000px; }
@@ -194,7 +254,6 @@
 
         #loading { font-size: 1.2em; color: var(--accent-color); text-align: center; }
 
-        /* Mobile Adjustments */
         @media (max-width: 768px) {
             .controls { flex-direction: column; align-items: stretch; gap: 15px; }
             .total-counter { margin-right: 0; justify-content: center; margin-bottom: 5px; }
@@ -206,7 +265,7 @@
 <body>
 
     <!-- Banner Image Container -->
-    <img id="community-banner" class="community-banner" src="" alt="Community Banner">
+    <img id="community-banner" class="community-banner" src="" alt="Community Banner" onerror="this.style.display='none'">
 
     <h1>Disponibilidad de Espacios VIP</h1>
     <div id="last-updated" class="last-updated">Cargando datos...</div>
@@ -222,17 +281,17 @@
             <span>Ocultar Ocupados</span>
         </label>
         
-        <!-- Botón Patreon -->
-        <a href="#" id="patreon-link" class="action-btn patreon-btn" target="_blank">
+        <!-- Botón Comprar (Abre Modal) -->
+        <button id="buy-btn" class="action-btn patreon-btn" onclick="openRulesModal()">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M15.386 5.634c-3.31 0-5.707 2.583-5.707 6.146 0 3.562 2.396 6.146 5.707 6.146 3.31 0 5.706-2.583 5.706-6.146 0-3.563-2.396-6.146-5.706-6.146zm-12.48 0h4.22v12.732h-4.22V5.634z"/></svg>
             Comprar VIP
-        </a>
+        </button>
 
-        <!-- Botón DM Admin -->
-        <a href="#" id="dm-link" class="action-btn dm-btn" target="_blank">
+        <!-- Botón Contactar Admin (Abre Modal) -->
+        <button id="dm-btn" class="action-btn dm-btn" onclick="openContactModal()">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
             Contactar Admin
-        </a>
+        </button>
 
         <!-- Botón Discord Server -->
         <a href="#" id="discord-link" class="action-btn discord-btn" target="_blank">
@@ -244,6 +303,36 @@
     <div id="tabs-container" class="tabs"></div>
     <div id="content-container" class="content-area">
         <div id="loading">Cargando disponibilidad...</div>
+    </div>
+
+    <!-- MODAL REGLAS / COMPRA -->
+    <div id="rulesModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('rulesModal')">&times;</span>
+            <h2 style="margin-top:0; color: var(--patreon-color);">📜 Reglas e Instrucciones</h2>
+            <div id="rules-content" class="rules-text">Cargando reglas...</div>
+            
+            <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:20px;">
+                <button class="action-btn" style="background-color:#444; flex:1;" onclick="copyForm()">
+                    📋 Copiar Formulario de Datos
+                </button>
+                <a id="modal-patreon-link" href="#" target="_blank" class="action-btn patreon-btn" style="flex:1; text-align:center;">
+                    Ir a Patreon para Pagar
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL CONTACTO ADMIN -->
+    <div id="contactModal" class="modal">
+        <div class="modal-content" style="max-width: 400px;">
+            <span class="close-modal" onclick="closeModal('contactModal')">&times;</span>
+            <h2 style="margin-top:0; color: var(--dm-color);">💬 Contactar Administrador</h2>
+            <p>Selecciona un administrador para enviar mensaje directo:</p>
+            <div id="admin-list" class="admin-list">
+                <!-- Botones generados dinámicamente -->
+            </div>
+        </div>
     </div>
 
     <script>
@@ -308,7 +397,6 @@
                 sec.classList.remove('active');
             });
             document.getElementById(`section-${sheetName}`).classList.add('active');
-            
             renderCurrentTab();
         }
 
@@ -318,8 +406,8 @@
             const hideOccupied = document.getElementById('hide-occupied').checked;
             
             const discordBtn = document.getElementById('discord-link');
-            const patreonBtn = document.getElementById('patreon-link');
-            const dmBtn = document.getElementById('dm-link');
+            const buyBtn = document.getElementById('buy-btn');
+            const dmBtn = document.getElementById('dm-btn');
             const bannerImg = document.getElementById('community-banner');
             const totalCounter = document.getElementById('total-counter');
 
@@ -344,17 +432,15 @@
                 discordBtn.style.display = "none";
             }
 
-            // Patreon Link
-            if (meta.patreon_url && meta.patreon_url.trim() !== "") {
-                patreonBtn.href = meta.patreon_url;
-                patreonBtn.style.display = "flex";
+            // Botón Comprar (Patreon + Reglas)
+            if (meta.patreon_url || meta.rules_text) {
+                buyBtn.style.display = "flex";
             } else {
-                patreonBtn.style.display = "none";
+                buyBtn.style.display = "none";
             }
 
-            // DM Admin Link
-            if (meta.discord_admin_id && meta.discord_admin_id.trim() !== "") {
-                dmBtn.href = `https://discord.com/users/${meta.discord_admin_id}`;
+            // Botón Contacto Admin
+            if (meta.admin_ids && meta.admin_ids.length > 0) {
                 dmBtn.style.display = "flex";
             } else {
                 dmBtn.style.display = "none";
@@ -421,6 +507,69 @@
 
             if (container.innerHTML === "") {
                 container.innerHTML = "<div style='text-align:center; padding:40px;'>🚫 No hay espacios libres en esta comunidad.</div>";
+            }
+        }
+
+        // --- MODAL LOGIC ---
+        function openRulesModal() {
+            const data = globalData[currentTab];
+            const meta = data._meta || {};
+            
+            document.getElementById('rules-content').textContent = meta.rules_text || "No hay reglas definidas.";
+            
+            const patreonLink = document.getElementById('modal-patreon-link');
+            if (meta.patreon_url) {
+                patreonLink.href = meta.patreon_url;
+                patreonLink.style.display = "block";
+            } else {
+                patreonLink.style.display = "none";
+            }
+            
+            document.getElementById('rulesModal').style.display = "block";
+        }
+
+        function openContactModal() {
+            const data = globalData[currentTab];
+            const meta = data._meta || {};
+            const adminList = document.getElementById('admin-list');
+            adminList.innerHTML = "";
+
+            if (meta.admin_ids && meta.admin_ids.length > 0) {
+                meta.admin_ids.forEach((id, index) => {
+                    const link = document.createElement('a');
+                    link.href = `https://discord.com/users/${id}`;
+                    link.target = "_blank";
+                    link.className = "admin-btn";
+                    link.textContent = `Admin #${index + 1} (ID: ${id})`;
+                    adminList.appendChild(link);
+                });
+            } else {
+                adminList.innerHTML = "<p>No hay administradores configurados.</p>";
+            }
+
+            document.getElementById('contactModal').style.display = "block";
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = "none";
+        }
+
+        function copyForm() {
+            const formText = `Hola, quiero adquirir un VIP/Partner.
+- Email Patreon: 
+- Foto (Link/Archivo): 
+- Links VRChat (Mío/Pareja): 
+- Tipo: (Con Cuadro / Sin Cuadro)`;
+            
+            navigator.clipboard.writeText(formText).then(() => {
+                alert("Formulario copiado al portapapeles.");
+            });
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.style.display = "none";
             }
         }
 
