@@ -15,7 +15,7 @@
             --occupied-color: #36393f;
             --border-radius: 8px;
             --patreon-color: #FF424D;
-            --dm-color: #2D7D46;
+            --input-bg: #2b2b2b;
         }
 
         body {
@@ -32,225 +32,122 @@
         h1 { margin-bottom: 5px; text-align: center; }
         .last-updated { font-size: 0.9em; color: var(--text-secondary); margin-bottom: 20px; text-align: center; }
 
-        /* Banner Image */
+        /* Banner */
         .community-banner {
-            width: 100%;
-            max-width: 800px;
-            height: auto;
-            max-height: 250px;
-            object-fit: cover;
-            border-radius: var(--border-radius);
-            margin-bottom: 20px;
-            display: none;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-            border: 1px solid #333;
+            width: 100%; max-width: 800px; height: auto; max-height: 250px;
+            object-fit: cover; border-radius: var(--border-radius);
+            margin-bottom: 20px; display: none;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5); border: 1px solid #333;
         }
 
-        /* Tabs Navigation */
-        .tabs {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-bottom: 20px;
-            justify-content: center;
-        }
-
+        /* Tabs */
+        .tabs { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px; justify-content: center; }
         .tab-btn {
-            background-color: var(--card-bg);
-            border: 1px solid #333;
-            color: var(--text-secondary);
-            padding: 10px 20px;
-            border-radius: 20px;
-            cursor: pointer;
-            transition: all 0.2s;
-            font-weight: bold;
+            background-color: var(--card-bg); border: 1px solid #333; color: var(--text-secondary);
+            padding: 10px 20px; border-radius: 20px; cursor: pointer; transition: all 0.2s; font-weight: bold;
         }
-
         .tab-btn:hover { background-color: #2c2c2c; }
-        .tab-btn.active {
-            background-color: var(--accent-color);
-            color: white;
-            border-color: var(--accent-color);
-        }
+        .tab-btn.active { background-color: var(--accent-color); color: white; border-color: var(--accent-color); }
 
-        /* Controls Bar */
+        /* Controls */
         .controls {
-            display: flex;
-            gap: 15px;
-            align-items: center;
-            margin-bottom: 20px;
-            background: var(--card-bg);
-            padding: 15px 20px;
-            border-radius: var(--border-radius);
-            flex-wrap: wrap;
-            justify-content: center;
-            width: 100%;
-            max-width: 900px;
-            box-sizing: border-box;
+            display: flex; gap: 15px; align-items: center; margin-bottom: 20px;
+            background: var(--card-bg); padding: 15px 20px; border-radius: var(--border-radius);
+            flex-wrap: wrap; justify-content: center; width: 100%; max-width: 900px; box-sizing: border-box;
         }
 
-        .total-counter {
-            font-weight: bold;
-            color: var(--free-color);
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            margin-right: auto;
-            font-size: 1.1em;
-        }
-
-        .toggle-switch {
-            display: flex;
-            align-items: center;
-            cursor: pointer;
-            margin-right: 10px;
-        }
-
+        .total-counter { font-weight: bold; color: var(--free-color); display: flex; align-items: center; gap: 5px; margin-right: auto; font-size: 1.1em; }
+        
+        .toggle-switch { display: flex; align-items: center; cursor: pointer; margin-right: 10px; }
         .toggle-switch input { display: none; }
         .slider {
-            width: 40px; height: 20px; background-color: #555;
-            border-radius: 20px; position: relative; margin-right: 10px;
-            transition: 0.3s;
+            width: 40px; height: 20px; background-color: #555; border-radius: 20px; position: relative; margin-right: 10px; transition: 0.3s;
         }
         .slider::before {
-            content: ""; position: absolute; width: 16px; height: 16px;
-            border-radius: 50%; background: white; top: 2px; left: 2px;
-            transition: 0.3s;
+            content: ""; position: absolute; width: 16px; height: 16px; border-radius: 50%; background: white; top: 2px; left: 2px; transition: 0.3s;
         }
         input:checked + .slider { background-color: var(--free-color); }
         input:checked + .slider::before { transform: translateX(20px); }
 
-        /* Action Buttons */
+        /* Buttons */
         .action-btn {
-            color: white;
-            text-decoration: none;
-            padding: 10px 18px;
-            border-radius: 6px;
-            font-weight: bold;
-            display: none;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            transition: transform 0.1s, filter 0.2s;
-            border: none;
-            font-size: 0.95rem;
-            cursor: pointer;
+            color: white; text-decoration: none; padding: 10px 18px; border-radius: 6px;
+            font-weight: bold; display: none; align-items: center; justify-content: center;
+            gap: 8px; transition: transform 0.1s, filter 0.2s; border: none; font-size: 0.95rem; cursor: pointer;
         }
         .action-btn:hover { transform: translateY(-2px); filter: brightness(1.1); }
-        
         .discord-btn { background-color: var(--accent-color); }
         .patreon-btn { background-color: var(--patreon-color); }
-        .dm-btn { background-color: var(--dm-color); }
+        .buy-main-btn { background-color: #FF9800; color: black; } /* Orange */
 
-        /* Modal Styles */
+        /* Modal Wizard */
         .modal {
-            display: none; 
-            position: fixed; 
-            z-index: 1000; 
-            left: 0; top: 0; 
-            width: 100%; height: 100%; 
-            background-color: rgba(0,0,0,0.8); 
-            overflow: auto;
+            display: none; position: fixed; z-index: 1000; left: 0; top: 0;
+            width: 100%; height: 100%; background-color: rgba(0,0,0,0.85); overflow: auto;
+            backdrop-filter: blur(5px);
         }
         .modal-content {
-            background-color: #252525;
-            margin: 5% auto;
-            padding: 25px;
-            border: 1px solid #444;
-            width: 90%;
-            max-width: 700px;
-            border-radius: 8px;
-            position: relative;
-            color: #e0e0e0;
+            background-color: #252525; margin: 5% auto; padding: 0;
+            border: 1px solid #444; width: 90%; max-width: 600px;
+            border-radius: 12px; position: relative; color: #e0e0e0;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            display: flex; flex-direction: column;
         }
-        .close-modal {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-            cursor: pointer;
+        .modal-header {
+            padding: 15px 20px; border-bottom: 1px solid #333; display: flex; justify-content: space-between; align-items: center;
+            background: #1f1f1f; border-radius: 12px 12px 0 0;
         }
+        .modal-body { padding: 20px; max-height: 60vh; overflow-y: auto; }
+        .modal-footer {
+            padding: 15px 20px; border-top: 1px solid #333; display: flex; justify-content: space-between;
+            background: #1f1f1f; border-radius: 0 0 12px 12px;
+        }
+        .close-modal { font-size: 24px; cursor: pointer; color: #aaa; }
         .close-modal:hover { color: white; }
+
+        /* Wizard Steps */
+        .step { display: none; animation: fadeIn 0.3s; }
+        .step.active { display: block; }
         
-        .rules-text {
-            white-space: pre-wrap;
-            background: #1a1a1a;
-            padding: 15px;
-            border-radius: 5px;
-            max-height: 400px;
-            overflow-y: auto;
-            margin-bottom: 20px;
-            font-size: 0.95em;
-            line-height: 1.5;
+        .rules-box {
+            white-space: pre-wrap; background: #151515; padding: 15px; border-radius: 6px;
+            font-size: 0.9em; line-height: 1.5; border: 1px solid #333; color: #ccc;
         }
 
-        .admin-list {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            margin-top: 15px;
+        /* Form Inputs */
+        .form-group { margin-bottom: 15px; }
+        .form-group label { display: block; margin-bottom: 5px; font-weight: bold; font-size: 0.9em; color: #bbb; }
+        .form-control {
+            width: 100%; padding: 10px; border-radius: 6px; border: 1px solid #444;
+            background-color: var(--input-bg); color: white; font-size: 1em; box-sizing: border-box;
         }
-        .admin-btn {
-            background-color: #36393f;
-            color: white;
-            padding: 12px;
-            text-decoration: none;
-            border-radius: 5px;
-            text-align: center;
-            font-weight: bold;
+        .form-control:focus { outline: none; border-color: var(--accent-color); }
+
+        .admin-list { display: flex; flex-direction: column; gap: 10px; }
+        .admin-card {
+            background: #36393f; padding: 12px; border-radius: 6px; text-decoration: none;
+            color: white; display: flex; align-items: center; justify-content: space-between;
             transition: background 0.2s;
         }
-        .admin-btn:hover { background-color: #5865F2; }
+        .admin-card:hover { background: var(--accent-color); }
 
         /* Content Area */
         .content-area { width: 100%; max-width: 1000px; }
         .community-section { display: none; animation: fadeIn 0.3s; }
         .community-section.active { display: block; }
 
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-
         .location-card {
-            background-color: var(--card-bg);
-            border-radius: var(--border-radius);
-            padding: 20px;
-            margin-bottom: 20px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+            background-color: var(--card-bg); border-radius: var(--border-radius);
+            padding: 20px; margin-bottom: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.3);
         }
-
         .location-title {
-            font-size: 1.2em;
-            font-weight: bold;
-            margin-bottom: 15px;
-            border-bottom: 1px solid #333;
-            padding-bottom: 10px;
-            color: var(--accent-color);
+            font-size: 1.2em; font-weight: bold; margin-bottom: 15px;
+            border-bottom: 1px solid #333; padding-bottom: 10px; color: var(--accent-color);
         }
-
-        .spaces-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
-            gap: 10px;
-        }
-
-        .space-badge {
-            padding: 8px;
-            border-radius: 4px;
-            text-align: center;
-            font-weight: bold;
-            font-size: 0.9em;
-        }
-
-        .space-free {
-            background-color: rgba(67, 181, 129, 0.2);
-            color: #43b581;
-            border: 1px solid #43b581;
-        }
-
-        .space-occupied {
-            background-color: var(--occupied-color);
-            color: #666;
-            border: 1px solid #444;
-        }
+        .spaces-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(80px, 1fr)); gap: 10px; }
+        .space-badge { padding: 8px; border-radius: 4px; text-align: center; font-weight: bold; font-size: 0.9em; }
+        .space-free { background-color: rgba(67, 181, 129, 0.2); color: #43b581; border: 1px solid #43b581; }
+        .space-occupied { background-color: var(--occupied-color); color: #666; border: 1px solid #444; }
 
         #loading { font-size: 1.2em; color: var(--accent-color); text-align: center; }
 
@@ -258,22 +155,18 @@
             .controls { flex-direction: column; align-items: stretch; gap: 15px; }
             .total-counter { margin-right: 0; justify-content: center; margin-bottom: 5px; }
             .action-btn { width: 100%; }
-            .toggle-switch { justify-content: center; margin-right: 0; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Banner Image Container -->
     <img id="community-banner" class="community-banner" src="" alt="Community Banner" onerror="this.style.display='none'">
 
     <h1>Disponibilidad de Espacios VIP</h1>
     <div id="last-updated" class="last-updated">Cargando datos...</div>
 
     <div class="controls">
-        <div id="total-counter" class="total-counter">
-            🟢 0 Libres
-        </div>
+        <div id="total-counter" class="total-counter">🟢 0 Libres</div>
 
         <label class="toggle-switch">
             <input type="checkbox" id="hide-occupied" checked onchange="renderCurrentTab()">
@@ -281,19 +174,11 @@
             <span>Ocultar Ocupados</span>
         </label>
         
-        <!-- Botón Comprar (Abre Modal) -->
-        <button id="buy-btn" class="action-btn patreon-btn" onclick="openRulesModal()">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M15.386 5.634c-3.31 0-5.707 2.583-5.707 6.146 0 3.562 2.396 6.146 5.707 6.146 3.31 0 5.706-2.583 5.706-6.146 0-3.563-2.396-6.146-5.706-6.146zm-12.48 0h4.22v12.732h-4.22V5.634z"/></svg>
-            Comprar VIP
+        <!-- Botón Principal de Compra -->
+        <button id="buy-btn" class="action-btn buy-main-btn" onclick="startPurchaseFlow()">
+            🛒 Comprar / Reservar VIP
         </button>
 
-        <!-- Botón Contactar Admin (Abre Modal) -->
-        <button id="dm-btn" class="action-btn dm-btn" onclick="openContactModal()">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
-            Contactar Admin
-        </button>
-
-        <!-- Botón Discord Server -->
         <a href="#" id="discord-link" class="action-btn discord-btn" target="_blank">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037 13.46 13.46 0 0 0-1.063 2.192 18.42 18.42 0 0 0-4.58 0 13.46 13.46 0 0 0-1.064-2.192.074.074 0 0 0-.078-.037 19.791 19.791 0 0 0-4.885 1.515.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>
             Unirse al Server
@@ -305,32 +190,78 @@
         <div id="loading">Cargando disponibilidad...</div>
     </div>
 
-    <!-- MODAL REGLAS / COMPRA -->
-    <div id="rulesModal" class="modal">
+    <!-- WIZARD MODAL -->
+    <div id="wizardModal" class="modal">
         <div class="modal-content">
-            <span class="close-modal" onclick="closeModal('rulesModal')">&times;</span>
-            <h2 style="margin-top:0; color: var(--patreon-color);">📜 Reglas e Instrucciones</h2>
-            <div id="rules-content" class="rules-text">Cargando reglas...</div>
-            
-            <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:20px;">
-                <button class="action-btn" style="background-color:#444; flex:1;" onclick="copyForm()">
-                    📋 Copiar Formulario de Datos
-                </button>
-                <a id="modal-patreon-link" href="#" target="_blank" class="action-btn patreon-btn" style="flex:1; text-align:center;">
-                    Ir a Patreon para Pagar
-                </a>
+            <div class="modal-header">
+                <h3 style="margin:0;" id="modal-title">Proceso de Compra</h3>
+                <span class="close-modal" onclick="closeModal('wizardModal')">&times;</span>
             </div>
-        </div>
-    </div>
+            
+            <div class="modal-body">
+                <!-- PASO 1: REGLAS -->
+                <div id="step-1" class="step">
+                    <h4 style="color: var(--patreon-color); margin-top:0;">📜 Reglas e Instrucciones</h4>
+                    <div id="rules-content" class="rules-box">Cargando reglas...</div>
+                    <p style="font-size:0.9em; color:#aaa;">Por favor, lee atentamente antes de continuar.</p>
+                </div>
 
-    <!-- MODAL CONTACTO ADMIN -->
-    <div id="contactModal" class="modal">
-        <div class="modal-content" style="max-width: 400px;">
-            <span class="close-modal" onclick="closeModal('contactModal')">&times;</span>
-            <h2 style="margin-top:0; color: var(--dm-color);">💬 Contactar Administrador</h2>
-            <p>Selecciona un administrador para enviar mensaje directo:</p>
-            <div id="admin-list" class="admin-list">
-                <!-- Botones generados dinámicamente -->
+                <!-- PASO 2: FORMULARIO -->
+                <div id="step-2" class="step">
+                    <h4 style="color: #FF9800; margin-top:0;">📝 Llena tus datos</h4>
+                    <div class="form-group">
+                        <label>📧 Email de Patreon:</label>
+                        <input type="email" id="f-email" class="form-control" placeholder="ejemplo@correo.com">
+                    </div>
+                    <div class="form-group">
+                        <label>🖼️ Link de tu Foto (1920x1080):</label>
+                        <input type="text" id="f-foto" class="form-control" placeholder="Link de Imgur, Discord, etc.">
+                    </div>
+                    <div class="form-group">
+                        <label>🔗 Link de tu Perfil VRChat:</label>
+                        <input type="text" id="f-vrc" class="form-control" placeholder="https://vrchat.com/home/user/...">
+                    </div>
+                    <div class="form-group">
+                        <label>📌 Tipo de VIP:</label>
+                        <select id="f-tipo" class="form-control">
+                            <option value="Con Cuadro">Con Cuadro (Espacio Físico)</option>
+                            <option value="Sin Cuadro">Sin Cuadro (Solo Rol y Beneficios)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>📝 Notas Adicionales (Opcional):</label>
+                        <input type="text" id="f-notas" class="form-control" placeholder="Pareja, detalles extra...">
+                    </div>
+                </div>
+
+                <!-- PASO 3: ACCIÓN -->
+                <div id="step-3" class="step">
+                    <div style="text-align:center; padding:20px;">
+                        <div style="font-size:3em;">✅</div>
+                        <h3>¡Formulario Copiado!</h3>
+                        <p>Los datos se han copiado a tu portapapeles.</p>
+                        <hr style="border-color:#444; margin: 20px 0;">
+                        <p><strong>Siguientes Pasos:</strong></p>
+                        <ol style="text-align:left; margin: 0 auto; display:inline-block;">
+                            <li>Selecciona un Admin abajo para abrir Discord.</li>
+                            <li>Pega el formulario (Ctrl+V) en el chat.</li>
+                            <li>Realiza el pago en Patreon si aún no lo haces.</li>
+                        </ol>
+                    </div>
+                    
+                    <h4 style="margin-bottom:10px;">1. Selecciona a quién enviar:</h4>
+                    <div id="admin-list-container" class="admin-list"></div>
+
+                    <h4 style="margin-top:20px; margin-bottom:10px;">2. Link de Pago:</h4>
+                    <a id="final-patreon-link" href="#" target="_blank" class="action-btn patreon-btn" style="display:flex; width:100%; box-sizing:border-box;">
+                        Ir a Patreon
+                    </a>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button id="btn-prev" class="action-btn" style="background:#555;" onclick="prevStep()">Atrás</button>
+                <button id="btn-next" class="action-btn buy-main-btn" onclick="nextStep()">Aceptar y Continuar</button>
             </div>
         </div>
     </div>
@@ -338,38 +269,31 @@
     <script>
         let globalData = {};
         let currentTab = "";
+        let currentStep = 1;
 
         async function loadData() {
             try {
                 const response = await fetch('availability.json?t=' + new Date().getTime());
-                if (!response.ok) throw new Error("No se pudo cargar el archivo JSON");
-                
+                if (!response.ok) throw new Error("Error JSON");
                 globalData = await response.json();
                 
                 if (globalData.last_updated_utc) {
                     const date = new Date(globalData.last_updated_utc);
                     document.getElementById('last-updated').textContent = "Última actualización: " + date.toLocaleString();
                 }
-
                 renderTabs();
             } catch (error) {
-                document.getElementById('loading').textContent = "Error al cargar datos. Verifica que 'availability.json' exista.";
-                console.error(error);
+                document.getElementById('loading').textContent = "Error al cargar datos.";
             }
         }
 
         function renderTabs() {
             const tabsContainer = document.getElementById('tabs-container');
             const contentContainer = document.getElementById('content-container');
-            tabsContainer.innerHTML = "";
-            contentContainer.innerHTML = "";
+            tabsContainer.innerHTML = ""; contentContainer.innerHTML = "";
 
             const sheets = Object.keys(globalData).filter(k => k !== "last_updated_utc");
-            
-            if (sheets.length === 0) {
-                contentContainer.innerHTML = "<div>No hay datos disponibles.</div>";
-                return;
-            }
+            if (sheets.length === 0) { contentContainer.innerHTML = "<div>Sin datos.</div>"; return; }
 
             sheets.forEach((sheetName, index) => {
                 const btn = document.createElement('button');
@@ -383,19 +307,14 @@
                 section.className = `community-section ${index === 0 ? 'active' : ''}`;
                 contentContainer.appendChild(section);
             });
-
             currentTab = sheets[0];
             renderCurrentTab();
         }
 
         function switchTab(sheetName) {
             currentTab = sheetName;
-            document.querySelectorAll('.tab-btn').forEach(btn => {
-                btn.classList.toggle('active', btn.textContent === sheetName);
-            });
-            document.querySelectorAll('.community-section').forEach(sec => {
-                sec.classList.remove('active');
-            });
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.toggle('active', btn.textContent === sheetName));
+            document.querySelectorAll('.community-section').forEach(sec => sec.classList.remove('active'));
             document.getElementById(`section-${sheetName}`).classList.add('active');
             renderCurrentTab();
         }
@@ -407,51 +326,30 @@
             
             const discordBtn = document.getElementById('discord-link');
             const buyBtn = document.getElementById('buy-btn');
-            const dmBtn = document.getElementById('dm-btn');
             const bannerImg = document.getElementById('community-banner');
             const totalCounter = document.getElementById('total-counter');
 
             container.innerHTML = ""; 
-
-            // --- METADATOS ---
             const meta = data._meta || {};
             
-            // Banner
             if (meta.banner && meta.banner.trim() !== "") {
-                bannerImg.src = meta.banner;
-                bannerImg.style.display = "block";
-            } else {
-                bannerImg.style.display = "none";
-            }
+                bannerImg.src = meta.banner; bannerImg.style.display = "block";
+            } else { bannerImg.style.display = "none"; }
 
-            // Discord Server
-            if (meta.discord_invite && meta.discord_invite.trim() !== "") {
-                discordBtn.href = meta.discord_invite;
-                discordBtn.style.display = "flex";
-            } else {
-                discordBtn.style.display = "none";
-            }
+            if (meta.discord_invite) {
+                discordBtn.href = meta.discord_invite; discordBtn.style.display = "flex";
+            } else { discordBtn.style.display = "none"; }
 
-            // Botón Comprar (Patreon + Reglas)
-            if (meta.patreon_url || meta.rules_text) {
+            // Mostrar botón de compra si hay reglas o admins configurados
+            if (meta.rules_text || (meta.admin_ids && meta.admin_ids.length > 0)) {
                 buyBtn.style.display = "flex";
-            } else {
-                buyBtn.style.display = "none";
-            }
+            } else { buyBtn.style.display = "none"; }
 
-            // Botón Contacto Admin
-            if (meta.admin_ids && meta.admin_ids.length > 0) {
-                dmBtn.style.display = "flex";
-            } else {
-                dmBtn.style.display = "none";
-            }
-
-            // --- RENDERIZADO Y CONTEO ---
             const locations = Object.keys(data).filter(k => k !== "_meta");
             let totalFree = 0;
 
             if (locations.length === 0) {
-                container.innerHTML = "<div style='text-align:center; color:gray;'>No hay ubicaciones configuradas.</div>";
+                container.innerHTML = "<div style='text-align:center; color:gray;'>No hay ubicaciones.</div>";
                 totalCounter.textContent = "🔴 0 Libres";
                 return;
             }
@@ -460,14 +358,12 @@
                 const locData = data[locName];
                 const libres = locData.libres || [];
                 const ocupados = locData.ocupados || [];
-
                 totalFree += libres.length;
 
                 if (hideOccupied && libres.length === 0) return;
 
                 const card = document.createElement('div');
                 card.className = 'location-card';
-
                 const title = document.createElement('div');
                 title.className = 'location-title';
                 title.textContent = locName;
@@ -491,87 +387,131 @@
                         grid.appendChild(badge);
                     });
                 }
-
                 card.appendChild(grid);
                 container.appendChild(card);
             });
 
-            // Actualizar contador total
             if (totalFree > 0) {
-                totalCounter.innerHTML = `🟢 ${totalFree} Libres`;
-                totalCounter.style.color = "#43b581";
+                totalCounter.innerHTML = `🟢 ${totalFree} Libres`; totalCounter.style.color = "#43b581";
             } else {
-                totalCounter.innerHTML = `🔴 0 Libres`;
-                totalCounter.style.color = "#F44336";
+                totalCounter.innerHTML = `🔴 0 Libres`; totalCounter.style.color = "#F44336";
             }
-
-            if (container.innerHTML === "") {
-                container.innerHTML = "<div style='text-align:center; padding:40px;'>🚫 No hay espacios libres en esta comunidad.</div>";
-            }
+            if (container.innerHTML === "") container.innerHTML = "<div style='text-align:center; padding:40px;'>🚫 No hay espacios libres.</div>";
         }
 
-        // --- MODAL LOGIC ---
-        function openRulesModal() {
+        // --- WIZARD LOGIC ---
+        function startPurchaseFlow() {
             const data = globalData[currentTab];
             const meta = data._meta || {};
             
-            document.getElementById('rules-content').textContent = meta.rules_text || "No hay reglas definidas.";
+            // Reset
+            currentStep = 1;
+            document.getElementById('f-email').value = "";
+            document.getElementById('f-foto').value = "";
+            document.getElementById('f-vrc').value = "";
+            document.getElementById('f-notas').value = "";
             
-            const patreonLink = document.getElementById('modal-patreon-link');
+            // Load Rules
+            document.getElementById('rules-content').textContent = meta.rules_text || "No hay reglas definidas. Contacta a un admin.";
+            
+            // Load Patreon Link
+            const pLink = document.getElementById('final-patreon-link');
             if (meta.patreon_url) {
-                patreonLink.href = meta.patreon_url;
-                patreonLink.style.display = "block";
-            } else {
-                patreonLink.style.display = "none";
-            }
-            
-            document.getElementById('rulesModal').style.display = "block";
-        }
+                pLink.href = meta.patreon_url; pLink.style.display = "flex";
+            } else { pLink.style.display = "none"; }
 
-        function openContactModal() {
-            const data = globalData[currentTab];
-            const meta = data._meta || {};
-            const adminList = document.getElementById('admin-list');
-            adminList.innerHTML = "";
-
+            // Load Admins
+            const adminContainer = document.getElementById('admin-list-container');
+            adminContainer.innerHTML = "";
             if (meta.admin_ids && meta.admin_ids.length > 0) {
-                meta.admin_ids.forEach((id, index) => {
-                    const link = document.createElement('a');
-                    link.href = `https://discord.com/users/${id}`;
-                    link.target = "_blank";
-                    link.className = "admin-btn";
-                    link.textContent = `Admin #${index + 1} (ID: ${id})`;
-                    adminList.appendChild(link);
+                meta.admin_ids.forEach((id, idx) => {
+                    const a = document.createElement('a');
+                    a.href = `https://discord.com/users/${id}`;
+                    a.target = "_blank";
+                    a.className = "admin-card";
+                    a.innerHTML = `<span>💬 Admin #${idx+1}</span> <small>ID: ${id}</small>`;
+                    adminContainer.appendChild(a);
                 });
             } else {
-                adminList.innerHTML = "<p>No hay administradores configurados.</p>";
+                adminContainer.innerHTML = "<p style='color:gray'>No hay admins configurados.</p>";
             }
 
-            document.getElementById('contactModal').style.display = "block";
+            updateWizardUI();
+            document.getElementById('wizardModal').style.display = "block";
         }
 
-        function closeModal(modalId) {
-            document.getElementById(modalId).style.display = "none";
+        function nextStep() {
+            if (currentStep === 1) {
+                currentStep = 2;
+            } else if (currentStep === 2) {
+                // Validate
+                const email = document.getElementById('f-email').value;
+                const vrc = document.getElementById('f-vrc').value;
+                if (!email || !vrc) { alert("Por favor, llena al menos el Email y el Link de VRChat."); return; }
+                
+                generateAndCopy();
+                currentStep = 3;
+            } else if (currentStep === 3) {
+                closeModal('wizardModal');
+                return;
+            }
+            updateWizardUI();
         }
 
-        function copyForm() {
-            const formText = `Hola, quiero adquirir un VIP/Partner.
-- Email Patreon: 
-- Foto (Link/Archivo): 
-- Links VRChat (Mío/Pareja): 
-- Tipo: (Con Cuadro / Sin Cuadro)`;
-            
-            navigator.clipboard.writeText(formText).then(() => {
-                alert("Formulario copiado al portapapeles.");
+        function prevStep() {
+            if (currentStep > 1) currentStep--;
+            updateWizardUI();
+        }
+
+        function updateWizardUI() {
+            document.querySelectorAll('.step').forEach(el => el.classList.remove('active'));
+            document.getElementById(`step-${currentStep}`).classList.add('active');
+
+            const btnNext = document.getElementById('btn-next');
+            const btnPrev = document.getElementById('btn-prev');
+
+            if (currentStep === 1) {
+                btnPrev.style.display = "none";
+                btnNext.textContent = "Acepto las reglas";
+                document.getElementById('modal-title').textContent = "Paso 1: Reglas";
+            } else if (currentStep === 2) {
+                btnPrev.style.display = "block";
+                btnNext.textContent = "Generar y Copiar";
+                document.getElementById('modal-title').textContent = "Paso 2: Tus Datos";
+            } else if (currentStep === 3) {
+                btnPrev.style.display = "none";
+                btnNext.textContent = "Cerrar";
+                document.getElementById('modal-title').textContent = "Paso 3: Enviar";
+            }
+        }
+
+        function generateAndCopy() {
+            const email = document.getElementById('f-email').value;
+            const foto = document.getElementById('f-foto').value || "Pendiente";
+            const vrc = document.getElementById('f-vrc').value;
+            const tipo = document.getElementById('f-tipo').value;
+            const notas = document.getElementById('f-notas').value;
+
+            const text = `Hola, deseo adquirir un VIP en **${currentTab}**.
+Aquí mis datos:
+
+📧 **Email Patreon:** ${email}
+🖼️ **Foto:** ${foto}
+🔗 **VRChat:** ${vrc}
+📌 **Tipo:** ${tipo}
+📝 **Notas:** ${notas}
+
+_Generado desde la web de disponibilidad._`;
+
+            navigator.clipboard.writeText(text).then(() => {
+                // Success feedback handled by UI transition
+            }).catch(err => {
+                alert("No se pudo copiar al portapapeles. Por favor copia los datos manualmente.");
             });
         }
 
-        // Close modal when clicking outside
-        window.onclick = function(event) {
-            if (event.target.classList.contains('modal')) {
-                event.target.style.display = "none";
-            }
-        }
+        function closeModal(id) { document.getElementById(id).style.display = "none"; }
+        window.onclick = function(e) { if (e.target.classList.contains('modal')) e.target.style.display = "none"; }
 
         loadData();
     </script>
