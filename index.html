@@ -225,12 +225,14 @@
             <div class="modal-body">
                 <!-- PASO 1: REGLAS Y PAGO -->
                 <div id="step-1" class="step">
-                    <h4 style="color: var(--patreon-color); margin-top:0;">1. Reglas y Pago</h4>
                     <div id="rules-content" class="rules-box">Cargando reglas...</div>
                     
                     <div style="margin-top:20px; text-align:center;">
                         <p style="margin-bottom:10px;">Para continuar, debes realizar tu suscripción en Patreon:</p>
-                        <a id="step1-patreon-link" href="#" target="_blank" class="action-btn patreon-btn" style="display:inline-flex; width:auto; padding:12px 25px; font-size:1.1em;">
+                        <!-- El onclick abre el link Y avanza al paso 2 -->
+                        <a id="step1-patreon-link" href="#" target="_blank" class="action-btn patreon-btn" 
+                           style="display:inline-flex; width:auto; padding:12px 25px; font-size:1.1em;"
+                           onclick="onPatreonClick(event)">
                             Ir a Patreon para Pagar
                         </a>
                     </div>
@@ -238,7 +240,6 @@
 
                 <!-- PASO 2: FORMULARIO -->
                 <div id="step-2" class="step">
-                    <h4 style="color: #FF9800; margin-top:0;">2. Llena tus datos</h4>
                     <p style="font-size:0.9em; color:#aaa;">Estos datos se enviarán al administrador para activar tu VIP.</p>
                     
                     <div class="form-group">
@@ -508,6 +509,14 @@
                 adminList.innerHTML = "<p style='color:gray'>No hay admins configurados.</p>";
             }
             document.getElementById('contactModal').classList.add('show');
+        }
+
+        function onPatreonClick(event) {
+            // El enlace se abre en una nueva pestaña por target="_blank"
+            // Nosotros avanzamos el wizard manualmente
+            setTimeout(() => {
+                nextStep();
+            }, 500); // Pequeño delay para que se sienta natural
         }
 
         function nextStep() {
