@@ -1,8 +1,5 @@
 {
     "LasCariñosas": {
-        "_meta": {
-            "discord_invite": "https://discord.gg/SzdzbvvGHN"
-        },
         "Entrada Spawn": {
             "libres": [],
             "ocupados": [
@@ -12,7 +9,9 @@
             ]
         },
         "Bar Spawn": {
-            "libres": [],
+            "libres": [
+                "VIP-13"
+            ],
             "ocupados": [
                 "VIP-4",
                 "VIP-5",
@@ -23,7 +22,6 @@
                 "VIP-10",
                 "VIP-11",
                 "VIP-12",
-                "VIP-13",
                 "VIP-14",
                 "VIP-15"
             ]
@@ -85,10 +83,11 @@
             ]
         },
         "Exterior": {
-            "libres": [],
+            "libres": [
+                "VIP-21"
+            ],
             "ocupados": [
                 "VIP-20",
-                "VIP-21",
                 "VIP-22",
                 "VIP-23",
                 "VIP-24",
@@ -102,6 +101,7 @@
         },
         "Zotano": {
             "libres": [
+                "VIP-7",
                 "VIP-11"
             ],
             "ocupados": [
@@ -111,7 +111,6 @@
                 "VIP-4",
                 "VIP-5",
                 "VIP-6",
-                "VIP-7",
                 "VIP-8",
                 "VIP-9",
                 "VIP-10",
@@ -124,9 +123,6 @@
         }
     },
     "Furrys Spanish": {
-        "_meta": {
-            "discord_invite": ""
-        },
         "Stage": {
             "libres": [
                 "PCC-VIP-17",
@@ -264,9 +260,6 @@
         }
     },
     "IslaDelPecado": {
-        "_meta": {
-            "discord_invite": "https://discord.gg/VMhFWuVQwB"
-        },
         "Spawn": {
             "libres": [
                 "VIpB-5",
@@ -338,5 +331,5 @@
             ]
         }
     },
-    "last_updated_utc": "2025-12-02T14:31:02.758441+00:00"
+    "last_updated_utc": "2025-12-02T14:33:03.045456+00:00"
 }
