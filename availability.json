@@ -2,9 +2,13 @@
     "LasCariñosas": {
         "_meta": {
             "discord_invite": "https://discord.gg/SzdzbvvGHN",
-            "banner": "https://github.com/Sainthe/vips-disponibilidad-publica/blob/main/LasCarisBanner1.png",
+            "banner": "https://raw.githubusercontent.com/Sainthe/vips-disponibilidad-publica/refs/heads/main/LasCarisBanner1.png",
             "patreon_url": "https://www.patreon.com/11405437/join",
-            "discord_admin_id": "1045423196633051147"
+            "admin_ids": [
+                "1045423196633051147",
+                "996690053013176320"
+            ],
+            "rules_text": ""
         },
         "Entrada Spawn": {
             "libres": [],
@@ -133,7 +137,8 @@
             "discord_invite": "",
             "banner": "",
             "patreon_url": "",
-            "discord_admin_id": ""
+            "admin_ids": [],
+            "rules_text": ""
         },
         "Stage": {
             "libres": [
@@ -277,7 +282,8 @@
             "discord_invite": "https://discord.gg/VMhFWuVQwB",
             "banner": "",
             "patreon_url": "",
-            "discord_admin_id": ""
+            "admin_ids": [],
+            "rules_text": ""
         },
         "Spawn": {
             "libres": [
@@ -350,5 +356,5 @@
             ]
         }
     },
-    "last_updated_utc": "2025-12-02T15:15:13.361984+00:00"
+    "last_updated_utc": "2025-12-02T15:30:46.100458+00:00"
 }
