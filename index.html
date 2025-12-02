@@ -583,3 +583,10 @@ _Generado desde la web de disponibilidad._`;
                 alert("No se pudo copiar al portapapeles. Por favor copia los datos manualmente.");
             });
         }
+    function closeModal(id) { document.getElementById(id).classList.remove('show'); }
+    window.onclick = function(e) { if (e.target.classList.contains('modal')) e.target.classList.remove('show'); }
+
+    loadData();
+</script>
+</body>
+</html>
