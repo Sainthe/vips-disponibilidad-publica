@@ -1,9 +1,5 @@
 {
     "LasCariñosas": {
-        "_meta": {
-            "discord_invite": "https://discord.gg/SzdzbvvGHN",
-            "banner": ""
-        },
         "Entrada Spawn": {
             "libres": [],
             "ocupados": [
@@ -127,10 +123,6 @@
         }
     },
     "Furrys Spanish": {
-        "_meta": {
-            "discord_invite": "",
-            "banner": ""
-        },
         "Stage": {
             "libres": [
                 "PCC-VIP-17",
@@ -143,6 +135,7 @@
         },
         "Spawn": {
             "libres": [
+                "D-VIP-30",
                 "D-VIP-31"
             ],
             "ocupados": [
@@ -151,16 +144,16 @@
                 "D-VIP-11",
                 "D-VIP-12",
                 "D-VIP-29",
-                "D-VIP-30",
                 "D-VIP-32"
             ]
         },
         "Pasillo": {
-            "libres": [],
+            "libres": [
+                "D-VIP-3"
+            ],
             "ocupados": [
                 "D-VIP-1",
                 "D-VIP-2",
-                "D-VIP-3",
                 "D-VIP-4",
                 "D-VIP-5",
                 "D-VIP-6",
@@ -218,6 +211,7 @@
                 "PCB-VIP-14",
                 "PCB-VIP-16",
                 "PCB-VIP-17",
+                "PCB-VIP-18",
                 "PCB-VIP-19",
                 "PCB-VIP-20",
                 "PCB-VIP-21",
@@ -235,8 +229,7 @@
             ],
             "ocupados": [
                 "PCB-VIP-11",
-                "PCB-VIP-15",
-                "PCB-VIP-18"
+                "PCB-VIP-15"
             ]
         },
         "Cine": {
@@ -268,10 +261,6 @@
         }
     },
     "IslaDelPecado": {
-        "_meta": {
-            "discord_invite": "https://discord.gg/VMhFWuVQwB",
-            "banner": ""
-        },
         "Spawn": {
             "libres": [
                 "VIpB-5",
@@ -343,5 +332,5 @@
             ]
         }
     },
-    "last_updated_utc": "2025-12-02T14:51:59.139163+00:00"
+    "last_updated_utc": "2025-12-02T14:57:07.743640+00:00"
 }
