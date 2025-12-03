@@ -283,7 +283,7 @@
     "IslaDelPecado": {
         "_meta": {
             "discord_invite": "https://discord.gg/VMhFWuVQwB",
-            "banner": "https://raw.githubusercontent.com/Sainthe/vips-disponibilidad-publica/refs/heads/main/IslaPecado.png",
+            "banner": "https://raw.githubusercontent.com/Sainthe/vips-disponibilidad-publica/refs/heads/main/IslaPecadoBanner1.jpeg",
             "patreon_url": "https://www.patreon.com/11405437/join",
             "admin_ids": [
                 "1045423196633051147",
@@ -365,5 +365,5 @@
             ]
         }
     },
-    "last_updated_utc": "2025-12-03T15:00:27.441995+00:00"
+    "last_updated_utc": "2025-12-03T15:09:22.645836+00:00"
 }
