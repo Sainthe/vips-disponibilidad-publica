@@ -1,1 +1,3 @@
-Furrys_Spanish:62
+<size=120%><b>Furrys Spanish</b></size>
+<color=#4CAF50><b>DISPONIBLE</b></color>
+Espacios: 62 / 85
