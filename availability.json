@@ -141,7 +141,7 @@
             "patreon_url": "",
             "admin_ids": [],
             "rules_text": "",
-            "partners_occupied": 7,
+            "partners_occupied": 6,
             "partners_max": 0
         },
         "Stage": {
@@ -183,13 +183,13 @@
         },
         "Terraza - SemiPlaya xD": {
             "libres": [
-                "D-VIP-16",
                 "D-VIP-17"
             ],
             "ocupados": [
                 "D-VIP-13",
                 "D-VIP-14",
                 "D-VIP-15",
+                "D-VIP-16",
                 "D-VIP-18"
             ]
         },
@@ -365,5 +365,5 @@
             ]
         }
     },
-    "last_updated_utc": "2025-12-04T21:18:55.668032+00:00"
+    "last_updated_utc": "2025-12-04T21:57:37.478702+00:00"
 }
