@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Disponibilidad de Espacios VIP</title>
-    <!-- SCRIPT DE SEGURIDAD TURNSTILE -->
     <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
     <style>
         :root {
@@ -218,12 +217,9 @@
                         <label>📝 Links Acompañantes / Notas Adicionales:</label>
                         <textarea id="f-notas" class="form-control" rows="3" placeholder="Si tu VIP incluye acompañantes, pega sus links de VRChat aquí."></textarea>
                     </div>
-                    
-                    <!-- WIDGET DE SEGURIDAD TURNSTILE -->
                     <div class="form-group" style="display: flex; justify-content: center; margin-top: 15px;">
                         <div class="cf-turnstile" data-sitekey="0x4AAAAAACFDQll30vmuGRmz"></div>
                     </div>
-                    
                 </div>
                 <div id="step-3" class="step">
                     <div id="success-message" style="text-align:center; padding:20px; background:#2d2d2d; border-radius:8px; margin-bottom:20px; display:none;">
@@ -232,30 +228,21 @@
                         <p style="font-size:1.1em;">Tus datos han sido registrados en el sistema.</p>
                         <p style="font-size:0.9em; color:#aaa; margin-top:10px;">El administrador revisará tu pago y activará tu VIP pronto.</p>
                     </div>
-                    
                     <div id="error-message" style="text-align:center; padding:20px; background:#3e2020; border-radius:8px; margin-bottom:20px; display:none;">
                         <div style="font-size:3em;">⚠️</div>
                         <h3 style="color:#FF9800;">Hubo un problema</h3>
                         <p style="font-size:1.1em;">No se pudo enviar la solicitud automáticamente.</p>
                         <p style="font-size:0.9em; color:#aaa; margin-top:10px;">Por favor, usa el respaldo de abajo.</p>
                     </div>
-
                     <div style="background:#333; padding:15px; border-radius:6px; margin-top:15px;">
                         <p style="margin:0; font-size:1em; color:#FF9800; font-weight:bold;">⚠️ RESPALDO DE DATOS</p>
                         <p style="font-size:0.9em; color:#ccc; margin-bottom:10px;">Si hubo un error o quieres asegurar tu compra, copia esto y envíalo al administrador:</p>
-                        
                         <textarea id="backup-text" class="form-control" rows="5" readonly style="font-size:0.85em; background:#111; color:#0f0; font-family:monospace;"></textarea>
-                        
-                        <button class="action-btn" style="width:100%; margin-top:10px; background:#5865F2; font-size:1.1em; padding:12px;" onclick="copyBackup()">
-                            📋 COPIAR RESPALDO
-                        </button>
+                        <button class="action-btn" style="width:100%; margin-top:10px; background:#5865F2; font-size:1.1em; padding:12px;" onclick="copyBackup()">📋 COPIAR RESPALDO</button>
                     </div>
-
                     <div style="margin-top:20px; text-align:center;">
                         <p style="margin-bottom:10px; color:#aaa;">¿Problemas? Contacta soporte directo:</p>
-                        <button class="action-btn dm-btn" style="width:100%;" onclick="openContactModal()">
-                            💬 Contactar Administrador
-                        </button>
+                        <button class="action-btn dm-btn" style="width:100%;" onclick="openContactModal()">💬 Contactar Administrador</button>
                     </div>
                 </div>
             </div>
@@ -278,11 +265,7 @@
         </div>
     </div>
     <script>
-        // ==========================================
-        // REEMPLAZA ESTO CON TU URL DE WORKER
-        // ==========================================
         const WORKER_URL = "https://vip-backend.ama-sainthe.workers.dev"; 
-        // ==========================================
 
         let globalData = {};
         let currentTab = "";
@@ -394,13 +377,13 @@
             reader.onerror = error => reject(error);
         });
 
-        async function uploadToCatbox(file) {
+        async function uploadToCatbox(file, token) {
             try {
                 const base64File = await toBase64(file);
                 const response = await fetch(WORKER_URL, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ action: "upload_image", image_base64: base64File })
+                    body: JSON.stringify({ action: "upload_image", image_base64: base64File, captcha_token: token })
                 });
                 const result = await response.json();
                 if (result.success) { return result.url; } else { 
@@ -475,25 +458,17 @@
                 const tipo = document.getElementById('f-tipo').value;
                 const notas = document.getElementById('f-notas').value;
                 const imageFile = document.getElementById('f-image').files[0];
-                
-                // VALIDACIÓN DE SEGURIDAD (TURNSTILE)
                 const turnstileToken = document.querySelector('[name="cf-turnstile-response"]').value;
-                if (!turnstileToken) {
-                    alert("Por favor completa la verificación de seguridad (Captcha).");
-                    return;
-                }
-
+                if (!turnstileToken) { alert("Por favor completa la verificación de seguridad (Captcha)."); return; }
                 if (!email || !vrc) { alert("Email y Link VRC son obligatorios."); return; }
-                
                 const btnNext = document.getElementById('btn-next');
                 const originalText = btnNext.textContent;
                 btnNext.textContent = "Procesando...";
                 btnNext.disabled = true;
-                
                 let fotoUrl = "";
                 if (imageFile && tipo === 'Con Cuadro') {
                     btnNext.textContent = "Subiendo imagen...";
-                    fotoUrl = await uploadToCatbox(imageFile);
+                    fotoUrl = await uploadToCatbox(imageFile, turnstileToken);
                     if (!fotoUrl) {
                         if(!confirm("Error subiendo la imagen. ¿Deseas continuar sin imagen?")) {
                             btnNext.textContent = originalText;
@@ -502,21 +477,9 @@
                         }
                     }
                 }
-                
                 btnNext.textContent = "Registrando...";
-                const payload = { 
-                    email_patreon: email, 
-                    nick_vr: "Usuario Web", 
-                    user_id: vrc, 
-                    discord: discord, 
-                    tipo_vip: tipo, 
-                    notas: notas, 
-                    foto_url: fotoUrl,
-                    captcha_token: turnstileToken // TOKEN DE SEGURIDAD
-                };
-                
+                const payload = { email_patreon: email, nick_vr: "Usuario Web", user_id: vrc, discord: discord, tipo_vip: tipo, notas: notas, foto_url: fotoUrl, captcha_token: turnstileToken };
                 const result = await submitToBackend(payload);
-                
                 if (result.success) { 
                     document.getElementById('success-message').style.display = 'block';
                     document.getElementById('error-message').style.display = 'none';
@@ -525,10 +488,8 @@
                     document.getElementById('error-message').style.display = 'block';
                     console.error("Error Backend:", result.error);
                 }
-                
                 generateBackupText(payload);
                 currentStep = 3;
-                
                 btnNext.textContent = originalText;
                 btnNext.disabled = false;
             } else if (currentStep === 3) { closeModal('wizardModal'); return; }
