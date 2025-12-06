@@ -76,7 +76,6 @@
         .buy-main-btn { background-color: #FF9800; color: black; }
         .dm-btn { background-color: var(--dm-color); }
         
-        /* --- MODAL CSS CORREGIDO --- */
         .modal {
             display: none; position: fixed; z-index: 1000; left: 0; top: 0;
             width: 100%; height: 100%; background-color: rgba(0,0,0,0.85); 
@@ -87,33 +86,32 @@
         .modal-content {
             background-color: #252525; padding: 0; border: 1px solid #444; 
             width: 90%; max-width: 600px; 
-            /* Altura máxima fija para evitar desbordes de pantalla */
+
             max-height: 90vh; 
             border-radius: 12px; position: relative; color: #e0e0e0;
             box-shadow: 0 10px 25px rgba(0,0,0,0.5); 
-            /* Flexbox para estructura Header-Body-Footer */
+
             display: flex; flex-direction: column;
         }
         
         .modal-header {
             padding: 15px 20px; border-bottom: 1px solid #333; display: flex; justify-content: space-between; align-items: center;
             background: #1f1f1f; border-radius: 12px 12px 0 0; 
-            flex-shrink: 0; /* No encoger */
+            flex-shrink: 0; 
         }
         
         .modal-body { 
             padding: 20px; 
-            overflow-y: auto; /* Scroll solo aquí */
-            flex-grow: 1; /* Ocupar espacio disponible */
+            overflow-y: auto; 
+            flex-grow: 1; 
         }
         
         .modal-footer {
             padding: 15px 20px; border-top: 1px solid #333; display: flex; justify-content: space-between;
             background: #1f1f1f; border-radius: 0 0 12px 12px; 
-            flex-shrink: 0; /* No encoger */
+            flex-shrink: 0;
             z-index: 10;
         }
-        /* --------------------------- */
 
         .close-modal { font-size: 24px; cursor: pointer; color: #aaa; }
         .close-modal:hover { color: white; }
@@ -284,11 +282,8 @@
         </div>
     </div>
     <script>
-        // ==========================================
-        // REEMPLAZA ESTO CON TU URL DE WORKER
-        // ==========================================
+
         const WORKER_URL = "https://vip-backend.ama-sainthe.workers.dev"; 
-        // ==========================================
 
         let globalData = {};
         let currentTab = "";
@@ -569,3 +564,4 @@
     </script>
 </body>
 </html>
+
