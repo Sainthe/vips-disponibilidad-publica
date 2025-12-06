@@ -224,7 +224,6 @@
         },
         "Segunda Planta": {
             "libres": [
-                "PCB-VIP-12",
                 "PCB-VIP-13",
                 "PCB-VIP-14",
                 "PCB-VIP-16",
@@ -247,6 +246,7 @@
             ],
             "ocupados": [
                 "PCB-VIP-11",
+                "PCB-VIP-12",
                 "PCB-VIP-15"
             ]
         },
@@ -363,5 +363,5 @@
             ]
         }
     },
-    "last_updated_utc": "2025-12-06T02:40:38.418974+00:00"
+    "last_updated_utc": "2025-12-06T03:33:51.217943+00:00"
 }
