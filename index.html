@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Disponibilidad de Espacios VIP</title>
+    <!-- SCRIPT DE SEGURIDAD TURNSTILE -->
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
     <style>
         :root {
             --bg-color: #121212;
@@ -216,6 +218,12 @@
                         <label>📝 Links Acompañantes / Notas Adicionales:</label>
                         <textarea id="f-notas" class="form-control" rows="3" placeholder="Si tu VIP incluye acompañantes, pega sus links de VRChat aquí."></textarea>
                     </div>
+                    
+                    <!-- WIDGET DE SEGURIDAD TURNSTILE -->
+                    <div class="form-group" style="display: flex; justify-content: center; margin-top: 15px;">
+                        <div class="cf-turnstile" data-sitekey="0x4AAAAAACFDQll30vmuGRmz"></div>
+                    </div>
+                    
                 </div>
                 <div id="step-3" class="step">
                     <div id="success-message" style="text-align:center; padding:20px; background:#2d2d2d; border-radius:8px; margin-bottom:20px; display:none;">
@@ -467,11 +475,21 @@
                 const tipo = document.getElementById('f-tipo').value;
                 const notas = document.getElementById('f-notas').value;
                 const imageFile = document.getElementById('f-image').files[0];
+                
+                // VALIDACIÓN DE SEGURIDAD (TURNSTILE)
+                const turnstileToken = document.querySelector('[name="cf-turnstile-response"]').value;
+                if (!turnstileToken) {
+                    alert("Por favor completa la verificación de seguridad (Captcha).");
+                    return;
+                }
+
                 if (!email || !vrc) { alert("Email y Link VRC son obligatorios."); return; }
+                
                 const btnNext = document.getElementById('btn-next');
                 const originalText = btnNext.textContent;
                 btnNext.textContent = "Procesando...";
                 btnNext.disabled = true;
+                
                 let fotoUrl = "";
                 if (imageFile && tipo === 'Con Cuadro') {
                     btnNext.textContent = "Subiendo imagen...";
@@ -484,11 +502,21 @@
                         }
                     }
                 }
+                
                 btnNext.textContent = "Registrando...";
-                const payload = { email_patreon: email, nick_vr: "Usuario Web", user_id: vrc, discord: discord, tipo_vip: tipo, notas: notas, foto_url: fotoUrl };
+                const payload = { 
+                    email_patreon: email, 
+                    nick_vr: "Usuario Web", 
+                    user_id: vrc, 
+                    discord: discord, 
+                    tipo_vip: tipo, 
+                    notas: notas, 
+                    foto_url: fotoUrl,
+                    captcha_token: turnstileToken // TOKEN DE SEGURIDAD
+                };
+                
                 const result = await submitToBackend(payload);
                 
-                // Lógica de éxito/error para el Paso 3
                 if (result.success) { 
                     document.getElementById('success-message').style.display = 'block';
                     document.getElementById('error-message').style.display = 'none';
