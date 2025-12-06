@@ -1,3 +1,1 @@
-<size=120%><b>LasCariñosas</b></size>
-<color=#4CAF50><b>DISPONIBLE</b></color>
-Espacios: 3 / 78
+LasCariñosas:3
