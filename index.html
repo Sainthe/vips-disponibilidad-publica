@@ -266,18 +266,21 @@
                         </select>
                     </div>
 
-                    <!-- AVISO DE IMAGEN (Dinámico) -->
-                    <div id="image-instruction-box" class="info-box">
-                        <span style="font-size:1.5em;">🖼️</span>
-                        <div>
-                            <strong>Imagen VIP:</strong><br>
-                            Ten lista tu imagen (1920x1080) en tu dispositivo. Deberás enviarla como <strong>archivo adjunto</strong> en el chat de Discord.
-                        </div>
-                    </div>
-
                     <div class="form-group">
                         <label>🔗 Link de tu Perfil VRChat:</label>
                         <input type="text" id="f-vrc" class="form-control" placeholder="https://vrchat.com/home/user/...">
+                    </div>
+
+                    <div class="form-group">
+                        <label>💬 Tu Usuario de Discord (Opcional):</label>
+                        <input type="text" id="f-discord" class="form-control" placeholder="usuario#1234">
+                    </div>
+
+                    <!-- INPUT DE IMAGEN -->
+                    <div id="image-group" class="form-group">
+                        <label>🖼️ Imagen VIP (Opcional):</label>
+                        <input type="file" id="f-image" class="form-control" accept="image/*">
+                        <small style="color:gray">Se subirá automáticamente a Catbox.moe</small>
                     </div>
                     
                     <div class="form-group">
@@ -290,14 +293,19 @@
                 <div id="step-3" class="step">
                     <div style="text-align:center; padding:20px; background:#2d2d2d; border-radius:8px; margin-bottom:20px;">
                         <div style="font-size:3em;">✅</div>
-                        <h3 style="color:#4CAF50;">¡Formulario Copiado!</h3>
-                        <p style="font-size:1.1em;">Los datos están en tu portapapeles.</p>
-                        <p style="color:#FF9800; font-weight:bold; margin-top:10px;">⚠️ IMPORTANTE: Abre el chat con el Admin y PEGA (Ctrl+V) el mensaje.</p>
-                        <p style="font-size:0.9em; color:#aaa; margin-top:5px;">(No olvides adjuntar tu imagen si aplica)</p>
+                        <h3 style="color:#4CAF50;">¡Solicitud Enviada!</h3>
+                        <p style="font-size:1.1em;">Tus datos han sido registrados en el sistema.</p>
+                        <p style="font-size:0.9em; color:#aaa; margin-top:10px;">
+                            El administrador revisará tu pago y activará tu VIP pronto.
+                        </p>
                     </div>
                     
-                    <h4 style="margin-bottom:10px;">Selecciona a quién enviar el formulario:</h4>
-                    <div id="admin-list-container" class="admin-list"></div>
+                    <div style="background:#333; padding:10px; border-radius:6px; margin-top:15px;">
+                        <p style="margin:0; font-size:0.9em; color:#FF9800;">⚠️ Respaldo (Por si acaso):</p>
+                        <p style="font-size:0.85em; color:#ccc;">Si algo falla, copia esto y envíalo por Discord:</p>
+                        <textarea id="backup-text" class="form-control" rows="4" readonly style="font-size:0.8em; margin-top:5px;"></textarea>
+                        <button class="action-btn" style="width:100%; margin-top:5px; background:#555;" onclick="copyBackup()">Copiar Respaldo</button>
+                    </div>
                 </div>
             </div>
 
@@ -325,6 +333,12 @@
     </div>
 
     <script>
+        // ==========================================
+        // CONFIGURACIÓN DEL WORKER (REEMPLAZAR AQUÍ)
+        // ==========================================
+        const WORKER_URL = "https://TU-WORKER-URL-AQUI.workers.dev"; 
+        // ==========================================
+
         let globalData = {};
         let currentTab = "";
         let currentStep = 1;
@@ -408,7 +422,6 @@
                 mainDmBtn.style.display = "inline-flex";
             } else { mainDmBtn.style.display = "none"; }
 
-            // Partner Counter
             if (meta.partners_max > 0) {
                 partnerCounter.textContent = `🤝 Partners: ${meta.partners_occupied} / ${meta.partners_max}`;
                 partnerCounter.style.display = "block";
@@ -470,43 +483,64 @@
             if (container.innerHTML === "") container.innerHTML = "<div style='text-align:center; padding:40px;'>🚫 No hay espacios libres.</div>";
         }
 
+        // --- LOGICA DE SUBIDA Y ENVIO ---
+
+        async function uploadToCatbox(file) {
+            const formData = new FormData();
+            formData.append('reqtype', 'fileupload');
+            formData.append('fileToUpload', file);
+
+            try {
+                const response = await fetch('https://catbox.moe/user/api.php', {
+                    method: 'POST',
+                    body: formData
+                });
+                
+                if (response.ok) {
+                    return await response.text();
+                } else {
+                    throw new Error("Error Catbox");
+                }
+            } catch (e) {
+                console.error(e);
+                return null;
+            }
+        }
+
+        async function submitToBackend(data) {
+            try {
+                const response = await fetch(WORKER_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+                return await response.json();
+            } catch (e) {
+                console.error(e);
+                return { error: e.message };
+            }
+        }
+
         // --- WIZARD LOGIC ---
         function startPurchaseFlow() {
             const data = globalData[currentTab];
             const meta = data._meta || {};
             
-            // Reset
             currentStep = 1;
             document.getElementById('f-email').value = "";
             document.getElementById('f-vrc').value = "";
+            document.getElementById('f-discord').value = "";
             document.getElementById('f-notas').value = "";
             document.getElementById('f-tipo').value = "Con Cuadro";
+            document.getElementById('f-image').value = ""; // Reset file input
             toggleImageInstructions(); 
             
-            // Load Rules
             document.getElementById('rules-content').textContent = meta.rules_text || "No hay reglas definidas. Contacta a un admin.";
             
-            // Load Patreon Link (Step 1)
             const pLink = document.getElementById('step1-patreon-link');
             if (meta.patreon_url) {
                 pLink.href = meta.patreon_url; pLink.style.display = "inline-flex";
             } else { pLink.style.display = "none"; }
-
-            // Load Admins for Wizard (Step 3)
-            const adminContainer = document.getElementById('admin-list-container');
-            adminContainer.innerHTML = "";
-            if (meta.admin_ids && meta.admin_ids.length > 0) {
-                meta.admin_ids.forEach((id, idx) => {
-                    const a = document.createElement('a');
-                    a.href = `https://discord.com/users/${id}`;
-                    a.target = "_blank";
-                    a.className = "admin-card";
-                    a.innerHTML = `<span>💬 Admin #${idx+1}</span> <small>ID: ${id}</small>`;
-                    adminContainer.appendChild(a);
-                });
-            } else {
-                adminContainer.innerHTML = "<p style='color:gray'>No hay admins configurados.</p>";
-            }
 
             updateWizardUI();
             document.getElementById('wizardModal').classList.add('show');
@@ -541,25 +575,76 @@
 
         function toggleImageInstructions() {
             const tipo = document.getElementById('f-tipo').value;
-            const box = document.getElementById('image-instruction-box');
+            const box = document.getElementById('image-group');
             if (tipo === 'Con Cuadro') {
-                box.style.display = 'flex';
+                box.style.display = 'block';
             } else {
                 box.style.display = 'none';
             }
         }
 
-        function nextStep() {
+        async function nextStep() {
             if (currentStep === 1) {
                 currentStep = 2;
             } else if (currentStep === 2) {
-                // Validate
+                // Validación
                 const email = document.getElementById('f-email').value;
                 const vrc = document.getElementById('f-vrc').value;
-                if (!email || !vrc) { alert("Por favor, llena al menos el Email y el Link de VRChat."); return; }
+                const discord = document.getElementById('f-discord').value;
+                const tipo = document.getElementById('f-tipo').value;
+                const notas = document.getElementById('f-notas').value;
+                const imageFile = document.getElementById('f-image').files[0];
+
+                if (!email || !vrc) { alert("Email y Link VRC son obligatorios."); return; }
+
+                // UI Loading
+                const btnNext = document.getElementById('btn-next');
+                const originalText = btnNext.textContent;
+                btnNext.textContent = "Procesando...";
+                btnNext.disabled = true;
+
+                let fotoUrl = "";
                 
-                generateAndCopy();
-                currentStep = 3;
+                // 1. Subir Imagen
+                if (imageFile && tipo === 'Con Cuadro') {
+                    btnNext.textContent = "Subiendo imagen...";
+                    fotoUrl = await uploadToCatbox(imageFile);
+                    if (!fotoUrl) {
+                        if(!confirm("Error subiendo la imagen a Catbox. ¿Deseas continuar sin imagen?")) {
+                            btnNext.textContent = originalText;
+                            btnNext.disabled = false;
+                            return;
+                        }
+                    }
+                }
+
+                // 2. Enviar al Backend
+                btnNext.textContent = "Registrando...";
+                const payload = {
+                    email_patreon: email,
+                    nick_vr: "Usuario Web", // Se actualizará en la app
+                    user_id: vrc,
+                    discord: discord,
+                    tipo_vip: tipo,
+                    notas: notas,
+                    foto_url: fotoUrl
+                };
+
+                const result = await submitToBackend(payload);
+
+                if (result.success) {
+                    currentStep = 3;
+                    generateBackupText(payload);
+                } else {
+                    alert("Hubo un error registrando tu solicitud: " + (result.error || "Desconocido"));
+                    // Generar backup de todas formas por si acaso
+                    currentStep = 3;
+                    generateBackupText(payload);
+                }
+
+                btnNext.textContent = originalText;
+                btnNext.disabled = false;
+
             } else if (currentStep === 3) {
                 closeModal('wizardModal');
                 return;
@@ -579,7 +664,6 @@
             const btnNext = document.getElementById('btn-next');
             const btnPrev = document.getElementById('btn-prev');
 
-            // FORCE DISPLAY
             btnNext.style.display = "inline-flex";
 
             if (currentStep === 1) {
@@ -588,41 +672,31 @@
                 document.getElementById('modal-title').textContent = "Paso 1: Reglas y Pago";
             } else if (currentStep === 2) {
                 btnPrev.style.display = "inline-flex";
-                btnNext.textContent = "Generar y Copiar";
+                btnNext.textContent = "Enviar Solicitud";
                 document.getElementById('modal-title').textContent = "Paso 2: Tus Datos";
             } else if (currentStep === 3) {
                 btnPrev.style.display = "none";
                 btnNext.textContent = "Cerrar";
-                document.getElementById('modal-title').textContent = "Paso 3: Enviar al Admin";
+                document.getElementById('modal-title').textContent = "Paso 3: Confirmación";
             }
         }
 
-        function generateAndCopy() {
-            const email = document.getElementById('f-email').value;
-            const vrc = document.getElementById('f-vrc').value;
-            const tipo = document.getElementById('f-tipo').value;
-            const notas = document.getElementById('f-notas').value;
+        function generateBackupText(data) {
+            let text = `Hola, realicé mi pago para VIP en **${currentTab}**.\n`;
+            text += `Aquí mis datos (Respaldo Web):\n\n`;
+            text += `📧 **Email:** ${data.email_patreon}\n`;
+            text += `🔗 **VRChat:** ${data.user_id}\n`;
+            text += `💬 **Discord:** ${data.discord}\n`;
+            text += `📌 **Tipo:** ${data.tipo_vip}\n`;
+            if (data.foto_url) text += `🖼️ **Imagen:** ${data.foto_url}\n`;
+            if (data.notas) text += `📝 **Notas:** ${data.notas}\n`;
 
-            // FORMATO TEXTO PLANO CON EMOJIS Y NEGRITAS
-            let text = `Hola, ya realicé mi pago para VIP en **${currentTab}**.\n`;
-            text += `Aquí mis datos:\n\n`;
-            text += `📧 **Email Patreon:** ${email}\n`;
-            text += `🔗 **VRChat:** ${vrc}\n`;
-            text += `📌 **Tipo:** ${tipo}\n`;
+            document.getElementById('backup-text').value = text;
+        }
 
-            if (notas && notas.trim() !== "") {
-                text += `📝 **Acompañantes/Notas:** ${notas}\n`;
-            }
-
-            if (tipo === "Con Cuadro") {
-                text += `\n(Adjuntaré mi imagen en este chat)`;
-            }
-
-            navigator.clipboard.writeText(text).then(() => {
-                // Success feedback handled by UI transition
-            }).catch(err => {
-                alert("No se pudo copiar al portapapeles. Por favor copia los datos manualmente.");
-            });
+        function copyBackup() {
+            const text = document.getElementById('backup-text').value;
+            navigator.clipboard.writeText(text).then(() => alert("Copiado al portapapeles"));
         }
 
         function closeModal(id) { document.getElementById(id).classList.remove('show'); }
