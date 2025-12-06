@@ -75,27 +75,46 @@
         .patreon-btn { background-color: var(--patreon-color); }
         .buy-main-btn { background-color: #FF9800; color: black; }
         .dm-btn { background-color: var(--dm-color); }
+        
+        /* --- MODAL CSS CORREGIDO --- */
         .modal {
             display: none; position: fixed; z-index: 1000; left: 0; top: 0;
             width: 100%; height: 100%; background-color: rgba(0,0,0,0.85); 
             backdrop-filter: blur(5px); justify-content: center; align-items: center;
         }
         .modal.show { display: flex; }
+        
         .modal-content {
             background-color: #252525; padding: 0; border: 1px solid #444; 
-            width: 90%; max-width: 600px; height: auto; max-height: 85vh;
+            width: 90%; max-width: 600px; 
+            /* Altura máxima fija para evitar desbordes de pantalla */
+            max-height: 90vh; 
             border-radius: 12px; position: relative; color: #e0e0e0;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.5); display: flex; flex-direction: column;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5); 
+            /* Flexbox para estructura Header-Body-Footer */
+            display: flex; flex-direction: column;
         }
+        
         .modal-header {
             padding: 15px 20px; border-bottom: 1px solid #333; display: flex; justify-content: space-between; align-items: center;
-            background: #1f1f1f; border-radius: 12px 12px 0 0; flex: 0 0 auto;
+            background: #1f1f1f; border-radius: 12px 12px 0 0; 
+            flex-shrink: 0; /* No encoger */
         }
-        .modal-body { padding: 20px; overflow-y: auto; flex: 1 1 auto; }
+        
+        .modal-body { 
+            padding: 20px; 
+            overflow-y: auto; /* Scroll solo aquí */
+            flex-grow: 1; /* Ocupar espacio disponible */
+        }
+        
         .modal-footer {
             padding: 15px 20px; border-top: 1px solid #333; display: flex; justify-content: space-between;
-            background: #1f1f1f; border-radius: 0 0 12px 12px; flex: 0 0 auto; z-index: 10;
+            background: #1f1f1f; border-radius: 0 0 12px 12px; 
+            flex-shrink: 0; /* No encoger */
+            z-index: 10;
         }
+        /* --------------------------- */
+
         .close-modal { font-size: 24px; cursor: pointer; color: #aaa; }
         .close-modal:hover { color: white; }
         .step { display: none; animation: fadeIn 0.3s; }
@@ -238,11 +257,11 @@
                         <p style="margin:0; font-size:1em; color:#FF9800; font-weight:bold;">⚠️ RESPALDO DE DATOS</p>
                         <p style="font-size:0.9em; color:#ccc; margin-bottom:10px;">Si hubo un error o quieres asegurar tu compra, copia esto y envíalo al administrador:</p>
                         <textarea id="backup-text" class="form-control" rows="5" readonly style="font-size:0.85em; background:#111; color:#0f0; font-family:monospace;"></textarea>
-                        <button class="action-btn" style="width:100%; margin-top:10px; background:#5865F2; font-size:1.1em; padding:12px;" onclick="copyBackup()">📋 COPIAR RESPALDO</button>
+                        <button class="action-btn" style="width:100%; margin-top:10px; background:#5865F2; font-size:1.1em; padding:12px; display:block;" onclick="copyBackup()">📋 COPIAR RESPALDO</button>
                     </div>
                     <div style="margin-top:20px; text-align:center;">
                         <p style="margin-bottom:10px; color:#aaa;">¿Problemas? Contacta soporte directo:</p>
-                        <button class="action-btn dm-btn" style="width:100%;" onclick="openContactModal()">💬 Contactar Administrador</button>
+                        <button class="action-btn dm-btn" style="width:100%; display:inline-flex;" onclick="openContactModal()">💬 Contactar Administrador</button>
                     </div>
                 </div>
             </div>
@@ -478,7 +497,7 @@
                     discord: discord, 
                     tipo_vip: tipo, 
                     notas: notas, 
-                    image_base64: imageBase64, // Enviamos la imagen en base64 directamente
+                    image_base64: imageBase64, 
                     captcha_token: turnstileToken 
                 };
                 
@@ -487,7 +506,6 @@
                 if (result.success) { 
                     document.getElementById('success-message').style.display = 'block';
                     document.getElementById('error-message').style.display = 'none';
-                    // Si el backend devolvió la URL de la foto, la usamos para el backup
                     if (result.foto_url) payload.foto_url = result.foto_url;
                 } else { 
                     document.getElementById('success-message').style.display = 'none';
