@@ -94,9 +94,7 @@
             ]
         },
         "Exterior": {
-            "libres": [
-                "VIP-27"
-            ],
+            "libres": [],
             "ocupados": [
                 "VIP-20",
                 "VIP-21",
@@ -105,6 +103,7 @@
                 "VIP-24",
                 "VIP-25",
                 "VIP-26",
+                "VIP-27",
                 "VIP-28",
                 "VIP-29",
                 "VIP-30"
@@ -140,7 +139,7 @@
             "patreon_url": "",
             "admin_ids": [],
             "rules_text": "",
-            "partners_occupied": 6,
+            "partners_occupied": 7,
             "partners_max": 0
         },
         "Stage": {
@@ -364,5 +363,5 @@
             ]
         }
     },
-    "last_updated_utc": "2025-12-05T20:06:53.286611+00:00"
+    "last_updated_utc": "2025-12-06T01:30:26.820169+00:00"
 }
