@@ -210,7 +210,6 @@
                     <div id="image-group" class="form-group">
                         <label>🖼️ Imagen VIP (Opcional):</label>
                         <input type="file" id="f-image" class="form-control" accept="image/*">
-                        <!-- TEXTO CORREGIDO AQUÍ -->
                         <small style="color:gray">La imagen se procesará de forma segura.</small>
                     </div>
                     <div class="form-group">
@@ -219,17 +218,36 @@
                     </div>
                 </div>
                 <div id="step-3" class="step">
-                    <div style="text-align:center; padding:20px; background:#2d2d2d; border-radius:8px; margin-bottom:20px;">
+                    <div id="success-message" style="text-align:center; padding:20px; background:#2d2d2d; border-radius:8px; margin-bottom:20px; display:none;">
                         <div style="font-size:3em;">✅</div>
                         <h3 style="color:#4CAF50;">¡Solicitud Enviada!</h3>
                         <p style="font-size:1.1em;">Tus datos han sido registrados en el sistema.</p>
                         <p style="font-size:0.9em; color:#aaa; margin-top:10px;">El administrador revisará tu pago y activará tu VIP pronto.</p>
                     </div>
-                    <div style="background:#333; padding:10px; border-radius:6px; margin-top:15px;">
-                        <p style="margin:0; font-size:0.9em; color:#FF9800;">⚠️ Respaldo (Por si acaso):</p>
-                        <p style="font-size:0.85em; color:#ccc;">Si algo falla, copia esto y envíalo por Discord:</p>
-                        <textarea id="backup-text" class="form-control" rows="4" readonly style="font-size:0.8em; margin-top:5px;"></textarea>
-                        <button class="action-btn" style="width:100%; margin-top:5px; background:#555;" onclick="copyBackup()">Copiar Respaldo</button>
+                    
+                    <div id="error-message" style="text-align:center; padding:20px; background:#3e2020; border-radius:8px; margin-bottom:20px; display:none;">
+                        <div style="font-size:3em;">⚠️</div>
+                        <h3 style="color:#FF9800;">Hubo un problema</h3>
+                        <p style="font-size:1.1em;">No se pudo enviar la solicitud automáticamente.</p>
+                        <p style="font-size:0.9em; color:#aaa; margin-top:10px;">Por favor, usa el respaldo de abajo.</p>
+                    </div>
+
+                    <div style="background:#333; padding:15px; border-radius:6px; margin-top:15px;">
+                        <p style="margin:0; font-size:1em; color:#FF9800; font-weight:bold;">⚠️ RESPALDO DE DATOS</p>
+                        <p style="font-size:0.9em; color:#ccc; margin-bottom:10px;">Si hubo un error o quieres asegurar tu compra, copia esto y envíalo al administrador:</p>
+                        
+                        <textarea id="backup-text" class="form-control" rows="5" readonly style="font-size:0.85em; background:#111; color:#0f0; font-family:monospace;"></textarea>
+                        
+                        <button class="action-btn" style="width:100%; margin-top:10px; background:#5865F2; font-size:1.1em; padding:12px;" onclick="copyBackup()">
+                            📋 COPIAR RESPALDO
+                        </button>
+                    </div>
+
+                    <div style="margin-top:20px; text-align:center;">
+                        <p style="margin-bottom:10px; color:#aaa;">¿Problemas? Contacta soporte directo:</p>
+                        <button class="action-btn dm-btn" style="width:100%;" onclick="openContactModal()">
+                            💬 Contactar Administrador
+                        </button>
                     </div>
                 </div>
             </div>
@@ -469,7 +487,20 @@
                 btnNext.textContent = "Registrando...";
                 const payload = { email_patreon: email, nick_vr: "Usuario Web", user_id: vrc, discord: discord, tipo_vip: tipo, notas: notas, foto_url: fotoUrl };
                 const result = await submitToBackend(payload);
-                if (result.success) { currentStep = 3; generateBackupText(payload); } else { alert("Hubo un error registrando tu solicitud: " + (result.error || "Desconocido")); currentStep = 3; generateBackupText(payload); }
+                
+                // Lógica de éxito/error para el Paso 3
+                if (result.success) { 
+                    document.getElementById('success-message').style.display = 'block';
+                    document.getElementById('error-message').style.display = 'none';
+                } else { 
+                    document.getElementById('success-message').style.display = 'none';
+                    document.getElementById('error-message').style.display = 'block';
+                    console.error("Error Backend:", result.error);
+                }
+                
+                generateBackupText(payload);
+                currentStep = 3;
+                
                 btnNext.textContent = originalText;
                 btnNext.disabled = false;
             } else if (currentStep === 3) { closeModal('wizardModal'); return; }
