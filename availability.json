@@ -141,7 +141,7 @@
             "patreon_url": "",
             "admin_ids": [],
             "rules_text": "",
-            "partners_occupied": 8,
+            "partners_occupied": 6,
             "partners_max": 0
         },
         "Stage": {
@@ -169,14 +169,15 @@
             ]
         },
         "Pasillo": {
-            "libres": [],
+            "libres": [
+                "D-VIP-6"
+            ],
             "ocupados": [
                 "D-VIP-1",
                 "D-VIP-2",
                 "D-VIP-3",
                 "D-VIP-4",
                 "D-VIP-5",
-                "D-VIP-6",
                 "D-VIP-7",
                 "D-VIP-8"
             ]
@@ -365,5 +366,5 @@
             ]
         }
     },
-    "last_updated_utc": "2025-12-08T22:58:31.199169+00:00"
+    "last_updated_utc": "2025-12-08T23:10:19.822414+00:00"
 }
