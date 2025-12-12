@@ -69,7 +69,7 @@
         },
         "Pasillo VIP": {
             "libres": [
-                "VIP-13"
+                "VIP-12"
             ],
             "ocupados": [
                 "VIP-4",
@@ -80,7 +80,7 @@
                 "VIP-9",
                 "VIP-10",
                 "VIP-11",
-                "VIP-12"
+                "VIP-13"
             ]
         },
         "Back Stage": {
@@ -367,5 +367,5 @@
             ]
         }
     },
-    "last_updated_utc": "2025-12-12T15:38:31.068458+00:00"
+    "last_updated_utc": "2025-12-12T16:07:05.697856+00:00"
 }
