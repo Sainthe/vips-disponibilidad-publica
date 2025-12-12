@@ -84,10 +84,11 @@
             ]
         },
         "Back Stage": {
-            "libres": [],
+            "libres": [
+                "VIP-15"
+            ],
             "ocupados": [
                 "VIP-14",
-                "VIP-15",
                 "VIP-16",
                 "VIP-17",
                 "VIP-18",
@@ -366,5 +367,5 @@
             ]
         }
     },
-    "last_updated_utc": "2025-12-11T19:48:49.414950+00:00"
+    "last_updated_utc": "2025-12-12T15:38:31.068458+00:00"
 }
