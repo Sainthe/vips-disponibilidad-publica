@@ -21,13 +21,14 @@
             ]
         },
         "Bar Spawn": {
-            "libres": [],
+            "libres": [
+                "VIP-8"
+            ],
             "ocupados": [
                 "VIP-4",
                 "VIP-5",
                 "VIP-6",
                 "VIP-7",
-                "VIP-8",
                 "VIP-9",
                 "VIP-10",
                 "VIP-11",
@@ -52,9 +53,10 @@
             ]
         },
         "Stage": {
-            "libres": [],
+            "libres": [
+                "VIP-1"
+            ],
             "ocupados": [
-                "VIP-1",
                 "VIP-2",
                 "VIP-3",
                 "VIP-25",
@@ -85,22 +87,23 @@
         },
         "Back Stage": {
             "libres": [
-                "VIP-15"
+                "VIP-15",
+                "VIP-18"
             ],
             "ocupados": [
                 "VIP-14",
                 "VIP-16",
                 "VIP-17",
-                "VIP-18",
                 "VIP-19"
             ]
         },
         "Exterior": {
-            "libres": [],
+            "libres": [
+                "VIP-22"
+            ],
             "ocupados": [
                 "VIP-20",
                 "VIP-21",
-                "VIP-22",
                 "VIP-23",
                 "VIP-24",
                 "VIP-25",
@@ -366,5 +369,5 @@
             ]
         }
     },
-    "last_updated_utc": "2025-12-15T23:48:15.319924+00:00"
+    "last_updated_utc": "2025-12-15T23:54:57.149508+00:00"
 }
