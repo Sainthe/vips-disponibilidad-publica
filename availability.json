@@ -21,14 +21,13 @@
             ]
         },
         "Bar Spawn": {
-            "libres": [
-                "VIP-8"
-            ],
+            "libres": [],
             "ocupados": [
                 "VIP-4",
                 "VIP-5",
                 "VIP-6",
                 "VIP-7",
+                "VIP-8",
                 "VIP-9",
                 "VIP-10",
                 "VIP-11",
@@ -114,6 +113,7 @@
         },
         "Zotano": {
             "libres": [
+                "VIP-9",
                 "VIP-12",
                 "VIP-13",
                 "VIP-31"
@@ -127,7 +127,6 @@
                 "VIP-6",
                 "VIP-7",
                 "VIP-8",
-                "VIP-9",
                 "VIP-10",
                 "VIP-11",
                 "VIP-14",
@@ -367,5 +366,5 @@
             ]
         }
     },
-    "last_updated_utc": "2025-12-17T00:49:08.843489+00:00"
+    "last_updated_utc": "2025-12-17T20:03:15.995476+00:00"
 }
