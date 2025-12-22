@@ -173,14 +173,14 @@
             "libres": [
                 "D-VIP-2",
                 "D-VIP-5",
-                "D-VIP-6"
+                "D-VIP-6",
+                "D-VIP-8"
             ],
             "ocupados": [
                 "D-VIP-1",
                 "D-VIP-3",
                 "D-VIP-4",
-                "D-VIP-7",
-                "D-VIP-8"
+                "D-VIP-7"
             ]
         },
         "Terraza - SemiPlaya xD": {
@@ -367,5 +367,5 @@
             ]
         }
     },
-    "last_updated_utc": "2025-12-22T21:21:19.296927+00:00"
+    "last_updated_utc": "2025-12-22T21:29:11.078169+00:00"
 }
