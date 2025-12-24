@@ -39,13 +39,13 @@
         },
         "Zona de Escalera": {
             "libres": [
-                "VIP-18",
                 "VIP-23",
                 "VIP-24"
             ],
             "ocupados": [
                 "VIP-16",
                 "VIP-17",
+                "VIP-18",
                 "VIP-19",
                 "VIP-20",
                 "VIP-21",
@@ -142,7 +142,7 @@
             "patreon_url": "",
             "admin_ids": [],
             "rules_text": "",
-            "partners_occupied": 6,
+            "partners_occupied": 7,
             "partners_max": 0
         },
         "Stage": {
@@ -367,5 +367,5 @@
             ]
         }
     },
-    "last_updated_utc": "2025-12-22T21:29:11.078169+00:00"
+    "last_updated_utc": "2025-12-24T00:56:38.292744+00:00"
 }
