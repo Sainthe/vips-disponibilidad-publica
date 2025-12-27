@@ -52,7 +52,9 @@
             ]
         },
         "Stage": {
-            "libres": [],
+            "libres": [
+                "VIP-31"
+            ],
             "ocupados": [
                 "VIP-1",
                 "VIP-2",
@@ -63,7 +65,6 @@
                 "VIP-28",
                 "VIP-29",
                 "VIP-30",
-                "VIP-31",
                 "VIP-32"
             ]
         },
@@ -96,19 +97,19 @@
         },
         "Exterior": {
             "libres": [
-                "VIP-22"
+                "VIP-22",
+                "VIP-24",
+                "VIP-30"
             ],
             "ocupados": [
                 "VIP-20",
                 "VIP-21",
                 "VIP-23",
-                "VIP-24",
                 "VIP-25",
                 "VIP-26",
                 "VIP-27",
                 "VIP-28",
-                "VIP-29",
-                "VIP-30"
+                "VIP-29"
             ]
         },
         "Zotano": {
@@ -366,5 +367,5 @@
             ]
         }
     },
-    "last_updated_utc": "2025-12-27T08:44:32.754700+00:00"
+    "last_updated_utc": "2025-12-27T08:51:09.354749+00:00"
 }
