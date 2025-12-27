@@ -230,6 +230,7 @@
                 "PCB-VIP-12",
                 "PCB-VIP-13",
                 "PCB-VIP-14",
+                "PCB-VIP-15",
                 "PCB-VIP-16",
                 "PCB-VIP-18",
                 "PCB-VIP-19",
@@ -249,7 +250,6 @@
             ],
             "ocupados": [
                 "PCB-VIP-11",
-                "PCB-VIP-15",
                 "PCB-VIP-17"
             ]
         },
@@ -366,5 +366,5 @@
             ]
         }
     },
-    "last_updated_utc": "2025-12-26T12:12:05.224603+00:00"
+    "last_updated_utc": "2025-12-27T08:43:53.282883+00:00"
 }
