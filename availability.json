@@ -147,14 +147,13 @@
         },
         "Stage": {
             "libres": [
+                "PCC-VIP-17",
                 "PCC-VIP-18",
                 "PCC-VIP-19",
                 "PCC-VIP-20",
                 "PCC-VIP-21"
             ],
-            "ocupados": [
-                "PCC-VIP-17"
-            ]
+            "ocupados": []
         },
         "Spawn": {
             "libres": [
@@ -185,14 +184,13 @@
             ]
         },
         "Terraza - SemiPlaya xD": {
-            "libres": [
-                "D-VIP-17"
-            ],
+            "libres": [],
             "ocupados": [
                 "D-VIP-13",
                 "D-VIP-14",
                 "D-VIP-15",
                 "D-VIP-16",
+                "D-VIP-17",
                 "D-VIP-18"
             ]
         },
@@ -368,5 +366,5 @@
             ]
         }
     },
-    "last_updated_utc": "2025-12-28T03:38:52.939497+00:00"
+    "last_updated_utc": "2025-12-28T03:42:15.833641+00:00"
 }
