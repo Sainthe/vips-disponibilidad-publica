@@ -155,15 +155,14 @@
             "ocupados": []
         },
         "Spawn": {
-            "libres": [
-                "D-VIP-30"
-            ],
+            "libres": [],
             "ocupados": [
                 "D-VIP-9",
                 "D-VIP-10",
                 "D-VIP-11",
                 "D-VIP-12",
                 "D-VIP-29",
+                "D-VIP-30",
                 "D-VIP-31",
                 "D-VIP-32"
             ]
@@ -365,5 +364,5 @@
             ]
         }
     },
-    "last_updated_utc": "2025-12-29T04:23:13.710918+00:00"
+    "last_updated_utc": "2025-12-29T14:15:25.000982+00:00"
 }
