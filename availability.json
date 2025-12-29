@@ -295,10 +295,13 @@
         },
         "Spawn": {
             "libres": [
+                "VIpB-1",
                 "VipV-2",
                 "VIpB-2",
                 "VipV-3",
+                "VIpB-3",
                 "VipV-4",
+                "VIpB-4",
                 "VipV-5",
                 "VIpB-5",
                 "VipV-6",
@@ -350,19 +353,16 @@
                 "VIpB-29",
                 "VipV-30",
                 "VIpB-30",
+                "VipV-31",
                 "VIpB-31",
                 "VipV-32",
                 "VIpB-32"
             ],
             "ocupados": [
                 "VipV-1",
-                "VIpB-1",
-                "VIpB-3",
-                "VIpB-4",
-                "VipV-15",
-                "VipV-31"
+                "VipV-15"
             ]
         }
     },
-    "last_updated_utc": "2025-12-29T14:15:25.000982+00:00"
+    "last_updated_utc": "2025-12-29T16:10:44.728558+00:00"
 }
