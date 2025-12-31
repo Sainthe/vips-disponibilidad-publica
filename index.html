@@ -206,10 +206,8 @@
                 </div>
                 <div id="step-2" class="step">
                     <p style="font-size:0.9em; color:#aaa;">Estos datos se enviarán al administrador para activar tu VIP.</p>
-                    <div class="form-group">
-                        <label>📧 Email de Patreon:</label>
-                        <input type="email" id="f-email" class="form-control" placeholder="ejemplo@correo.com">
-                    </div>
+                    
+                    <!-- REORDENADO: Tipo de VIP primero -->
                     <div class="form-group">
                         <label>📌 Tipo de VIP:</label>
                         <select id="f-tipo" class="form-control" onchange="toggleImageInstructions()">
@@ -217,19 +215,30 @@
                             <option value="Sin Cuadro">Sin Cuadro (Solo Rol y Beneficios)</option>
                         </select>
                     </div>
+
+                    <div class="form-group">
+                        <label>📧 Email de Patreon:</label>
+                        <input type="email" id="f-email" class="form-control" placeholder="ejemplo@correo.com">
+                    </div>
+                    
                     <div class="form-group">
                         <label>🔗 Link de tu Perfil VRChat:</label>
                         <input type="text" id="f-vrc" class="form-control" placeholder="https://vrchat.com/home/user/...">
                     </div>
+                    
+                    <!-- MODIFICADO: Discord Obligatorio -->
                     <div class="form-group">
-                        <label>💬 Tu Usuario de Discord (Opcional):</label>
+                        <label>💬 Tu Usuario de Discord:</label>
                         <input type="text" id="f-discord" class="form-control" placeholder="usuario#1234">
                     </div>
+                    
+                    <!-- MODIFICADO: Imagen Obligatoria (si aplica) -->
                     <div id="image-group" class="form-group">
-                        <label>🖼️ Imagen VIP (Opcional):</label>
+                        <label>🖼️ Imagen VIP:</label>
                         <input type="file" id="f-image" class="form-control" accept="image/*">
                         <small style="color:gray">La imagen se procesará de forma segura.</small>
                     </div>
+                    
                     <div class="form-group">
                         <label>📝 Links Acompañantes / Notas Adicionales:</label>
                         <textarea id="f-notas" class="form-control" rows="3" placeholder="Si tu VIP incluye acompañantes, pega sus links de VRChat aquí."></textarea>
@@ -463,7 +472,12 @@
                 
                 const turnstileToken = document.querySelector('[name="cf-turnstile-response"]').value;
                 if (!turnstileToken) { alert("Por favor completa la verificación de seguridad (Captcha)."); return; }
-                if (!email || !vrc) { alert("Email y Link VRC son obligatorios."); return; }
+                
+                // MODIFICADO: Validación de campos obligatorios
+                if (!email || !vrc || !discord) { alert("Email, Link VRC y Discord son obligatorios."); return; }
+                
+                // MODIFICADO: Validación de imagen obligatoria solo para "Con Cuadro"
+                if (tipo === 'Con Cuadro' && !imageFile) { alert("La imagen es obligatoria para VIP con Cuadro."); return; }
                 
                 const btnNext = document.getElementById('btn-next');
                 const originalText = btnNext.textContent;
@@ -564,4 +578,3 @@
     </script>
 </body>
 </html>
-
