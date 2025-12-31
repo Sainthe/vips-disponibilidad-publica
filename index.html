@@ -33,14 +33,14 @@
         h1 { margin-bottom: 5px; text-align: center; }
         .last-updated { font-size: 0.9em; color: var(--text-secondary); margin-bottom: 20px; text-align: center; }
         
-        /* MEJORA 1: Banner Opción B (Ajuste automático y centrado) */
+        /* Banner Opción B: Ajuste automático y centrado */
         .community-banner {
             width: 100%; 
             max-width: 800px; 
-            height: auto; /* La altura se calcula sola según la imagen */
+            height: auto; 
             border-radius: var(--border-radius);
             margin-bottom: 20px; 
-            display: none; /* Se controla con JS */
+            display: none; 
             box-shadow: 0 10px 25px rgba(0,0,0,0.5);
             border: 1px solid #333;
             display: block; 
@@ -56,29 +56,57 @@
         .tab-btn:hover { background-color: #2c2c2c; }
         .tab-btn.active { background-color: var(--accent-color); color: white; border-color: var(--accent-color); }
         
+        /* --- BARRA DE CONTROLES ADAPTABLE --- */
         .controls {
-            display: flex; gap: 10px; align-items: center; margin-bottom: 20px;
-            background: var(--card-bg); padding: 10px 15px; border-radius: var(--border-radius);
-            flex-wrap: nowrap; justify-content: flex-start; width: 100%; max-width: 950px;
-            box-sizing: border-box; overflow-x: auto;
+            display: flex; 
+            gap: 10px; 
+            align-items: center; 
+            margin-bottom: 20px;
+            background: var(--card-bg); 
+            padding: 10px 15px; 
+            border-radius: var(--border-radius);
+            
+            /* Diseño Flexible (Wrap) */
+            flex-wrap: wrap; 
+            justify-content: center; 
+            width: 100%; 
+            max-width: 950px;
+            box-sizing: border-box; 
+            /* Sin scroll horizontal */
         }
         
-        /* MEJORA 3: Estilo para el Buscador */
+        /* --- BUSCADOR EXPANDIBLE --- */
         .search-input {
             background-color: var(--input-bg);
             border: 1px solid #444;
             color: white;
-            padding: 8px 12px;
+            padding: 8px;
             border-radius: 20px;
             font-size: 0.9em;
-            width: 140px;
-            transition: border-color 0.2s;
+            width: 36px; /* Ancho inicial (solo icono) */
+            transition: all 0.3s ease;
+            cursor: pointer;
+            
+            /* Icono Lupa */
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='white' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: center;
         }
-        .search-input:focus { outline: none; border-color: var(--accent-color); }
+        .search-input:focus {
+            width: 160px; /* Ancho expandido */
+            outline: none;
+            border-color: var(--accent-color);
+            cursor: text;
+            background-position: 10px center;
+            padding-left: 35px;
+        }
+        .search-input::placeholder { color: transparent; }
+        .search-input:focus::placeholder { color: #aaa; }
 
         .counters-wrapper { display: flex; gap: 15px; margin-right: auto; align-items: center; }
         .total-counter { font-weight: bold; color: var(--free-color); white-space: nowrap; font-size: 1em; }
         .partner-counter { font-weight: bold; color: var(--partner-color); white-space: nowrap; font-size: 1em; display: none; }
+        
         .toggle-switch { display: flex; align-items: center; cursor: pointer; margin-right: 5px; white-space: nowrap; }
         .toggle-switch input { display: none; }
         .slider {
@@ -89,6 +117,7 @@
         }
         input:checked + .slider { background-color: var(--free-color); }
         input:checked + .slider::before { transform: translateX(18px); }
+        
         .action-btn {
             color: white; text-decoration: none; padding: 8px 14px; border-radius: 6px;
             font-weight: bold; display: none; align-items: center; justify-content: center;
@@ -101,41 +130,29 @@
         .buy-main-btn { background-color: #FF9800; color: black; }
         .dm-btn { background-color: var(--dm-color); }
         
+        /* Modal Styles */
         .modal {
             display: none; position: fixed; z-index: 1000; left: 0; top: 0;
             width: 100%; height: 100%; background-color: rgba(0,0,0,0.85); 
             backdrop-filter: blur(5px); justify-content: center; align-items: center;
         }
         .modal.show { display: flex; }
-        
         .modal-content {
             background-color: #252525; padding: 0; border: 1px solid #444; 
-            width: 90%; max-width: 600px; 
-            max-height: 90vh; 
+            width: 90%; max-width: 600px; max-height: 90vh; 
             border-radius: 12px; position: relative; color: #e0e0e0;
             box-shadow: 0 10px 25px rgba(0,0,0,0.5); 
             display: flex; flex-direction: column;
         }
-        
         .modal-header {
             padding: 15px 20px; border-bottom: 1px solid #333; display: flex; justify-content: space-between; align-items: center;
-            background: #1f1f1f; border-radius: 12px 12px 0 0; 
-            flex-shrink: 0; 
+            background: #1f1f1f; border-radius: 12px 12px 0 0; flex-shrink: 0; 
         }
-        
-        .modal-body { 
-            padding: 20px; 
-            overflow-y: auto; 
-            flex-grow: 1; 
-        }
-        
+        .modal-body { padding: 20px; overflow-y: auto; flex-grow: 1; }
         .modal-footer {
             padding: 15px 20px; border-top: 1px solid #333; display: flex; justify-content: space-between;
-            background: #1f1f1f; border-radius: 0 0 12px 12px; 
-            flex-shrink: 0;
-            z-index: 10;
+            background: #1f1f1f; border-radius: 0 0 12px 12px; flex-shrink: 0; z-index: 10;
         }
-
         .close-modal { font-size: 24px; cursor: pointer; color: #aaa; }
         .close-modal:hover { color: white; }
         .step { display: none; animation: fadeIn 0.3s; }
@@ -151,12 +168,6 @@
             background-color: var(--input-bg); color: white; font-size: 1em; box-sizing: border-box;
         }
         .form-control:focus { outline: none; border-color: var(--accent-color); }
-        .info-box {
-            background-color: rgba(88, 101, 242, 0.1); border: 1px solid var(--accent-color);
-            padding: 10px; border-radius: 6px; color: #ddd; font-size: 0.9em; margin-bottom: 15px;
-            display: flex; align-items: center; gap: 10px;
-            transition: all 0.3s ease;
-        }
         .admin-list { display: flex; flex-direction: column; gap: 10px; }
         .admin-card {
             background: #36393f; padding: 12px; border-radius: 6px; text-decoration: none;
@@ -180,10 +191,20 @@
         .space-free { background-color: rgba(67, 181, 129, 0.2); color: #43b581; border: 1px solid #43b581; }
         .space-occupied { background-color: var(--occupied-color); color: #666; border: 1px solid #444; }
         #loading { font-size: 1.2em; color: var(--accent-color); text-align: center; }
+
+        /* Media Queries para Diseño Adaptable */
         @media (max-width: 768px) {
-            .controls { flex-wrap: wrap; justify-content: center; }
-            .counters-wrapper { margin-right: 0; width: 100%; justify-content: center; margin-bottom: 10px; }
-            .action-btn { flex: 1; }
+            .controls { 
+                gap: 15px; 
+                justify-content: space-between; /* Distribuye espacio en móviles */
+            }
+            .counters-wrapper { 
+                width: 100%; 
+                justify-content: center; 
+                margin-bottom: 5px; 
+                order: -1; /* Pone los contadores arriba */
+            }
+            .action-btn { flex: 1; min-width: 120px; }
         }
     </style>
 </head>
@@ -198,8 +219,8 @@
             <div id="partner-counter" class="partner-counter">🤝 0/0 Partners</div>
         </div>
         
-        <!-- MEJORA 3: Buscador de Espacios -->
-        <input type="text" id="search-space" class="search-input" placeholder="🔍 Buscar espacio..." onkeyup="filterSpaces()">
+        <!-- Buscador Expandible -->
+        <input type="text" id="search-space" class="search-input" placeholder="Buscar..." onkeyup="filterSpaces()">
         
         <label class="toggle-switch">
             <input type="checkbox" id="hide-occupied" checked onchange="renderCurrentTab()">
@@ -260,7 +281,6 @@
                         <input type="text" id="f-discord" class="form-control" placeholder="usuario#1234">
                     </div>
                     
-                    <!-- MEJORA 2: Previsualización de Imagen -->
                     <div id="image-group" class="form-group">
                         <label>🖼️ Imagen VIP:</label>
                         <input type="file" id="f-image" class="form-control" accept="image/*" onchange="previewImage()">
@@ -492,7 +512,7 @@
             if (tipo === 'Con Cuadro') { box.style.display = 'block'; } else { box.style.display = 'none'; }
         }
 
-        // MEJORA 2: Función de Previsualización
+        // Función de Previsualización
         function previewImage() {
             const file = document.getElementById('f-image').files[0];
             const preview = document.getElementById('img-preview');
@@ -509,7 +529,7 @@
             }
         }
 
-        // MEJORA 3: Función de Búsqueda
+        // Función de Búsqueda
         function filterSpaces() {
             const query = document.getElementById('search-space').value.toLowerCase();
             const badges = document.querySelectorAll('.space-badge');
