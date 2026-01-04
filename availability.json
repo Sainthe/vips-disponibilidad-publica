@@ -140,7 +140,7 @@
             "patreon_url": "",
             "admin_ids": [],
             "rules_text": "",
-            "partners_occupied": 9,
+            "partners_occupied": 8,
             "partners_max": 0
         },
         "Stage": {
@@ -181,14 +181,15 @@
             ]
         },
         "Terraza - SemiPlaya xD": {
-            "libres": [],
+            "libres": [
+                "D-VIP-18"
+            ],
             "ocupados": [
                 "D-VIP-13",
                 "D-VIP-14",
                 "D-VIP-15",
                 "D-VIP-16",
-                "D-VIP-17",
-                "D-VIP-18"
+                "D-VIP-17"
             ]
         },
         "Sala de Star - Bar": {
@@ -363,5 +364,5 @@
             ]
         }
     },
-    "last_updated_utc": "2026-01-04T06:09:07.860774+00:00"
+    "last_updated_utc": "2026-01-04T23:46:49.965553+00:00"
 }
