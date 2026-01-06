@@ -52,7 +52,9 @@
             ]
         },
         "Stage": {
-            "libres": [],
+            "libres": [
+                "VIP-29"
+            ],
             "ocupados": [
                 "VIP-1",
                 "VIP-2",
@@ -61,7 +63,6 @@
                 "VIP-26",
                 "VIP-27",
                 "VIP-28",
-                "VIP-29",
                 "VIP-30",
                 "VIP-31",
                 "VIP-32"
@@ -115,6 +116,7 @@
                 "VIP-1",
                 "VIP-5",
                 "VIP-6",
+                "VIP-7",
                 "VIP-9",
                 "VIP-10",
                 "VIP-12",
@@ -126,7 +128,6 @@
                 "VIP-2",
                 "VIP-3",
                 "VIP-4",
-                "VIP-7",
                 "VIP-8",
                 "VIP-11",
                 "VIP-32"
@@ -140,7 +141,7 @@
             "patreon_url": "",
             "admin_ids": [],
             "rules_text": "",
-            "partners_occupied": 8,
+            "partners_occupied": 9,
             "partners_max": 0
         },
         "Stage": {
@@ -364,5 +365,5 @@
             ]
         }
     },
-    "last_updated_utc": "2026-01-04T23:46:49.965553+00:00"
+    "last_updated_utc": "2026-01-06T12:53:32.872467+00:00"
 }
