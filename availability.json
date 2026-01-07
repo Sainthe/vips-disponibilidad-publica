@@ -84,13 +84,14 @@
             ]
         },
         "Back Stage": {
-            "libres": [],
+            "libres": [
+                "VIP-18"
+            ],
             "ocupados": [
                 "VIP-14",
                 "VIP-15",
                 "VIP-16",
                 "VIP-17",
-                "VIP-18",
                 "VIP-19"
             ]
         },
@@ -98,8 +99,7 @@
             "libres": [
                 "VIP-22",
                 "VIP-24",
-                "VIP-26",
-                "VIP-30"
+                "VIP-26"
             ],
             "ocupados": [
                 "VIP-20",
@@ -108,7 +108,8 @@
                 "VIP-25",
                 "VIP-27",
                 "VIP-28",
-                "VIP-29"
+                "VIP-29",
+                "VIP-30"
             ]
         },
         "Zotano": {
@@ -366,5 +367,5 @@
             ]
         }
     },
-    "last_updated_utc": "2026-01-07T03:41:41.793757+00:00"
+    "last_updated_utc": "2026-01-07T13:17:42.899784+00:00"
 }
