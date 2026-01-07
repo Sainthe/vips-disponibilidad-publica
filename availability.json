@@ -144,7 +144,7 @@
             "patreon_url": "",
             "admin_ids": [],
             "rules_text": "",
-            "partners_occupied": 9,
+            "partners_occupied": 7,
             "partners_max": 0
         },
         "Stage": {
@@ -269,6 +269,7 @@
             "libres": [
                 "PCC-VIP-5",
                 "PCC-VIP-6",
+                "PCC-VIP-7",
                 "PCC-VIP-8",
                 "PCC-VIP-9",
                 "PCC-VIP-10",
@@ -279,9 +280,7 @@
                 "PCC-VIP-15",
                 "PCC-VIP-16"
             ],
-            "ocupados": [
-                "PCC-VIP-7"
-            ]
+            "ocupados": []
         }
     },
     "IslaDelPecado": {
@@ -369,5 +368,5 @@
             ]
         }
     },
-    "last_updated_utc": "2026-01-07T13:25:11.566976+00:00"
+    "last_updated_utc": "2026-01-07T13:38:32.850604+00:00"
 }
