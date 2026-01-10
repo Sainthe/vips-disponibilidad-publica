@@ -21,7 +21,9 @@
             ]
         },
         "Bar Spawn": {
-            "libres": [],
+            "libres": [
+                "VIP-14"
+            ],
             "ocupados": [
                 "VIP-4",
                 "VIP-5",
@@ -33,7 +35,6 @@
                 "VIP-11",
                 "VIP-12",
                 "VIP-13",
-                "VIP-14",
                 "VIP-15"
             ]
         },
@@ -52,9 +53,7 @@
             ]
         },
         "Stage": {
-            "libres": [
-                "VIP-29"
-            ],
+            "libres": [],
             "ocupados": [
                 "VIP-1",
                 "VIP-2",
@@ -63,6 +62,7 @@
                 "VIP-26",
                 "VIP-27",
                 "VIP-28",
+                "VIP-29",
                 "VIP-30",
                 "VIP-31",
                 "VIP-32"
@@ -366,5 +366,5 @@
             ]
         }
     },
-    "last_updated_utc": "2026-01-10T16:24:47.734625+00:00"
+    "last_updated_utc": "2026-01-10T21:01:05.783670+00:00"
 }
