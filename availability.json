@@ -324,6 +324,7 @@
                 "VIpB-13",
                 "VipV-14",
                 "VIpB-14",
+                "VipV-15",
                 "VIpB-15",
                 "VipV-16",
                 "VIpB-16",
@@ -361,10 +362,9 @@
                 "VIpB-32"
             ],
             "ocupados": [
-                "VipV-1",
-                "VipV-15"
+                "VipV-1"
             ]
         }
     },
-    "last_updated_utc": "2026-01-10T05:57:01.977963+00:00"
+    "last_updated_utc": "2026-01-10T16:24:47.734625+00:00"
 }
