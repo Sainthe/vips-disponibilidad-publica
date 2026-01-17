@@ -157,7 +157,8 @@
         },
         "Spawn": {
             "libres": [
-                "D-VIP-12"
+                "D-VIP-12",
+                "D-VIP-32"
             ],
             "ocupados": [
                 "D-VIP-9",
@@ -165,8 +166,7 @@
                 "D-VIP-11",
                 "D-VIP-29",
                 "D-VIP-30",
-                "D-VIP-31",
-                "D-VIP-32"
+                "D-VIP-31"
             ]
         },
         "Pasillo": {
@@ -185,10 +185,10 @@
         },
         "Terraza - SemiPlaya xD": {
             "libres": [
+                "D-VIP-13",
                 "D-VIP-18"
             ],
             "ocupados": [
-                "D-VIP-13",
                 "D-VIP-14",
                 "D-VIP-15",
                 "D-VIP-16",
@@ -366,5 +366,5 @@
             ]
         }
     },
-    "last_updated_utc": "2026-01-17T00:03:43.385689+00:00"
+    "last_updated_utc": "2026-01-17T00:04:37.034875+00:00"
 }
