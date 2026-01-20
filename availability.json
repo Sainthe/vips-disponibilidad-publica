@@ -145,7 +145,7 @@
                 "1045423196633051147"
             ],
             "rules_text": "",
-            "partners_occupied": 7,
+            "partners_occupied": 6,
             "partners_max": 0
         },
         "Stage": {
@@ -161,6 +161,7 @@
         "Spawn": {
             "libres": [
                 "D-VIP-12",
+                "D-VIP-31",
                 "D-VIP-32"
             ],
             "ocupados": [
@@ -168,17 +169,16 @@
                 "D-VIP-10",
                 "D-VIP-11",
                 "D-VIP-29",
-                "D-VIP-30",
-                "D-VIP-31"
+                "D-VIP-30"
             ]
         },
         "Pasillo": {
             "libres": [
+                "D-VIP-1",
                 "D-VIP-3",
                 "D-VIP-8"
             ],
             "ocupados": [
-                "D-VIP-1",
                 "D-VIP-2",
                 "D-VIP-4",
                 "D-VIP-5",
@@ -369,5 +369,5 @@
             ]
         }
     },
-    "last_updated_utc": "2026-01-20T22:15:02.254464+00:00"
+    "last_updated_utc": "2026-01-20T22:17:11.807717+00:00"
 }
