@@ -1,3 +1,1 @@
-<size=120%><b>IslaDelPecado</b></size>
-<color=#4CAF50><b>DISPONIBLE</b></color>
-Espacios: 63 / 64
+IslaDelPecado:63
