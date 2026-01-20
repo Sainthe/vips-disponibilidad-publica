@@ -140,8 +140,10 @@
         "_meta": {
             "discord_invite": "",
             "banner": "",
-            "patreon_url": "",
-            "admin_ids": [],
+            "patreon_url": "https://www.patreon.com/c/nastichope/membership",
+            "admin_ids": [
+                "1045423196633051147"
+            ],
             "rules_text": "",
             "partners_occupied": 7,
             "partners_max": 0
@@ -367,5 +369,5 @@
             ]
         }
     },
-    "last_updated_utc": "2026-01-20T18:23:25.398887+00:00"
+    "last_updated_utc": "2026-01-20T21:44:14.883220+00:00"
 }
