@@ -68,9 +68,7 @@
             ]
         },
         "Pasillo VIP": {
-            "libres": [
-                "VIP-10"
-            ],
+            "libres": [],
             "ocupados": [
                 "VIP-4",
                 "VIP-5",
@@ -78,6 +76,7 @@
                 "VIP-7",
                 "VIP-8",
                 "VIP-9",
+                "VIP-10",
                 "VIP-11",
                 "VIP-12",
                 "VIP-13"
@@ -368,5 +367,5 @@
             ]
         }
     },
-    "last_updated_utc": "2026-01-23T19:38:12.535923+00:00"
+    "last_updated_utc": "2026-01-23T20:03:05.227472+00:00"
 }
