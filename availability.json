@@ -199,6 +199,7 @@
         },
         "Sala de Star - Bar": {
             "libres": [
+                "D-VIP-20",
                 "D-VIP-21",
                 "D-VIP-22",
                 "D-VIP-23",
@@ -208,7 +209,6 @@
             ],
             "ocupados": [
                 "D-VIP-19",
-                "D-VIP-20",
                 "D-VIP-25",
                 "D-VIP-27"
             ]
@@ -368,5 +368,5 @@
             ]
         }
     },
-    "last_updated_utc": "2026-01-23T21:07:37.937449+00:00"
+    "last_updated_utc": "2026-01-24T01:34:15.209536+00:00"
 }
