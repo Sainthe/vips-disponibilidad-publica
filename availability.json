@@ -302,7 +302,6 @@
                 "VIpB-1",
                 "VIpB-2",
                 "VIpB-3",
-                "VipV-4",
                 "VIpB-4",
                 "VipV-5",
                 "VIpB-5",
@@ -364,9 +363,10 @@
             "ocupados": [
                 "VipV-1",
                 "VipV-2",
-                "VipV-3"
+                "VipV-3",
+                "VipV-4"
             ]
         }
     },
-    "last_updated_utc": "2026-01-25T14:26:01.285508+00:00"
+    "last_updated_utc": "2026-01-25T23:56:17.588521+00:00"
 }
