@@ -301,7 +301,6 @@
             "libres": [
                 "VIpB-1",
                 "VIpB-2",
-                "VipV-3",
                 "VIpB-3",
                 "VipV-4",
                 "VIpB-4",
@@ -364,9 +363,10 @@
             ],
             "ocupados": [
                 "VipV-1",
-                "VipV-2"
+                "VipV-2",
+                "VipV-3"
             ]
         }
     },
-    "last_updated_utc": "2026-01-25T13:36:14.229799+00:00"
+    "last_updated_utc": "2026-01-25T14:26:01.285508+00:00"
 }
