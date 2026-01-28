@@ -144,7 +144,7 @@
                 "1045423196633051147"
             ],
             "rules_text": "",
-            "partners_occupied": 6,
+            "partners_occupied": 7,
             "partners_max": 0
         },
         "Stage": {
@@ -204,12 +204,12 @@
                 "D-VIP-22",
                 "D-VIP-23",
                 "D-VIP-24",
+                "D-VIP-25",
                 "D-VIP-26",
                 "D-VIP-28"
             ],
             "ocupados": [
                 "D-VIP-19",
-                "D-VIP-25",
                 "D-VIP-27"
             ]
         },
@@ -368,5 +368,5 @@
             ]
         }
     },
-    "last_updated_utc": "2026-01-27T17:14:22.850735+00:00"
+    "last_updated_utc": "2026-01-28T15:24:36.682926+00:00"
 }
