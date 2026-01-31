@@ -21,13 +21,14 @@
             ]
         },
         "Bar Spawn": {
-            "libres": [],
+            "libres": [
+                "VIP-8"
+            ],
             "ocupados": [
                 "VIP-4",
                 "VIP-5",
                 "VIP-6",
                 "VIP-7",
-                "VIP-8",
                 "VIP-9",
                 "VIP-10",
                 "VIP-11",
@@ -68,10 +69,11 @@
             ]
         },
         "Pasillo VIP": {
-            "libres": [],
+            "libres": [
+                "VIP-5"
+            ],
             "ocupados": [
                 "VIP-4",
-                "VIP-5",
                 "VIP-6",
                 "VIP-7",
                 "VIP-8",
@@ -367,5 +369,5 @@
             ]
         }
     },
-    "last_updated_utc": "2026-01-31T14:24:18.464776+00:00"
+    "last_updated_utc": "2026-01-31T14:35:01.125714+00:00"
 }
