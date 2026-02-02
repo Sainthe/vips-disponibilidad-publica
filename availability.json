@@ -298,7 +298,6 @@
         },
         "Spawn": {
             "libres": [
-                "VipV-7",
                 "VipV-8",
                 "VipV-9",
                 "VipV-10",
@@ -331,9 +330,10 @@
                 "VipV-3",
                 "VipV-4",
                 "VipV-5",
-                "VipV-6"
+                "VipV-6",
+                "VipV-7"
             ]
         }
     },
-    "last_updated_utc": "2026-02-02T01:13:15.248936+00:00"
+    "last_updated_utc": "2026-02-02T01:18:24.894957+00:00"
 }
