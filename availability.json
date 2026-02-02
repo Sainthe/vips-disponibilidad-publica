@@ -175,13 +175,13 @@
         },
         "Pasillo": {
             "libres": [
+                "D-VIP-2",
                 "D-VIP-3",
                 "D-VIP-6",
                 "D-VIP-8"
             ],
             "ocupados": [
                 "D-VIP-1",
-                "D-VIP-2",
                 "D-VIP-4",
                 "D-VIP-5",
                 "D-VIP-7"
@@ -370,5 +370,5 @@
             ]
         }
     },
-    "last_updated_utc": "2026-02-02T15:32:26.746339+00:00"
+    "last_updated_utc": "2026-02-02T15:32:55.137113+00:00"
 }
