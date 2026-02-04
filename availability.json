@@ -52,9 +52,7 @@
             ]
         },
         "Stage": {
-            "libres": [
-                "VIP-31"
-            ],
+            "libres": [],
             "ocupados": [
                 "VIP-1",
                 "VIP-2",
@@ -65,15 +63,17 @@
                 "VIP-28",
                 "VIP-29",
                 "VIP-30",
+                "VIP-31",
                 "VIP-32"
             ]
         },
         "Pasillo VIP": {
-            "libres": [],
+            "libres": [
+                "VIP-6"
+            ],
             "ocupados": [
                 "VIP-4",
                 "VIP-5",
-                "VIP-6",
                 "VIP-7",
                 "VIP-8",
                 "VIP-9",
@@ -368,5 +368,5 @@
             ]
         }
     },
-    "last_updated_utc": "2026-02-04T18:08:02.928245+00:00"
+    "last_updated_utc": "2026-02-04T21:20:08.361401+00:00"
 }
