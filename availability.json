@@ -174,13 +174,13 @@
             "libres": [
                 "D-VIP-2",
                 "D-VIP-3",
-                "D-VIP-4",
                 "D-VIP-5",
                 "D-VIP-6",
                 "D-VIP-8"
             ],
             "ocupados": [
                 "D-VIP-1",
+                "D-VIP-4",
                 "D-VIP-7"
             ]
         },
@@ -367,5 +367,5 @@
             ]
         }
     },
-    "last_updated_utc": "2026-02-08T19:55:27.599056+00:00"
+    "last_updated_utc": "2026-02-11T20:37:12.449651+00:00"
 }
