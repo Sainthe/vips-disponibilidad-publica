@@ -299,6 +299,7 @@
         },
         "Spawn": {
             "libres": [
+                "VipN-1",
                 "VipN-2",
                 "VipN-3",
                 "VipN-4",
@@ -350,7 +351,6 @@
             ],
             "ocupados": [
                 "VipV-1",
-                "VipN-1",
                 "VipV-2",
                 "VipV-3",
                 "VipV-4",
@@ -368,5 +368,5 @@
             ]
         }
     },
-    "last_updated_utc": "2026-02-16T06:19:16.667560+00:00"
+    "last_updated_utc": "2026-02-16T06:21:34.735939+00:00"
 }
