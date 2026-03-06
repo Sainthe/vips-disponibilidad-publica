@@ -1,5 +1,8 @@
 {
     "LasCariñosas": [
+        "C-VIP-1",
+        "C-VIP-11",
+        "C-VIP-2",
         "C-VIP-20",
         "C-VIP-21",
         "C-VIP-22",
@@ -26,12 +29,10 @@
         "VIP-19",
         "VIP-20",
         "VIP-21",
-        "VIP-6",
-        "VIP-8",
-        "VIP-9"
+        "VIP-25",
+        "VIP-8"
     ],
     "Furrys Spanish": [
-        "D-VIP-12",
         "D-VIP-13",
         "D-VIP-15",
         "D-VIP-16",
@@ -42,12 +43,10 @@
         "D-VIP-22",
         "D-VIP-23",
         "D-VIP-24",
-        "D-VIP-25",
         "D-VIP-26",
         "D-VIP-28",
         "D-VIP-29",
         "D-VIP-3",
-        "D-VIP-30",
         "D-VIP-31",
         "D-VIP-32",
         "D-VIP-5",
@@ -139,7 +138,6 @@
         "VipN-7",
         "VipN-8",
         "VipN-9",
-        "VipV-11",
         "VipV-13",
         "VipV-17",
         "VipV-18",
@@ -154,14 +152,9 @@
         "VipV-27",
         "VipV-28",
         "VipV-29",
-        "VipV-3",
         "VipV-30",
         "VipV-31",
         "VipV-32",
-        "VipV-4",
-        "VipV-5",
-        "VipV-6",
-        "VipV-7",
         "VipV-9"
     ]
 }
