@@ -13,15 +13,20 @@
             "partners_max": 5
         },
         "Entrada Spawn": {
-            "libres": [],
+            "libres": [
+                "VIP-3"
+            ],
             "ocupados": [
                 "VIP-1",
-                "VIP-2",
-                "VIP-3"
+                "VIP-2"
             ]
         },
         "Bar Spawn": {
             "libres": [
+                "VIP-4",
+                "VIP-5",
+                "VIP-6",
+                "VIP-7",
                 "VIP-8",
                 "VIP-9",
                 "VIP-10",
@@ -31,12 +36,7 @@
                 "VIP-14",
                 "VIP-15"
             ],
-            "ocupados": [
-                "VIP-4",
-                "VIP-5",
-                "VIP-6",
-                "VIP-7"
-            ]
+            "ocupados": []
         },
         "Zona de Escalera": {
             "libres": [
@@ -132,14 +132,6 @@
                 "VIP-32"
             ],
             "ocupados": []
-        },
-        "BannerPerzonalizada": {
-            "is_virtual": true,
-            "libres": [],
-            "ocupados": [
-                "Akita Neru〆",
-                "ＴＯＫＡＹＯ"
-            ]
         }
     },
     "Furrys Spanish": {
@@ -375,5 +367,5 @@
             ]
         }
     },
-    "last_updated_utc": "2026-03-09T22:22:48.507376+00:00"
+    "last_updated_utc": "2026-03-09T22:46:26.693580+00:00"
 }
