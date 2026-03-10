@@ -72,30 +72,30 @@
         },
         "Pasillo VIP": {
             "libres": [
-                "VIP-6"
-            ],
-            "ocupados": [
-                "VIP-4",
-                "VIP-5",
-                "VIP-7",
+                "VIP-6",
                 "VIP-8",
                 "VIP-9",
                 "VIP-10",
                 "VIP-11",
                 "VIP-12",
                 "VIP-13"
+            ],
+            "ocupados": [
+                "VIP-4",
+                "VIP-5",
+                "VIP-7"
             ]
         },
         "Back Stage": {
-            "libres": [],
-            "ocupados": [
+            "libres": [
                 "VIP-14",
                 "VIP-15",
                 "VIP-16",
                 "VIP-17",
                 "VIP-18",
                 "VIP-19"
-            ]
+            ],
+            "ocupados": []
         },
         "Exterior": {
             "libres": [
@@ -103,21 +103,21 @@
                 "VIP-21",
                 "VIP-22",
                 "VIP-23",
+                "VIP-24",
+                "VIP-25",
                 "VIP-26",
                 "VIP-27",
                 "VIP-28",
                 "VIP-29",
                 "VIP-30"
             ],
-            "ocupados": [
-                "VIP-24",
-                "VIP-25"
-            ]
+            "ocupados": []
         },
         "Zotano": {
             "libres": [
                 "VIP-1",
                 "VIP-2",
+                "VIP-3",
                 "VIP-4",
                 "VIP-5",
                 "VIP-6",
@@ -132,9 +132,7 @@
                 "VIP-31",
                 "VIP-32"
             ],
-            "ocupados": [
-                "VIP-3"
-            ]
+            "ocupados": []
         }
     },
     "Furrys Spanish": {
@@ -370,5 +368,5 @@
             ]
         }
     },
-    "last_updated_utc": "2026-03-10T18:41:06.780567+00:00"
+    "last_updated_utc": "2026-03-10T18:57:34.367084+00:00"
 }
