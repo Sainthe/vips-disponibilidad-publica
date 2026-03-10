@@ -26,7 +26,6 @@
                 "VIP-6",
                 "VIP-8",
                 "VIP-9",
-                "VIP-10",
                 "VIP-11",
                 "VIP-12",
                 "VIP-13",
@@ -35,14 +34,13 @@
             ],
             "ocupados": [
                 "VIP-4",
-                "VIP-7"
+                "VIP-7",
+                "VIP-10"
             ]
         },
         "Zona de Escalera": {
             "libres": [
-                "VIP-17",
                 "VIP-18",
-                "VIP-19",
                 "VIP-20",
                 "VIP-21",
                 "VIP-22",
@@ -50,7 +48,9 @@
                 "VIP-24"
             ],
             "ocupados": [
-                "VIP-16"
+                "VIP-16",
+                "VIP-17",
+                "VIP-19"
             ]
         },
         "Stage": {
@@ -63,11 +63,12 @@
                 "VIP-27",
                 "VIP-28",
                 "VIP-29",
-                "VIP-30",
                 "VIP-31",
                 "VIP-32"
             ],
-            "ocupados": []
+            "ocupados": [
+                "VIP-30"
+            ]
         },
         "Pasillo VIP": {
             "libres": [
@@ -367,5 +368,5 @@
             ]
         }
     },
-    "last_updated_utc": "2026-03-10T17:44:58.553702+00:00"
+    "last_updated_utc": "2026-03-10T17:48:11.604382+00:00"
 }
