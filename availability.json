@@ -129,10 +129,11 @@
                 "VIP-12",
                 "VIP-13",
                 "VIP-14",
-                "VIP-31",
                 "VIP-32"
             ],
-            "ocupados": []
+            "ocupados": [
+                "VIP-31"
+            ]
         }
     },
     "Furrys Spanish": {
@@ -368,5 +369,5 @@
             ]
         }
     },
-    "last_updated_utc": "2026-03-10T18:57:34.367084+00:00"
+    "last_updated_utc": "2026-03-10T21:32:35.410116+00:00"
 }
