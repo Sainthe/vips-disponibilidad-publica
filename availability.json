@@ -128,12 +128,12 @@
                 "VIP-12",
                 "VIP-13",
                 "VIP-14",
-                "VIP-31",
                 "VIP-32"
             ],
             "ocupados": [
                 "VIP-2",
-                "VIP-3"
+                "VIP-3",
+                "VIP-31"
             ]
         },
         "BannerPerzonalizada": {
@@ -378,5 +378,5 @@
             ]
         }
     },
-    "last_updated_utc": "2026-03-10T00:17:53.559343+00:00"
+    "last_updated_utc": "2026-03-10T00:28:24.722176+00:00"
 }
