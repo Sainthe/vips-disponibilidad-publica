@@ -23,7 +23,6 @@
         "Bar Spawn": {
             "libres": [
                 "VIP-6",
-                "VIP-7",
                 "VIP-8",
                 "VIP-9",
                 "VIP-13"
@@ -31,6 +30,7 @@
             "ocupados": [
                 "VIP-4",
                 "VIP-5",
+                "VIP-7",
                 "VIP-10",
                 "VIP-11",
                 "VIP-12",
@@ -72,9 +72,7 @@
         },
         "Pasillo VIP": {
             "libres": [
-                "VIP-11",
-                "VIP-12",
-                "VIP-13"
+                "VIP-11"
             ],
             "ocupados": [
                 "VIP-4",
@@ -83,7 +81,9 @@
                 "VIP-7",
                 "VIP-8",
                 "VIP-9",
-                "VIP-10"
+                "VIP-10",
+                "VIP-12",
+                "VIP-13"
             ]
         },
         "Back Stage": {
@@ -103,21 +103,20 @@
                 "VIP-21",
                 "VIP-22",
                 "VIP-23",
-                "VIP-24",
-                "VIP-25",
                 "VIP-26",
-                "VIP-27",
                 "VIP-28",
                 "VIP-29",
                 "VIP-30"
             ],
-            "ocupados": []
+            "ocupados": [
+                "VIP-24",
+                "VIP-25",
+                "VIP-27"
+            ]
         },
         "Zotano": {
             "libres": [
                 "VIP-1",
-                "VIP-2",
-                "VIP-3",
                 "VIP-4",
                 "VIP-5",
                 "VIP-6",
@@ -132,7 +131,10 @@
                 "VIP-31",
                 "VIP-32"
             ],
-            "ocupados": []
+            "ocupados": [
+                "VIP-2",
+                "VIP-3"
+            ]
         },
         "BannerPerzonalizada": {
             "is_virtual": true,
@@ -376,5 +378,5 @@
             ]
         }
     },
-    "last_updated_utc": "2026-03-09T23:59:19.355654+00:00"
+    "last_updated_utc": "2026-03-10T00:05:21.273962+00:00"
 }
