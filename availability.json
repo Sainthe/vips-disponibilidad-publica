@@ -105,14 +105,15 @@
                 "VIP-22",
                 "VIP-23",
                 "VIP-24",
-                "VIP-25",
                 "VIP-26",
                 "VIP-27",
                 "VIP-28",
                 "VIP-29",
                 "VIP-30"
             ],
-            "ocupados": []
+            "ocupados": [
+                "VIP-25"
+            ]
         },
         "Zotano": {
             "libres": [
@@ -370,5 +371,5 @@
             ]
         }
     },
-    "last_updated_utc": "2026-03-10T21:39:28.059407+00:00"
+    "last_updated_utc": "2026-03-10T21:41:15.012275+00:00"
 }
