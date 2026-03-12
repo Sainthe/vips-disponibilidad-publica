@@ -188,11 +188,11 @@
                 "D-VIP-13",
                 "D-VIP-15",
                 "D-VIP-16",
+                "D-VIP-17",
                 "D-VIP-18"
             ],
             "ocupados": [
-                "D-VIP-14",
-                "D-VIP-17"
+                "D-VIP-14"
             ]
         },
         "Sala de Star - Bar": {
@@ -202,13 +202,13 @@
                 "D-VIP-22",
                 "D-VIP-23",
                 "D-VIP-24",
+                "D-VIP-25",
                 "D-VIP-26",
+                "D-VIP-27",
                 "D-VIP-28"
             ],
             "ocupados": [
-                "D-VIP-19",
-                "D-VIP-25",
-                "D-VIP-27"
+                "D-VIP-19"
             ]
         },
         "Pasillo Stage": {
@@ -234,6 +234,7 @@
                 "PCB-VIP-14",
                 "PCB-VIP-15",
                 "PCB-VIP-16",
+                "PCB-VIP-17",
                 "PCB-VIP-18",
                 "PCB-VIP-19",
                 "PCB-VIP-20",
@@ -250,9 +251,7 @@
                 "PCB-VIP-31",
                 "PCB-VIP-32"
             ],
-            "ocupados": [
-                "PCB-VIP-17"
-            ]
+            "ocupados": []
         },
         "Cine": {
             "libres": [
@@ -366,5 +365,5 @@
             ]
         }
     },
-    "last_updated_utc": "2026-03-11T20:59:44.308410+00:00"
+    "last_updated_utc": "2026-03-12T22:10:26.927493+00:00"
 }
