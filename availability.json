@@ -158,43 +158,41 @@
         },
         "Spawn": {
             "libres": [
-                "D-VIP-12",
-                "D-VIP-29",
-                "D-VIP-31",
-                "D-VIP-32"
-            ],
-            "ocupados": [
                 "D-VIP-9",
                 "D-VIP-10",
                 "D-VIP-11",
-                "D-VIP-30"
-            ]
+                "D-VIP-12",
+                "D-VIP-29",
+                "D-VIP-30",
+                "D-VIP-31",
+                "D-VIP-32"
+            ],
+            "ocupados": []
         },
         "Pasillo": {
             "libres": [
                 "D-VIP-2",
                 "D-VIP-3",
+                "D-VIP-4",
                 "D-VIP-5",
                 "D-VIP-6",
+                "D-VIP-7",
                 "D-VIP-8"
             ],
             "ocupados": [
-                "D-VIP-1",
-                "D-VIP-4",
-                "D-VIP-7"
+                "D-VIP-1"
             ]
         },
         "Terraza - SemiPlaya xD": {
             "libres": [
                 "D-VIP-13",
+                "D-VIP-14",
                 "D-VIP-15",
                 "D-VIP-16",
                 "D-VIP-17",
                 "D-VIP-18"
             ],
-            "ocupados": [
-                "D-VIP-14"
-            ]
+            "ocupados": []
         },
         "Sala de Star - Bar": {
             "libres": [
@@ -366,5 +364,5 @@
             ]
         }
     },
-    "last_updated_utc": "2026-03-13T04:25:32.032245+00:00"
+    "last_updated_utc": "2026-03-14T21:21:34.885444+00:00"
 }
