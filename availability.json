@@ -186,13 +186,14 @@
         "Terraza - SemiPlaya xD": {
             "libres": [
                 "D-VIP-13",
-                "D-VIP-14",
                 "D-VIP-15",
                 "D-VIP-16",
                 "D-VIP-17",
                 "D-VIP-18"
             ],
-            "ocupados": []
+            "ocupados": [
+                "D-VIP-14"
+            ]
         },
         "Sala de Star - Bar": {
             "libres": [
@@ -364,5 +365,5 @@
             ]
         }
     },
-    "last_updated_utc": "2026-03-18T17:52:55.291971+00:00"
+    "last_updated_utc": "2026-03-18T17:54:01.762564+00:00"
 }
