@@ -157,16 +157,17 @@
         },
         "Spawn": {
             "libres": [
-                "D-VIP-9",
-                "D-VIP-10",
-                "D-VIP-11",
                 "D-VIP-12",
                 "D-VIP-29",
                 "D-VIP-30",
                 "D-VIP-31",
                 "D-VIP-32"
             ],
-            "ocupados": []
+            "ocupados": [
+                "D-VIP-9",
+                "D-VIP-10",
+                "D-VIP-11"
+            ]
         },
         "Pasillo": {
             "libres": [
@@ -363,5 +364,5 @@
             ]
         }
     },
-    "last_updated_utc": "2026-03-17T22:56:31.224896+00:00"
+    "last_updated_utc": "2026-03-18T17:52:25.644525+00:00"
 }
