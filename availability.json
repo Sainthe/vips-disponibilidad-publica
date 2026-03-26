@@ -44,25 +44,25 @@
                 "VIP-20",
                 "VIP-21",
                 "VIP-22",
-                "VIP-23"
+                "VIP-23",
+                "VIP-24"
             ],
             "ocupados": [
                 "VIP-17",
                 "VIP-18",
-                "VIP-19",
-                "VIP-24"
+                "VIP-19"
             ]
         },
         "Stage": {
             "libres": [
-                "VIP-2"
+                "VIP-2",
+                "VIP-27"
             ],
             "ocupados": [
                 "VIP-1",
                 "VIP-3",
                 "VIP-25",
                 "VIP-26",
-                "VIP-27",
                 "VIP-28",
                 "VIP-29",
                 "VIP-30",
@@ -365,6 +365,13 @@
             "ocupados": [
                 "VipV-7"
             ]
+        },
+        "Anubis": {
+            "is_virtual": true,
+            "libres": [],
+            "ocupados": [
+                "Tiburcio 435f"
+            ]
         }
     },
     "OKXO": {
@@ -378,5 +385,5 @@
             "partners_max": 0
         }
     },
-    "last_updated_utc": "2026-03-25T03:51:02.960869+00:00"
+    "last_updated_utc": "2026-03-26T04:06:46.227664+00:00"
 }
