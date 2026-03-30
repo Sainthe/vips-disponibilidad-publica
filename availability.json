@@ -151,14 +151,13 @@
         },
         "Stage": {
             "libres": [
+                "PCC-VIP-17",
                 "PCC-VIP-18",
                 "PCC-VIP-19",
                 "PCC-VIP-20",
                 "PCC-VIP-21"
             ],
-            "ocupados": [
-                "PCC-VIP-17"
-            ]
+            "ocupados": []
         },
         "Spawn": {
             "libres": [
@@ -387,5 +386,5 @@
             "partners_max": 0
         }
     },
-    "last_updated_utc": "2026-03-30T01:23:14.881124+00:00"
+    "last_updated_utc": "2026-03-30T01:29:06.147078+00:00"
 }
