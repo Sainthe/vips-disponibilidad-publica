@@ -122,7 +122,6 @@
                 "VIP-3",
                 "VIP-4",
                 "VIP-5",
-                "VIP-6",
                 "VIP-7",
                 "VIP-8",
                 "VIP-9",
@@ -134,7 +133,9 @@
                 "VIP-31",
                 "VIP-32"
             ],
-            "ocupados": []
+            "ocupados": [
+                "VIP-6"
+            ]
         }
     },
     "Furrys Spanish": {
@@ -386,5 +387,5 @@
             "partners_max": 0
         }
     },
-    "last_updated_utc": "2026-04-03T21:57:24.199131+00:00"
+    "last_updated_utc": "2026-04-03T22:07:15.128559+00:00"
 }
