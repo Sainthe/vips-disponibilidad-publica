@@ -13,27 +13,28 @@
             "partners_max": 5
         },
         "Entrada Spawn": {
-            "libres": [],
-            "ocupados": [
+            "libres": [
                 "VIP-1",
-                "VIP-2",
                 "VIP-3"
+            ],
+            "ocupados": [
+                "VIP-2"
             ]
         },
         "Bar Spawn": {
             "libres": [
+                "VIP-4",
+                "VIP-5",
                 "VIP-6",
                 "VIP-7",
+                "VIP-10",
                 "VIP-11",
                 "VIP-13",
                 "VIP-15"
             ],
             "ocupados": [
-                "VIP-4",
-                "VIP-5",
                 "VIP-8",
                 "VIP-9",
-                "VIP-10",
                 "VIP-12",
                 "VIP-14"
             ]
@@ -55,28 +56,28 @@
         },
         "Stage": {
             "libres": [
+                "VIP-1",
                 "VIP-2",
+                "VIP-25",
                 "VIP-27",
-                "VIP-31"
+                "VIP-31",
+                "VIP-32"
             ],
             "ocupados": [
-                "VIP-1",
                 "VIP-3",
-                "VIP-25",
                 "VIP-26",
                 "VIP-28",
                 "VIP-29",
-                "VIP-30",
-                "VIP-32"
+                "VIP-30"
             ]
         },
         "Pasillo VIP": {
             "libres": [
+                "VIP-4",
                 "VIP-8",
                 "VIP-12"
             ],
             "ocupados": [
-                "VIP-4",
                 "VIP-5",
                 "VIP-6",
                 "VIP-7",
@@ -105,15 +106,14 @@
                 "VIP-22",
                 "VIP-23",
                 "VIP-24",
+                "VIP-25",
                 "VIP-26",
                 "VIP-27",
                 "VIP-28",
                 "VIP-29",
                 "VIP-30"
             ],
-            "ocupados": [
-                "VIP-25"
-            ]
+            "ocupados": []
         },
         "Zotano": {
             "libres": [
@@ -394,5 +394,5 @@
             "partners_max": 0
         }
     },
-    "last_updated_utc": "2026-04-06T18:57:26.883092+00:00"
+    "last_updated_utc": "2026-04-06T19:40:57.760057+00:00"
 }
