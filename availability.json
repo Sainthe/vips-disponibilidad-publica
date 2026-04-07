@@ -13,12 +13,11 @@
             "partners_max": 5
         },
         "Entrada Spawn": {
-            "libres": [
-                "VIP-1",
-                "VIP-3"
-            ],
+            "libres": [],
             "ocupados": [
-                "VIP-2"
+                "VIP-1",
+                "VIP-2",
+                "VIP-3"
             ]
         },
         "Bar Spawn": {
@@ -29,13 +28,13 @@
                 "VIP-7",
                 "VIP-10",
                 "VIP-11",
+                "VIP-12",
                 "VIP-13",
                 "VIP-15"
             ],
             "ocupados": [
                 "VIP-8",
                 "VIP-9",
-                "VIP-12",
                 "VIP-14"
             ]
         },
@@ -135,13 +134,6 @@
             ],
             "ocupados": [
                 "VIP-6"
-            ]
-        },
-        "Monarka": {
-            "is_virtual": true,
-            "libres": [],
-            "ocupados": [
-                "ＴＯＫＡＹＯ"
             ]
         }
     },
@@ -401,5 +393,5 @@
             "partners_max": 0
         }
     },
-    "last_updated_utc": "2026-04-07T02:13:56.047014+00:00"
+    "last_updated_utc": "2026-04-07T19:22:18.425317+00:00"
 }
