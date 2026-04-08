@@ -164,11 +164,11 @@
                 "D-VIP-10",
                 "D-VIP-11",
                 "D-VIP-12",
-                "D-VIP-29",
                 "D-VIP-31",
                 "D-VIP-32"
             ],
             "ocupados": [
+                "D-VIP-29",
                 "D-VIP-30"
             ]
         },
@@ -392,5 +392,5 @@
             "partners_max": 0
         }
     },
-    "last_updated_utc": "2026-04-08T02:57:31.493724+00:00"
+    "last_updated_utc": "2026-04-08T20:08:56.586083+00:00"
 }
