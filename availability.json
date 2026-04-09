@@ -41,6 +41,7 @@
         "Zona de Escalera": {
             "libres": [
                 "VIP-16",
+                "VIP-19",
                 "VIP-20",
                 "VIP-21",
                 "VIP-22",
@@ -49,8 +50,7 @@
             ],
             "ocupados": [
                 "VIP-17",
-                "VIP-18",
-                "VIP-19"
+                "VIP-18"
             ]
         },
         "Stage": {
@@ -89,11 +89,11 @@
         "Back Stage": {
             "libres": [
                 "VIP-14",
+                "VIP-15",
                 "VIP-17",
                 "VIP-19"
             ],
             "ocupados": [
-                "VIP-15",
                 "VIP-16",
                 "VIP-18"
             ]
@@ -393,5 +393,5 @@
             "partners_max": 0
         }
     },
-    "last_updated_utc": "2026-04-09T23:32:10.087378+00:00"
+    "last_updated_utc": "2026-04-09T23:39:36.675664+00:00"
 }
