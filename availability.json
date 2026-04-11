@@ -59,15 +59,15 @@
                 "VIP-2",
                 "VIP-25",
                 "VIP-27",
-                "VIP-31",
-                "VIP-32"
+                "VIP-31"
             ],
             "ocupados": [
                 "VIP-3",
                 "VIP-26",
                 "VIP-28",
                 "VIP-29",
-                "VIP-30"
+                "VIP-30",
+                "VIP-32"
             ]
         },
         "Pasillo VIP": {
@@ -90,11 +90,11 @@
             "libres": [
                 "VIP-14",
                 "VIP-15",
+                "VIP-16",
                 "VIP-17",
                 "VIP-19"
             ],
             "ocupados": [
-                "VIP-16",
                 "VIP-18"
             ]
         },
@@ -393,5 +393,5 @@
             "partners_max": 0
         }
     },
-    "last_updated_utc": "2026-04-09T23:39:36.675664+00:00"
+    "last_updated_utc": "2026-04-11T20:34:20.920946+00:00"
 }
