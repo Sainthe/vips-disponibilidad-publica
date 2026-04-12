@@ -57,13 +57,13 @@
             "libres": [
                 "VIP-1",
                 "VIP-25",
-                "VIP-27",
                 "VIP-31"
             ],
             "ocupados": [
                 "VIP-2",
                 "VIP-3",
                 "VIP-26",
+                "VIP-27",
                 "VIP-28",
                 "VIP-29",
                 "VIP-30",
@@ -393,5 +393,5 @@
             "partners_max": 0
         }
     },
-    "last_updated_utc": "2026-04-12T00:13:28.753928+00:00"
+    "last_updated_utc": "2026-04-12T20:32:31.520951+00:00"
 }
