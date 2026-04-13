@@ -22,7 +22,6 @@
         },
         "Bar Spawn": {
             "libres": [
-                "VIP-4",
                 "VIP-5",
                 "VIP-7",
                 "VIP-10",
@@ -32,6 +31,7 @@
                 "VIP-15"
             ],
             "ocupados": [
+                "VIP-4",
                 "VIP-6",
                 "VIP-8",
                 "VIP-9",
@@ -393,5 +393,5 @@
             "partners_max": 0
         }
     },
-    "last_updated_utc": "2026-04-12T22:40:29.043153+00:00"
+    "last_updated_utc": "2026-04-13T17:12:12.211240+00:00"
 }
