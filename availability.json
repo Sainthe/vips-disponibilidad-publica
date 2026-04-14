@@ -146,7 +146,7 @@
                 "1045423196633051147"
             ],
             "rules_text": "",
-            "partners_occupied": 5,
+            "partners_occupied": 2,
             "partners_max": 0
         },
         "Stage": {
@@ -200,6 +200,7 @@
         },
         "Sala de Star - Bar": {
             "libres": [
+                "D-VIP-19",
                 "D-VIP-20",
                 "D-VIP-21",
                 "D-VIP-22",
@@ -209,7 +210,6 @@
                 "D-VIP-28"
             ],
             "ocupados": [
-                "D-VIP-19",
                 "D-VIP-23",
                 "D-VIP-24"
             ]
@@ -393,5 +393,5 @@
             "partners_max": 0
         }
     },
-    "last_updated_utc": "2026-04-14T21:00:19.985771+00:00"
+    "last_updated_utc": "2026-04-14T21:22:33.939226+00:00"
 }
