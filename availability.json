@@ -162,13 +162,13 @@
         "Spawn": {
             "libres": [
                 "D-VIP-9",
-                "D-VIP-10",
-                "D-VIP-11",
                 "D-VIP-12",
                 "D-VIP-31",
                 "D-VIP-32"
             ],
             "ocupados": [
+                "D-VIP-10",
+                "D-VIP-11",
                 "D-VIP-29",
                 "D-VIP-30"
             ]
@@ -190,13 +190,14 @@
         "Terraza - SemiPlaya xD": {
             "libres": [
                 "D-VIP-13",
-                "D-VIP-14",
                 "D-VIP-15",
                 "D-VIP-16",
-                "D-VIP-17",
                 "D-VIP-18"
             ],
-            "ocupados": []
+            "ocupados": [
+                "D-VIP-14",
+                "D-VIP-17"
+            ]
         },
         "Sala de Star - Bar": {
             "libres": [
@@ -393,5 +394,5 @@
             "partners_max": 0
         }
     },
-    "last_updated_utc": "2026-04-14T21:22:33.939226+00:00"
+    "last_updated_utc": "2026-04-14T21:28:59.671830+00:00"
 }
