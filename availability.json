@@ -117,7 +117,6 @@
         },
         "Zotano": {
             "libres": [
-                "VIP-2",
                 "VIP-3",
                 "VIP-4",
                 "VIP-5",
@@ -134,7 +133,8 @@
                 "VIP-32"
             ],
             "ocupados": [
-                "VIP-1"
+                "VIP-1",
+                "VIP-2"
             ]
         }
     },
@@ -395,5 +395,5 @@
             "partners_max": 0
         }
     },
-    "last_updated_utc": "2026-04-15T06:14:14.437832+00:00"
+    "last_updated_utc": "2026-04-15T06:21:46.067126+00:00"
 }
