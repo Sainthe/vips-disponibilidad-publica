@@ -40,6 +40,7 @@
         },
         "Zona de Escalera": {
             "libres": [
+                "VIP-17",
                 "VIP-19",
                 "VIP-20",
                 "VIP-22",
@@ -48,7 +49,6 @@
             ],
             "ocupados": [
                 "VIP-16",
-                "VIP-17",
                 "VIP-18",
                 "VIP-21"
             ]
@@ -117,7 +117,6 @@
         },
         "Zotano": {
             "libres": [
-                "VIP-1",
                 "VIP-2",
                 "VIP-3",
                 "VIP-4",
@@ -134,7 +133,9 @@
                 "VIP-31",
                 "VIP-32"
             ],
-            "ocupados": []
+            "ocupados": [
+                "VIP-1"
+            ]
         }
     },
     "Furrys Spanish": {
@@ -394,5 +395,5 @@
             "partners_max": 0
         }
     },
-    "last_updated_utc": "2026-04-15T05:33:04.282855+00:00"
+    "last_updated_utc": "2026-04-15T06:14:14.437832+00:00"
 }
