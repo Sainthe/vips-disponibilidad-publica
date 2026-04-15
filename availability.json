@@ -308,7 +308,6 @@
                 "VipN-3",
                 "VipV-4",
                 "VipN-4",
-                "VipV-5",
                 "VipN-5",
                 "VipV-6",
                 "VipN-6",
@@ -366,6 +365,7 @@
             ],
             "ocupados": [
                 "VipN-1",
+                "VipV-5",
                 "VipV-7"
             ]
         },
@@ -395,5 +395,5 @@
             "partners_max": 0
         }
     },
-    "last_updated_utc": "2026-04-15T19:07:14.103443+00:00"
+    "last_updated_utc": "2026-04-15T19:23:36.161211+00:00"
 }
