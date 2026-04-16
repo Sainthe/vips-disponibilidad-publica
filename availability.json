@@ -301,17 +301,9 @@
         },
         "Spawn": {
             "libres": [
-                "VipList1-1",
-                "VipList1-2",
-                "VipList1-3",
                 "VipList1-4",
-                "VipList1-5",
-                "VipList1-6",
-                "VipList1-7",
-                "VipList1-8",
                 "VipList1-9",
                 "VipList1-10",
-                "VipList1-11",
                 "VipList1-12",
                 "VipList1-13",
                 "VipList1-14",
@@ -366,7 +358,16 @@
                 "VipList2-31",
                 "VipList2-32"
             ],
-            "ocupados": []
+            "ocupados": [
+                "VipList1-1",
+                "VipList1-2",
+                "VipList1-3",
+                "VipList1-5",
+                "VipList1-6",
+                "VipList1-7",
+                "VipList1-8",
+                "VipList1-11"
+            ]
         },
         "Anubis": {
             "is_virtual": true,
@@ -394,5 +395,5 @@
             "partners_max": 0
         }
     },
-    "last_updated_utc": "2026-04-16T16:06:39.589339+00:00"
+    "last_updated_utc": "2026-04-16T16:10:37.149770+00:00"
 }
