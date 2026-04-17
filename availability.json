@@ -75,7 +75,7 @@
                 "VIP-4",
                 "VIP-5",
                 "VIP-11",
-                "VIP-12"
+                "VIP-13"
             ],
             "ocupados": [
                 "VIP-6",
@@ -83,7 +83,7 @@
                 "VIP-8",
                 "VIP-9",
                 "VIP-10",
-                "VIP-13"
+                "VIP-12"
             ]
         },
         "Back Stage": {
@@ -395,5 +395,5 @@
             "partners_max": 0
         }
     },
-    "last_updated_utc": "2026-04-16T16:41:04.852304+00:00"
+    "last_updated_utc": "2026-04-17T18:53:29.799169+00:00"
 }
