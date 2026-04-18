@@ -162,12 +162,12 @@
         },
         "Spawn": {
             "libres": [
-                "D-VIP-9",
                 "D-VIP-12",
                 "D-VIP-31",
                 "D-VIP-32"
             ],
             "ocupados": [
+                "D-VIP-9",
                 "D-VIP-10",
                 "D-VIP-11",
                 "D-VIP-29",
@@ -395,5 +395,5 @@
             "partners_max": 0
         }
     },
-    "last_updated_utc": "2026-04-17T18:53:29.799169+00:00"
+    "last_updated_utc": "2026-04-18T10:08:24.257637+00:00"
 }
