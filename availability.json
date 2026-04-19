@@ -303,7 +303,6 @@
                 "VipList1-4",
                 "VipList1-9",
                 "VipList1-10",
-                "VipList1-13",
                 "VipList1-15",
                 "VipList1-16",
                 "VipList1-17",
@@ -365,6 +364,7 @@
                 "VipList1-8",
                 "VipList1-11",
                 "VipList1-12",
+                "VipList1-13",
                 "VipList1-14"
             ]
         },
@@ -394,5 +394,5 @@
             "partners_max": 0
         }
     },
-    "last_updated_utc": "2026-04-19T01:31:24.683636+00:00"
+    "last_updated_utc": "2026-04-19T01:39:26.257290+00:00"
 }
