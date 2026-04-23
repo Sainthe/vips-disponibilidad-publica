@@ -1,5 +1,6 @@
 {
     "LasCariñosas": [
+        "C-VIP-10",
         "C-VIP-11",
         "C-VIP-13",
         "C-VIP-15",
@@ -21,6 +22,8 @@
         "C-VIP-32",
         "C-VIP-4",
         "C-VIP-5",
+        "C-VIP-7",
+        "C-VIP-9",
         "V-VIP-10",
         "V-VIP-11",
         "V-VIP-12",
@@ -46,7 +49,9 @@
         "VIP-25",
         "VIP-29",
         "VIP-30",
-        "VIP-7"
+        "VIP-7",
+        "VIP-8",
+        "VIP-9"
     ],
     "Furrys Spanish": [
         "D-VIP-1",
