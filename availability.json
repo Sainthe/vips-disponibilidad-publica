@@ -23,6 +23,8 @@
         "Bar Spawn": {
             "libres": [
                 "VIP-7",
+                "VIP-8",
+                "VIP-9",
                 "VIP-10",
                 "VIP-11",
                 "VIP-12",
@@ -33,9 +35,7 @@
             "ocupados": [
                 "VIP-4",
                 "VIP-5",
-                "VIP-6",
-                "VIP-8",
-                "VIP-9"
+                "VIP-6"
             ]
         },
         "Zona de Escalera": {
@@ -74,15 +74,15 @@
             "libres": [
                 "VIP-4",
                 "VIP-5",
+                "VIP-7",
+                "VIP-9",
+                "VIP-10",
                 "VIP-11",
                 "VIP-13"
             ],
             "ocupados": [
                 "VIP-6",
-                "VIP-7",
                 "VIP-8",
-                "VIP-9",
-                "VIP-10",
                 "VIP-12"
             ]
         },
@@ -394,5 +394,5 @@
             "partners_max": 0
         }
     },
-    "last_updated_utc": "2026-04-23T11:32:18.828884+00:00"
+    "last_updated_utc": "2026-04-23T12:12:29.467824+00:00"
 }
