@@ -13,12 +13,12 @@
             "partners_max": 5
         },
         "Entrada Spawn": {
-            "libres": [
+            "libres": [],
+            "ocupados": [
                 "VIP-1",
                 "VIP-2",
                 "VIP-3"
-            ],
-            "ocupados": []
+            ]
         },
         "Bar Spawn": {
             "libres": [
@@ -394,5 +394,5 @@
             "partners_max": 0
         }
     },
-    "last_updated_utc": "2026-04-26T15:57:55.392295+00:00"
+    "last_updated_utc": "2026-04-26T16:11:53.925121+00:00"
 }
