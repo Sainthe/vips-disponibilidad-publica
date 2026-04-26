@@ -74,13 +74,13 @@
             "libres": [
                 "VIP-4",
                 "VIP-5",
-                "VIP-6",
                 "VIP-7",
                 "VIP-9",
                 "VIP-11",
                 "VIP-13"
             ],
             "ocupados": [
+                "VIP-6",
                 "VIP-8",
                 "VIP-10",
                 "VIP-12"
@@ -91,11 +91,11 @@
                 "VIP-15",
                 "VIP-16",
                 "VIP-17",
-                "VIP-18",
                 "VIP-19"
             ],
             "ocupados": [
-                "VIP-14"
+                "VIP-14",
+                "VIP-18"
             ]
         },
         "Exterior": {
@@ -394,5 +394,5 @@
             "partners_max": 0
         }
     },
-    "last_updated_utc": "2026-04-26T16:18:34.184454+00:00"
+    "last_updated_utc": "2026-04-26T16:19:22.031839+00:00"
 }
