@@ -302,6 +302,7 @@
             "libres": [
                 "VipList1-3",
                 "VipList1-4",
+                "VipList1-6",
                 "VipList1-9",
                 "VipList1-10",
                 "VipList1-15",
@@ -359,7 +360,6 @@
                 "VipList1-1",
                 "VipList1-2",
                 "VipList1-5",
-                "VipList1-6",
                 "VipList1-7",
                 "VipList1-8",
                 "VipList1-11",
@@ -394,5 +394,5 @@
             "partners_max": 0
         }
     },
-    "last_updated_utc": "2026-04-29T15:55:02.327732+00:00"
+    "last_updated_utc": "2026-04-29T15:55:40.516358+00:00"
 }
