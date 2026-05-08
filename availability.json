@@ -205,13 +205,14 @@
                 "D-VIP-21",
                 "D-VIP-22",
                 "D-VIP-23",
-                "D-VIP-24",
                 "D-VIP-25",
                 "D-VIP-26",
                 "D-VIP-27",
                 "D-VIP-28"
             ],
-            "ocupados": []
+            "ocupados": [
+                "D-VIP-24"
+            ]
         },
         "Pasillo Stage": {
             "libres": [
@@ -392,5 +393,5 @@
             "partners_max": 0
         }
     },
-    "last_updated_utc": "2026-05-05T23:11:43.827422+00:00"
+    "last_updated_utc": "2026-05-08T23:35:51.800502+00:00"
 }
