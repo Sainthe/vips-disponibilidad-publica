@@ -13,10 +13,11 @@
             "partners_max": 5
         },
         "Entrada Spawn": {
-            "libres": [],
+            "libres": [
+                "VIP-2"
+            ],
             "ocupados": [
                 "VIP-1",
-                "VIP-2",
                 "VIP-3"
             ]
         },
@@ -145,7 +146,7 @@
                 "1045423196633051147"
             ],
             "rules_text": "",
-            "partners_occupied": 3,
+            "partners_occupied": 4,
             "partners_max": 0
         },
         "Stage": {
@@ -393,5 +394,5 @@
             "partners_max": 0
         }
     },
-    "last_updated_utc": "2026-05-08T23:35:51.800502+00:00"
+    "last_updated_utc": "2026-05-15T15:54:57.834059+00:00"
 }
