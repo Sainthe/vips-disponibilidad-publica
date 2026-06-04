@@ -174,7 +174,6 @@
         },
         "Pasillo": {
             "libres": [
-                "D-VIP-1",
                 "D-VIP-2",
                 "D-VIP-3",
                 "D-VIP-4",
@@ -183,7 +182,9 @@
                 "D-VIP-7",
                 "D-VIP-8"
             ],
-            "ocupados": []
+            "ocupados": [
+                "D-VIP-1"
+            ]
         },
         "Terraza - SemiPlaya xD": {
             "libres": [
@@ -391,5 +392,5 @@
             "partners_max": 0
         }
     },
-    "last_updated_utc": "2026-06-01T22:18:41.425431+00:00"
+    "last_updated_utc": "2026-06-04T05:02:52.975265+00:00"
 }
