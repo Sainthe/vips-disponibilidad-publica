@@ -144,7 +144,7 @@
                 "1045423196633051147"
             ],
             "rules_text": "",
-            "partners_occupied": 4,
+            "partners_occupied": 3,
             "partners_max": 0
         },
         "Stage": {
@@ -203,14 +203,13 @@
                 "D-VIP-21",
                 "D-VIP-22",
                 "D-VIP-23",
+                "D-VIP-24",
                 "D-VIP-25",
                 "D-VIP-26",
                 "D-VIP-27",
                 "D-VIP-28"
             ],
-            "ocupados": [
-                "D-VIP-24"
-            ]
+            "ocupados": []
         },
         "Pasillo Stage": {
             "libres": [
@@ -391,5 +390,5 @@
             "partners_max": 0
         }
     },
-    "last_updated_utc": "2026-06-13T17:35:02.283367+00:00"
+    "last_updated_utc": "2026-06-13T17:46:06.485888+00:00"
 }
