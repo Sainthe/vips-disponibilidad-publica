@@ -43,14 +43,14 @@
                 "VIP-18",
                 "VIP-19",
                 "VIP-20",
+                "VIP-23",
                 "VIP-24"
             ],
             "ocupados": [
                 "VIP-16",
                 "VIP-17",
                 "VIP-21",
-                "VIP-22",
-                "VIP-23"
+                "VIP-22"
             ]
         },
         "Stage": {
@@ -73,7 +73,6 @@
             "libres": [
                 "VIP-5",
                 "VIP-7",
-                "VIP-8",
                 "VIP-11",
                 "VIP-12",
                 "VIP-13"
@@ -81,6 +80,7 @@
             "ocupados": [
                 "VIP-4",
                 "VIP-6",
+                "VIP-8",
                 "VIP-9",
                 "VIP-10"
             ]
@@ -390,5 +390,5 @@
             "partners_max": 0
         }
     },
-    "last_updated_utc": "2026-06-19T20:35:37.267810+00:00"
+    "last_updated_utc": "2026-06-19T21:32:18.332270+00:00"
 }
