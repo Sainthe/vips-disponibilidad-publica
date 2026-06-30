@@ -300,7 +300,6 @@
                 "VipList1-3",
                 "VipList1-4",
                 "VipList1-5",
-                "VipList1-6",
                 "VipList1-7",
                 "VipList1-8",
                 "VipList1-9",
@@ -362,6 +361,7 @@
             "ocupados": [
                 "VipList1-1",
                 "VipList1-2",
+                "VipList1-6",
                 "VipList1-12"
             ]
         },
@@ -384,5 +384,5 @@
             "partners_max": 0
         }
     },
-    "last_updated_utc": "2026-06-30T11:33:28.781595+00:00"
+    "last_updated_utc": "2026-06-30T12:14:22.541701+00:00"
 }
