@@ -201,7 +201,6 @@
                 "VipList2-9",
                 "VipList2-10",
                 "VipList2-11",
-                "VipList2-12",
                 "VipList2-13",
                 "VipList2-14",
                 "VipList2-15",
@@ -230,7 +229,8 @@
                 "VipList1-6",
                 "VipList1-9",
                 "VipList1-11",
-                "VipList1-12"
+                "VipList1-12",
+                "VipList2-12"
             ]
         },
         "Mosquepteros": {
@@ -252,5 +252,5 @@
             "partners_max": 0
         }
     },
-    "last_updated_utc": "2026-07-10T17:57:46.994157+00:00"
+    "last_updated_utc": "2026-07-10T18:00:39.341332+00:00"
 }
