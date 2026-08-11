@@ -28,14 +28,14 @@
                 "VIP-9",
                 "VIP-10",
                 "VIP-11",
-                "VIP-13",
-                "VIP-14"
+                "VIP-13"
             ],
             "ocupados": [
                 "VIP-4",
                 "VIP-5",
                 "VIP-6",
                 "VIP-12",
+                "VIP-14",
                 "VIP-15"
             ]
         },
@@ -253,5 +253,5 @@
             "partners_max": 0
         }
     },
-    "last_updated_utc": "2026-08-07T15:32:28.014494+00:00"
+    "last_updated_utc": "2026-08-11T00:48:06.824108+00:00"
 }
