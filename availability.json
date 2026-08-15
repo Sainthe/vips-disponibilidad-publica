@@ -13,10 +13,9 @@
             "partners_max": 5
         },
         "Entrada Spawn": {
-            "libres": [
-                "VIP-1"
-            ],
+            "libres": [],
             "ocupados": [
+                "VIP-1",
                 "VIP-2",
                 "VIP-3"
             ]
@@ -254,5 +253,5 @@
             "partners_max": 0
         }
     },
-    "last_updated_utc": "2026-08-14T04:27:24.652093+00:00"
+    "last_updated_utc": "2026-08-15T19:09:28.614263+00:00"
 }
