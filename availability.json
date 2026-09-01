@@ -22,7 +22,6 @@
         },
         "Bar Spawn": {
             "libres": [
-                "VIP-7",
                 "VIP-9",
                 "VIP-10",
                 "VIP-11",
@@ -32,6 +31,7 @@
                 "VIP-4",
                 "VIP-5",
                 "VIP-6",
+                "VIP-7",
                 "VIP-8",
                 "VIP-12",
                 "VIP-14",
@@ -253,5 +253,5 @@
             "partners_max": 0
         }
     },
-    "last_updated_utc": "2026-09-01T04:51:15.687374+00:00"
+    "last_updated_utc": "2026-09-01T22:54:09.910649+00:00"
 }
