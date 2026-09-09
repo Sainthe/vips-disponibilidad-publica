@@ -24,6 +24,7 @@
             "libres": [
                 "VIP-10",
                 "VIP-11",
+                "VIP-12",
                 "VIP-13"
             ],
             "ocupados": [
@@ -33,19 +34,18 @@
                 "VIP-7",
                 "VIP-8",
                 "VIP-9",
-                "VIP-12",
                 "VIP-14",
                 "VIP-15"
             ]
         },
         "Zona de Escalera": {
             "libres": [
+                "VIP-16",
                 "VIP-20",
                 "VIP-22",
                 "VIP-24"
             ],
             "ocupados": [
-                "VIP-16",
                 "VIP-17",
                 "VIP-18",
                 "VIP-19",
@@ -55,13 +55,13 @@
         },
         "Stage": {
             "libres": [
+                "VIP-25",
                 "VIP-26"
             ],
             "ocupados": [
                 "VIP-1",
                 "VIP-2",
                 "VIP-3",
-                "VIP-25",
                 "VIP-27",
                 "VIP-28",
                 "VIP-29",
@@ -72,6 +72,7 @@
         },
         "Pasillo VIP": {
             "libres": [
+                "VIP-9",
                 "VIP-10",
                 "VIP-11",
                 "VIP-12",
@@ -82,8 +83,7 @@
                 "VIP-5",
                 "VIP-6",
                 "VIP-7",
-                "VIP-8",
-                "VIP-9"
+                "VIP-8"
             ]
         },
         "Back Stage": {
@@ -253,5 +253,5 @@
             "partners_max": 0
         }
     },
-    "last_updated_utc": "2026-09-09T00:49:28.724898+00:00"
+    "last_updated_utc": "2026-09-09T03:01:56.578522+00:00"
 }
