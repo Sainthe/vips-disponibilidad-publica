@@ -74,7 +74,6 @@
             "libres": [
                 "VIP-9",
                 "VIP-10",
-                "VIP-11",
                 "VIP-12",
                 "VIP-13"
             ],
@@ -83,7 +82,8 @@
                 "VIP-5",
                 "VIP-6",
                 "VIP-7",
-                "VIP-8"
+                "VIP-8",
+                "VIP-11"
             ]
         },
         "Back Stage": {
@@ -253,5 +253,5 @@
             "partners_max": 0
         }
     },
-    "last_updated_utc": "2026-09-15T06:00:58.950126+00:00"
+    "last_updated_utc": "2026-09-15T19:46:46.354673+00:00"
 }
