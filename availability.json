@@ -22,18 +22,19 @@
             ]
         },
         "Bar Spawn": {
-            "libres": [],
+            "libres": [
+                "VIP-9",
+                "VIP-13"
+            ],
             "ocupados": [
                 "VIP-4",
                 "VIP-5",
                 "VIP-6",
                 "VIP-7",
                 "VIP-8",
-                "VIP-9",
                 "VIP-10",
                 "VIP-11",
                 "VIP-12",
-                "VIP-13",
                 "VIP-14",
                 "VIP-15"
             ]
@@ -72,7 +73,6 @@
         },
         "Pasillo VIP": {
             "libres": [
-                "VIP-9",
                 "VIP-10",
                 "VIP-12",
                 "VIP-13"
@@ -83,6 +83,7 @@
                 "VIP-6",
                 "VIP-7",
                 "VIP-8",
+                "VIP-9",
                 "VIP-11"
             ]
         },
@@ -253,5 +254,5 @@
             "partners_max": 0
         }
     },
-    "last_updated_utc": "2026-09-17T23:52:39.840925+00:00"
+    "last_updated_utc": "2026-09-20T00:05:16.220822+00:00"
 }
