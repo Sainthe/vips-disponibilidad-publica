@@ -20,7 +20,6 @@
         "C-VIP-30",
         "C-VIP-31",
         "C-VIP-32",
-        "C-VIP-9",
         "V-VIP-10",
         "V-VIP-11",
         "V-VIP-12",
@@ -33,9 +32,11 @@
         "V-VIP-8",
         "V-VIP-9",
         "VIP-1",
+        "VIP-13",
         "VIP-18",
         "VIP-22",
-        "VIP-26"
+        "VIP-26",
+        "VIP-9"
     ],
     "Furrys Spanish": [],
     "IslaDelPecado": [
