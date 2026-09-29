@@ -87,12 +87,12 @@
         },
         "Back Stage": {
             "libres": [
-                "VIP-14",
                 "VIP-16",
                 "VIP-17",
                 "VIP-18"
             ],
             "ocupados": [
+                "VIP-14",
                 "VIP-15",
                 "VIP-19"
             ]
@@ -134,19 +134,6 @@
                 "VIP-3",
                 "VIP-4"
             ]
-        }
-    },
-    "Furrys Spanish": {
-        "_meta": {
-            "discord_invite": "",
-            "banner": "",
-            "patreon_url": "https://www.patreon.com/c/nastichope/membership",
-            "admin_ids": [
-                "1045423196633051147"
-            ],
-            "rules_text": "",
-            "partners_occupied": 0,
-            "partners_max": 0
         }
     },
     "IslaDelPecado": {
@@ -252,5 +239,5 @@
             "partners_max": 0
         }
     },
-    "last_updated_utc": "2026-09-29T20:07:40.637699+00:00"
+    "last_updated_utc": "2026-09-29T23:45:43.243846+00:00"
 }
