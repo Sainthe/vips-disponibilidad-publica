@@ -16,7 +16,6 @@
         "C-VIP-29",
         "C-VIP-30",
         "C-VIP-31",
-        "C-VIP-32",
         "V-VIP-10",
         "V-VIP-11",
         "V-VIP-12",
@@ -32,7 +31,8 @@
         "VIP-15",
         "VIP-17",
         "VIP-22",
-        "VIP-26"
+        "VIP-26",
+        "VIP-9"
     ],
     "IslaDelPecado": [
         "VipList1-10",
