@@ -40,8 +40,7 @@
         },
         "Zona de Escalera": {
             "libres": [
-                "VIP-19",
-                "VIP-22"
+                "VIP-19"
             ],
             "ocupados": [
                 "VIP-16",
@@ -49,6 +48,7 @@
                 "VIP-18",
                 "VIP-20",
                 "VIP-21",
+                "VIP-22",
                 "VIP-23",
                 "VIP-24"
             ]
@@ -240,5 +240,5 @@
             "partners_max": 0
         }
     },
-    "last_updated_utc": "2026-10-11T16:44:33.356353+00:00"
+    "last_updated_utc": "2026-10-11T16:52:06.463869+00:00"
 }
