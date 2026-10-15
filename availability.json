@@ -55,10 +55,10 @@
         },
         "Stage": {
             "libres": [
-                "VIP-1",
                 "VIP-29"
             ],
             "ocupados": [
+                "VIP-1",
                 "VIP-2",
                 "VIP-3",
                 "VIP-25",
@@ -240,5 +240,5 @@
             "partners_max": 0
         }
     },
-    "last_updated_utc": "2026-10-15T19:07:46.817662+00:00"
+    "last_updated_utc": "2026-10-15T19:21:50.896806+00:00"
 }
