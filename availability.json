@@ -136,6 +136,19 @@
             ]
         }
     },
+    "Furrys Spanish": {
+        "_meta": {
+            "discord_invite": "",
+            "banner": "",
+            "patreon_url": "https://www.patreon.com/c/nastichope/membership",
+            "admin_ids": [
+                "1045423196633051147"
+            ],
+            "rules_text": "",
+            "partners_occupied": 0,
+            "partners_max": 0
+        }
+    },
     "IslaDelPecado": {
         "_meta": {
             "discord_invite": "https://discord.gg/VMhFWuVQwB",
@@ -239,5 +252,5 @@
             "partners_max": 0
         }
     },
-    "last_updated_utc": "2026-10-25T00:09:18.463874+00:00"
+    "last_updated_utc": "2026-10-25T00:11:57.297120+00:00"
 }
