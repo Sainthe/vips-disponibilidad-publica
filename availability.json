@@ -253,5 +253,16 @@
             "partners_max": 0
         }
     },
-    "last_updated_utc": "2026-10-26T06:57:31.106117+00:00"
+    "MMD VIP": {
+        "_meta": {
+            "discord_invite": "",
+            "banner": "",
+            "patreon_url": "",
+            "admin_ids": [],
+            "rules_text": "",
+            "partners_occupied": 0,
+            "partners_max": 0
+        }
+    },
+    "last_updated_utc": "2026-10-26T07:23:45.735745+00:00"
 }
