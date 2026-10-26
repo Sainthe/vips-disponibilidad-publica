@@ -26,7 +26,6 @@
                 "VIP-8",
                 "VIP-11",
                 "VIP-12",
-                "VIP-13",
                 "VIP-14",
                 "VIP-15"
             ],
@@ -36,7 +35,8 @@
                 "VIP-6",
                 "VIP-7",
                 "VIP-9",
-                "VIP-10"
+                "VIP-10",
+                "VIP-13"
             ]
         },
         "Zona de Escalera": {
@@ -264,5 +264,5 @@
             "partners_max": 0
         }
     },
-    "last_updated_utc": "2026-10-26T17:13:45.020365+00:00"
+    "last_updated_utc": "2026-10-26T18:04:47.282365+00:00"
 }
