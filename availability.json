@@ -24,6 +24,7 @@
         "Bar Spawn": {
             "libres": [
                 "VIP-8",
+                "VIP-9",
                 "VIP-11",
                 "VIP-12",
                 "VIP-14",
@@ -34,7 +35,6 @@
                 "VIP-5",
                 "VIP-6",
                 "VIP-7",
-                "VIP-9",
                 "VIP-10",
                 "VIP-13"
             ]
@@ -128,26 +128,13 @@
                 "VIP-12",
                 "VIP-13",
                 "VIP-14",
-                "VIP-31",
-                "VIP-32"
+                "VIP-31"
             ],
             "ocupados": [
                 "VIP-1",
-                "VIP-3"
+                "VIP-3",
+                "VIP-32"
             ]
-        }
-    },
-    "Furrys Spanish": {
-        "_meta": {
-            "discord_invite": "",
-            "banner": "",
-            "patreon_url": "https://www.patreon.com/c/nastichope/membership",
-            "admin_ids": [
-                "1045423196633051147"
-            ],
-            "rules_text": "",
-            "partners_occupied": 0,
-            "partners_max": 0
         }
     },
     "IslaDelPecado": {
@@ -264,5 +251,5 @@
             "partners_max": 0
         }
     },
-    "last_updated_utc": "2026-10-27T03:59:05.072286+00:00"
+    "last_updated_utc": "2026-10-27T19:32:48.808969+00:00"
 }
