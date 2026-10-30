@@ -88,13 +88,13 @@
         },
         "Back Stage": {
             "libres": [
-                "VIP-14",
                 "VIP-15",
                 "VIP-16",
                 "VIP-17",
                 "VIP-18"
             ],
             "ocupados": [
+                "VIP-14",
                 "VIP-19"
             ]
         },
@@ -251,5 +251,5 @@
             "partners_max": 0
         }
     },
-    "last_updated_utc": "2026-10-30T02:59:56.940361+00:00"
+    "last_updated_utc": "2026-10-30T03:11:07.028606+00:00"
 }
