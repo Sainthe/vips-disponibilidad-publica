@@ -26,7 +26,6 @@
                 "VIP-9",
                 "VIP-11",
                 "VIP-12",
-                "VIP-14",
                 "VIP-15"
             ],
             "ocupados": [
@@ -36,7 +35,8 @@
                 "VIP-7",
                 "VIP-8",
                 "VIP-10",
-                "VIP-13"
+                "VIP-13",
+                "VIP-14"
             ]
         },
         "Zona de Escalera": {
@@ -220,13 +220,6 @@
                 "VipList1-12",
                 "VipList1-13"
             ]
-        },
-        "Mosquepteros": {
-            "is_virtual": true,
-            "libres": [],
-            "ocupados": [
-                "JØT₳_M̶B̶"
-            ]
         }
     },
     "OKXO": {
@@ -251,5 +244,5 @@
             "partners_max": 0
         }
     },
-    "last_updated_utc": "2026-10-30T22:01:55.825409+00:00"
+    "last_updated_utc": "2026-10-31T09:10:17.331270+00:00"
 }
