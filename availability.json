@@ -12,17 +12,15 @@
             "partners_max": 5
         },
         "Entrada Spawn": {
-            "libres": [
-                "VIP-3"
-            ],
+            "libres": [],
             "ocupados": [
                 "VIP-1",
-                "VIP-2"
+                "VIP-2",
+                "VIP-3"
             ]
         },
         "Bar Spawn": {
             "libres": [
-                "VIP-5",
                 "VIP-9",
                 "VIP-11",
                 "VIP-14",
@@ -30,6 +28,7 @@
             ],
             "ocupados": [
                 "VIP-4",
+                "VIP-5",
                 "VIP-6",
                 "VIP-7",
                 "VIP-8",
@@ -54,7 +53,6 @@
         },
         "Stage": {
             "libres": [
-                "VIP-28",
                 "VIP-29"
             ],
             "ocupados": [
@@ -64,6 +62,7 @@
                 "VIP-25",
                 "VIP-26",
                 "VIP-27",
+                "VIP-28",
                 "VIP-30",
                 "VIP-31",
                 "VIP-32"
@@ -71,16 +70,16 @@
         },
         "Pasillo VIP": {
             "libres": [
-                "VIP-10"
+                "VIP-5",
+                "VIP-11"
             ],
             "ocupados": [
                 "VIP-4",
-                "VIP-5",
                 "VIP-6",
                 "VIP-7",
                 "VIP-8",
                 "VIP-9",
-                "VIP-11",
+                "VIP-10",
                 "VIP-12",
                 "VIP-13"
             ]
@@ -128,11 +127,11 @@
                 "VIP-12",
                 "VIP-13",
                 "VIP-14",
-                "VIP-31",
-                "VIP-32"
+                "VIP-31"
             ],
             "ocupados": [
-                "VIP-3"
+                "VIP-3",
+                "VIP-32"
             ]
         }
     },
@@ -250,5 +249,5 @@
             "partners_max": 0
         }
     },
-    "last_updated_utc": "2026-11-06T18:55:38.335829+00:00"
+    "last_updated_utc": "2026-11-08T18:14:57.530989+00:00"
 }
