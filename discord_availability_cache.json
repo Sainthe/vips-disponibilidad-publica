@@ -1,9 +1,7 @@
 {
     "LasCariñosas": [
-        "C-VIP-11",
         "C-VIP-15",
         "C-VIP-16",
-        "C-VIP-17",
         "C-VIP-18",
         "C-VIP-20",
         "C-VIP-21",
@@ -17,7 +15,6 @@
         "C-VIP-29",
         "C-VIP-30",
         "C-VIP-31",
-        "C-VIP-5",
         "V-VIP-1",
         "V-VIP-10",
         "V-VIP-11",
@@ -25,6 +22,7 @@
         "V-VIP-13",
         "V-VIP-14",
         "V-VIP-2",
+        "V-VIP-3",
         "V-VIP-4",
         "V-VIP-5",
         "V-VIP-6",
@@ -34,8 +32,8 @@
         "VIP-11",
         "VIP-14",
         "VIP-15",
-        "VIP-29",
-        "VIP-9"
+        "VIP-16",
+        "VIP-29"
     ],
     "IslaDelPecado": [
         "VipList1-1",
