@@ -152,6 +152,7 @@
         "Spawn": {
             "libres": [
                 "VipList1-1",
+                "VipList1-2",
                 "VipList1-3",
                 "VipList1-4",
                 "VipList1-5",
@@ -161,6 +162,8 @@
                 "VipList1-9",
                 "VipList1-10",
                 "VipList1-11",
+                "VipList1-12",
+                "VipList1-13",
                 "VipList1-14",
                 "VipList1-15",
                 "VipList1-16",
@@ -213,11 +216,7 @@
                 "VipList2-31",
                 "VipList2-32"
             ],
-            "ocupados": [
-                "VipList1-2",
-                "VipList1-12",
-                "VipList1-13"
-            ]
+            "ocupados": []
         },
         "Mosquepteros": {
             "is_virtual": true,
@@ -249,5 +248,5 @@
             "partners_max": 0
         }
     },
-    "last_updated_utc": "2026-11-15T01:12:37.955130+00:00"
+    "last_updated_utc": "2026-11-15T05:11:57.342242+00:00"
 }
