@@ -12,15 +12,20 @@
             "partners_max": 5
         },
         "Entrada Spawn": {
-            "libres": [
+            "libres": [],
+            "ocupados": [
                 "VIP-1",
                 "VIP-2",
                 "VIP-3"
-            ],
-            "ocupados": []
+            ]
         },
         "Bar Spawn": {
             "libres": [
+                "VIP-11",
+                "VIP-14",
+                "VIP-15"
+            ],
+            "ocupados": [
                 "VIP-4",
                 "VIP-5",
                 "VIP-6",
@@ -28,17 +33,15 @@
                 "VIP-8",
                 "VIP-9",
                 "VIP-10",
-                "VIP-11",
                 "VIP-12",
-                "VIP-13",
-                "VIP-14",
-                "VIP-15"
-            ],
-            "ocupados": []
+                "VIP-13"
+            ]
         },
         "Zona de Escalera": {
             "libres": [
-                "VIP-16",
+                "VIP-16"
+            ],
+            "ocupados": [
                 "VIP-17",
                 "VIP-18",
                 "VIP-19",
@@ -47,11 +50,13 @@
                 "VIP-22",
                 "VIP-23",
                 "VIP-24"
-            ],
-            "ocupados": []
+            ]
         },
         "Stage": {
             "libres": [
+                "VIP-29"
+            ],
+            "ocupados": [
                 "VIP-1",
                 "VIP-2",
                 "VIP-3",
@@ -59,18 +64,18 @@
                 "VIP-26",
                 "VIP-27",
                 "VIP-28",
-                "VIP-29",
                 "VIP-30",
                 "VIP-31",
                 "VIP-32"
-            ],
-            "ocupados": []
+            ]
         },
         "Pasillo VIP": {
             "libres": [
+                "VIP-6"
+            ],
+            "ocupados": [
                 "VIP-4",
                 "VIP-5",
-                "VIP-6",
                 "VIP-7",
                 "VIP-8",
                 "VIP-9",
@@ -78,19 +83,19 @@
                 "VIP-11",
                 "VIP-12",
                 "VIP-13"
-            ],
-            "ocupados": []
+            ]
         },
         "Back Stage": {
             "libres": [
+                "VIP-16",
+                "VIP-18"
+            ],
+            "ocupados": [
                 "VIP-14",
                 "VIP-15",
-                "VIP-16",
                 "VIP-17",
-                "VIP-18",
                 "VIP-19"
-            ],
-            "ocupados": []
+            ]
         },
         "Exterior": {
             "libres": [
@@ -114,7 +119,6 @@
                 "VIP-2",
                 "VIP-3",
                 "VIP-4",
-                "VIP-5",
                 "VIP-6",
                 "VIP-7",
                 "VIP-8",
@@ -124,10 +128,12 @@
                 "VIP-12",
                 "VIP-13",
                 "VIP-14",
-                "VIP-31",
-                "VIP-32"
+                "VIP-31"
             ],
-            "ocupados": []
+            "ocupados": [
+                "VIP-5",
+                "VIP-32"
+            ]
         }
     },
     "IslaDelPecado": {
@@ -146,70 +152,75 @@
         },
         "Spawn": {
             "libres": [
-                "VipList1-1",
-                "VipList1-2",
-                "VipList1-3",
-                "VipList1-4",
-                "VipList1-5",
-                "VipList1-6",
-                "VipList1-7",
-                "VipList1-8",
-                "VipList1-9",
-                "VipList1-10",
-                "VipList1-11",
-                "VipList1-12",
-                "VipList1-13",
-                "VipList1-14",
-                "VipList1-15",
-                "VipList1-16",
-                "VipList1-17",
-                "VipList1-18",
-                "VipList1-19",
-                "VipList1-20",
-                "VipList1-21",
-                "VipList1-22",
-                "VipList1-23",
-                "VipList1-24",
-                "VipList1-25",
-                "VipList1-26",
-                "VipList1-27",
-                "VipList1-28",
-                "VipList1-29",
-                "VipList1-30",
-                "VipList1-31",
-                "VipList1-32",
-                "VipList2-1",
-                "VipList2-2",
-                "VipList2-3",
-                "VipList2-4",
-                "VipList2-5",
-                "VipList2-6",
-                "VipList2-7",
-                "VipList2-8",
-                "VipList2-9",
-                "VipList2-10",
-                "VipList2-11",
-                "VipList2-12",
-                "VipList2-13",
-                "VipList2-14",
-                "VipList2-15",
-                "VipList2-16",
-                "VipList2-17",
-                "VipList2-18",
-                "VipList2-19",
-                "VipList2-20",
-                "VipList2-21",
-                "VipList2-22",
-                "VipList2-23",
-                "VipList2-24",
-                "VipList2-25",
-                "VipList2-26",
-                "VipList2-27",
-                "VipList2-28",
-                "VipList2-29",
-                "VipList2-30",
-                "VipList2-31",
-                "VipList2-32"
+                "VipV1",
+                "VipV2",
+                "VipV3",
+                "VipV4",
+                "VipV5",
+                "VipV6",
+                "VipV7",
+                "VipV8",
+                "VipV9",
+                "VipV10",
+                "VipV11",
+                "VipV12",
+                "VipV13",
+                "VipV14",
+                "VipV15",
+                "VipV16",
+                "VipV17",
+                "VipV18",
+                "VipV19",
+                "VipV20",
+                "VipV21",
+                "VipV22",
+                "VipV23",
+                "VipV24",
+                "VipV25",
+                "VipV26",
+                "VipV27",
+                "VipV28",
+                "VipV29",
+                "VipV30",
+                "VipV31",
+                "VipV32"
+            ],
+            "ocupados": []
+        },
+        "Piso1": {
+            "libres": [
+                "VipN1",
+                "VipN2",
+                "VipN3",
+                "VipN4",
+                "VipN5",
+                "VipN6",
+                "VipN7",
+                "VipN8",
+                "VipN9",
+                "VipN10",
+                "VipN11",
+                "VipN12",
+                "VipN13",
+                "VipN14",
+                "VipN15",
+                "VipN16",
+                "VipN17",
+                "VipN18",
+                "VipN19",
+                "VipN20",
+                "VipN21",
+                "VipN22",
+                "VipN23",
+                "VipN24",
+                "VipN25",
+                "VipN26",
+                "VipN27",
+                "VipN28",
+                "VipN29",
+                "VipN30",
+                "VipN31",
+                "VipN32"
             ],
             "ocupados": []
         },
@@ -243,5 +254,5 @@
             "partners_max": 0
         }
     },
-    "last_updated_utc": "2026-11-17T20:50:52.071336+00:00"
+    "last_updated_utc": "2026-11-21T01:06:00.917805+00:00"
 }
